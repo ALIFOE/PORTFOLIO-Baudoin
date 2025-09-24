@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALIFOE Kokou BAUDOIN</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1QRQVFF021"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-1QRQVFF021');
+    </script>
+    <link href="dist/output.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <script src="js/main.js" defer></script>
+</head>
+<body class="bg-gray-50 text-gray-800">    <!-- Navigation -->
+    <nav id="mainNav" class="modern-nav fixed w-full top-0 z-50 py-2">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#accueil" class="nav-brand"><img src="logo  v 02 concept tech.png" alt="conceptTech" class="h-12"></a>
+            <div class="hidden md:flex space-x-6">
+                <a href="index.html" class="nav-link text-custom-orange font-bold">Accueil</a>
+                <a href="about.html" class="nav-link">À propos</a>
+                <a href="experience.html" class="nav-link">Expérience</a>
+                <a href="competences.html" class="nav-link">Compétences</a>
+                <a href="formation.html" class="nav-link">Formation</a>
+                <a href="mesprojets.html" class="nav-link">Mes Projets</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <button class="md:hidden mobile-menu-btn" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+
+        </div>
+        <div id="mobile-menu" class="mobile-menu md:hidden hidden">
+            <a href="index.html" class="hover:text-custom-orange font-bold">Accueil</a>
+            <a href="about.html" class="hover:text-blue-400">À propos</a>
+            <a href="experience.html" class="hover:text-blue-400">Expérience</a>
+            <a href="competences.html" class="hover:text-blue-400">Compétences</a>
+            <a href="formation.html" class="hover:text-blue-400">Formation</a>
+            <a href="mesprojets.html" class="hover:text-blue-400">Mes Projets</a>
+            <a href="contact.html" class="hover:text-blue-400">Contact</a>
+        </div>
+    </nav>    <!-- Hero Section -->    <section id="accueil" class="hero-gradient text-white min-h-screen flex items-center">
+        <div class="stars"></div>
+        <div class="hero-content container mx-auto flex flex-col md:flex-row items-center justify-center gap-8">
+            <div class="fade-in relative z-10 w-full md:w-1/2 pt-16 md:pt-0">
+                <p class="hello-text">ME Connaissez-vous?</p>
+                <h1 class="hero-title">Je suis<br>ALIFOE Kokou<br>BAUDOIN</h1>
+                <p class="hero-description">
+                   Développeur Full Stack & Solutions Digitales, je transforme les idées en applications innovantes.<br>
+                    Spécialisé dans la création d'expériences web modernes et le développement d'applications mobiles performantes,<br>
+                    je combine expertise technique et vision stratégique pour répondre aux défis numériques d'aujourd'hui.
+                </p>                <div class="flex flex-wrap gap-4">
+                    <a href="contact.html" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-full transition-all duration-300 flex items-center" onclick="gtag('event', 'click', {'event_category': 'Contact', 'event_label': 'Contact Button Hero'});">
+                        <i class="fas fa-envelope mr-2"></i>Me contacter
+                    </a>
+                    <a href="#about" class="border border-blue-400 hover:border-blue-300 px-6 py-3 rounded-full transition-all duration-300" onclick="gtag('event', 'click', {'event_category': 'Navigation', 'event_label': 'About Section'});">
+                        En savoir plus
+                    </a>                    
+                   <a href="cv-baudoin-alifoe.pdf" id="cv-link" class="bg-custom-orange hover:bg-orange-600 px-6 py-3 rounded-full transition-all duration-300 flex items-center" onclick="gtag('event', 'download', {'event_category': 'CV', 'event_label': 'CV Download'});">
+                     <i class="fas fa-download mr-2"></i>Télécharger mon CV
+                   </a>
+                </div>
+            </div>
+            <div class="relative md:w-1/2 flex flex-col items-center">
+                <img src="photo3.png" alt="ALIFOE Kokou BAUDOIN" class="profile-image w-72 md:w-96 lg:w-auto mb-6">
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-center">Développeur Full Stack & Architecte Solutions Digitales</h1>
+                <p class="text-base md:text-lg lg:text-xl mb-6 text-blue-200 text-center max-w-2xl">
+                    Expert en développement web et mobile avec une approche fullstack, je crée des solutions digitales innovantes et performantes. Spécialisé dans les technologies modernes comme React, Node.js et les architectures cloud, je combine créativité et expertise technique pour donner vie à des projets ambitieux.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="mailto:Alifoebaudoin228@gmail.com" class="bg-custom-orange hover:bg-orange-600 px-6 py-3 rounded-lg transition-colors flex items-center" onclick="gtag('event', 'contact', {'event_category': 'Email', 'event_label': 'Email Hero'});">
+                        <i class="fas fa-envelope mr-2"></i>Contact
+                    </a>                    <a href="https://linkedin.com/in/baudoin-kokou-alifoe-110197231" target="_blank" class="border border-white hover:bg-white hover:text-dark-blue px-6 py-3 rounded-lg transition-colors flex items-center" onclick="gtag('event', 'social', {'event_category': 'Social', 'event_label': 'LinkedIn'});">
+                        <i class="fab fa-linkedin mr-2"></i>LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->    <!-- Contact -->
+    <section id="contact" class="py-20 animated-gradient">
+        <div class="container mx-auto px-4 fade-in">
+            <h2 class="text-4xl font-bold text-center mb-12 text-custom-orange">Contact</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 text-custom-orange">Restons en contact</h3>
+                        <p class="mb-8 contact-text">
+                            Je suis toujours ouvert aux nouvelles opportunités et collaborations. 
+                            N'hésitez pas à me contacter pour discuter de vos projets.
+                        </p>
+                        <div class="space-y-4 contact-info">
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope text-custom-orange mr-4"></i>
+                                <a href="mailto:Alifoebaudoin228@gmail.com" class="hover:text-blue-400">
+                                    Alifoebaudoin228@gmail.com
+                                </a>
+                            </div>                            <div class="flex items-center">
+                                <i class="fas fa-phone text-custom-orange mr-4"></i>
+                                <span>+228 97 73 43 81</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fab fa-whatsapp text-custom-orange mr-4"></i>
+                                <a href="https://wa.me/22897734381" target="_blank" class="hover:text-blue-400">
+                                    WhatsApp
+                                </a>
+                            </div>                            <div class="flex items-center">
+                                <i class="fab fa-linkedin text-custom-orange mr-4"></i>
+                                <a href="https://linkedin.com/in/baudoin-kokou-alifoe-110197231" target="_blank" class="hover:text-blue-400">
+                                    LinkedIn Profile
+                                </a>
+                            </div>
+                        </div>
+                    </div>                    
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 text-custom-orange">Centres d'intérêt</h3>
+                        <div class="grid grid-cols-3 gap-4 text-center centers-interet">
+                            <div class="p-4">
+                                <i class="fas fa-music text-3xl text-custom-orange mb-2"></i>
+                                <p>Musique</p>
+                            </div>
+                            <div class="p-4">
+                                <i class="fas fa-running text-3xl text-custom-orange mb-2"></i>
+                                <p>Sport</p>
+                            </div>
+                            <div class="p-4">
+                                <i class="fas fa-camera text-3xl text-custom-orange mb-2"></i>
+                                <p>Photographie</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->    <footer class="bg-black text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 ALIFOE Kokou BAUDOIN. Tous droits réservés.</p>
+            <p class="mt-2 text-gray-400">Technicien Réseau & Développeur passionné</p>
+        </div>
+    </footer>
+
+    <!-- Bouton WhatsApp flottant -->
+    <a href="https://wa.me/22897734381" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Animation au défilement
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(element => {
+            observer.observe(element);
+        });
+
+        // Effet de parallaxe léger pour le hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('#accueil');
+            if (hero) {
+                hero.style.backgroundPositionY = scrolled * 0.5 + 'px';
+            }
+        });
+
+        // Effet de scroll sur la navigation
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('mainNav');
+            if (window.scrollY > 50) {
+                nav.classList.add('nav-scrolled');
+            } else {
+                nav.classList.remove('nav-scrolled');
+            }
+        });
+
+        // Ouvrir le CV dans un nouvel onglet sans forcer le téléchargement dans l'onglet courant
+    const cvLink = document.getElementById('cv-link');
+    cvLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        const url = this.getAttribute('href');
+        window.open(url, '_blank');
+        // Ne rien faire d'autre : le document ne s'ouvrira que dans le nouvel onglet
+    });
+    </script>
+</body>
+</html>

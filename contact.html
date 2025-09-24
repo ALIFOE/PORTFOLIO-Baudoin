@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=d            <div class="hidden md:flex space-x-6">
+                <a href="index.html" class="nav-link">Accueil</a>
+                <a href="about.html" class="nav-link">À propos</a>
+                <a href="experience.html" class="nav-link">Expérience</a>
+                <a href="competences.html" class="nav-link">Compétences</a>
+                <a href="formation.html" class="nav-link">Formation</a>
+                <a href="mesprojets.html" class="nav-link">Mes Projets</a>
+                <a href="contact.html" class="nav-link font-bold text-custom-orange">Contact</a>
+            </div>th, initial-scale=1.0">
+    <title>Contact - ALIFOE Kokou BAUDOIN</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1QRQVFF021"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-1QRQVFF021');
+    </script>
+    <link href="dist/output.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <!-- Leaflet pour la carte -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <!-- Animation AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+        .contact-section {
+            background: linear-gradient(135deg, rgba(17, 24, 39, 0.95), rgba(29, 78, 216, 0.95), rgba(124, 58, 237, 0.95));
+            min-height: calc(100vh - 64px);
+        }
+
+        .contact-form-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }        .contact-input {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .contact-input:focus {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: #60a5fa;
+            color: white;
+        }
+
+        .contact-input:focus {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: #60a5fa;
+            outline: none;
+            box-shadow: 0 0 15px rgba(96, 165, 250, 0.3);
+        }
+
+        .contact-submit {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            transition: all 0.3s ease;
+        }
+
+        .contact-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+        }
+
+        .contact-info-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .contact-info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+
+        #map {
+            height: 300px;
+            width: 100%;
+            border-radius: 12px;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 min-h-screen text-white">
+    <!-- Navigation -->
+    <nav id="mainNav" class="modern-nav fixed w-full top-0 z-50 py-2">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <a href="#accueil" class="nav-brand"><img src="logo  v 02 concept tech.png" alt="conceptTech" class="h-12"></a>
+            <div class="hidden md:flex space-x-6">
+                <a href="index.html#accueil" class="nav-link">Accueil</a>
+                <a href="index.html#about" class="nav-link">À propos</a>
+                <a href="index.html#experience" class="nav-link">Expérience</a>
+                <a href="index.html#competences" class="nav-link">Compétences</a>
+                <a href="index.html#formation" class="nav-link">Formation</a>
+                <a href="mesprojets.html" class="nav-link font-bold text-custom-orange">Mes Projets</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <button class="md:hidden mobile-menu-btn" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="mobile-menu md:hidden hidden">
+            <a href="index.html" class="hover:text-blue-400">Accueil</a>
+            <a href="about.html" class="hover:text-blue-400">À propos</a>
+            <a href="experience.html" class="hover:text-blue-400">Expérience</a>
+            <a href="competences.html" class="hover:text-blue-400">Compétences</a>
+            <a href="formation.html" class="hover:text-blue-400">Formation</a>
+            <a href="mesprojets.html" class="hover:text-blue-400">Mes Projets</a>
+            <a href="contact.html" class="hover:text-custom-orange font-bold">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section class="contact-section pt-24">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12" data-aos="fade-down">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+                    Contactez-Moi
+                </h1>
+                <p class="text-xl text-blue-200">Discutons de vos projets et voyons comment je peux vous aider</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <!-- Formulaire de Contact -->
+                <div class="contact-form-container" data-aos="fade-right">
+                    <h2 class="text-2xl font-bold mb-6 text-blue-400">Envoyez-moi un message</h2>                    <form id="contactForm" action="https://formspree.io/f/2781463317787442707" method="POST" class="space-y-6">
+                        <!-- Message de confirmation ou d'erreur -->
+                        <div id="formMessage" class="hidden rounded-lg p-4 mb-4 text-center"></div>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block mb-2 text-blue-200">Nom complet</label>
+                                <input type="text" id="name" name="name" required 
+                                    class="contact-input w-full" 
+                                    placeholder="Votre nom">
+                            </div>
+                            <div>
+                                <label for="whatsapp" class="block mb-2 text-blue-200">Numéro WhatsApp</label>
+                                <input type="tel" id="whatsapp" name="whatsapp" required 
+                                    class="contact-input w-full" 
+                                    placeholder="+XXX XX XX XX XX">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="email" class="block mb-2 text-blue-200">Email</label>
+                            <input type="email" id="email" name="email" required 
+                                class="contact-input w-full" 
+                                placeholder="votre@email.com">
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block mb-2 text-blue-200">Sujet</label>
+                            <input type="text" id="subject" name="subject" required 
+                                class="contact-input w-full" 
+                                placeholder="Sujet de votre message">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block mb-2 text-blue-200">Message</label>
+                            <textarea id="message" name="message" required 
+                                class="contact-input w-full h-32 resize-none" 
+                                placeholder="Votre message..."></textarea>
+                        </div>
+                        <button type="submit" 
+                            class="contact-submit w-full py-3 px-6 rounded-lg font-semibold text-white hover:bg-blue-600 transition-all">
+                            Envoyer le message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Informations de Contact -->
+                <div class="space-y-6">
+                    <div class="contact-info-card p-6" data-aos="fade-left">
+                        <h2 class="text-2xl font-bold mb-6 text-blue-400">Mes Coordonnées</h2>
+                        <div class="space-y-6">
+                            <div class="flex items-center space-x-4">
+                                <div class="social-icon bg-blue-600">
+                                    <i class="fas fa-envelope text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-blue-200">Email</h3>
+                                    <a href="mailto:Alifoebaudoin228@gmail.com" class="text-blue-400 hover:text-blue-300 transition-colors">
+                                        Alifoebaudoin228@gmail.com
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center space-x-4">
+                                <div class="social-icon bg-green-600">
+                                    <i class="fab fa-whatsapp text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-blue-200">WhatsApp</h3>
+                                    <a href="https://wa.me/22897734381" target="_blank" class="text-blue-400 hover:text-blue-300 transition-colors">
+                                        +228 97 73 43 81
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center space-x-4">
+                                <div class="social-icon bg-blue-800">
+                                    <i class="fab fa-linkedin-in text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-blue-200">LinkedIn</h3>
+                                    <a href="https://linkedin.com" target="_blank" class="text-blue-400 hover:text-blue-300 transition-colors">
+                                        Mon Profil LinkedIn
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-card p-6" data-aos="fade-left" data-aos-delay="100">
+                        <h2 class="text-2xl font-bold mb-6 text-blue-400">Localisation</h2>
+                        <div id="map" class="mb-4"></div>
+                        <p class="text-blue-200"><i class="fas fa-map-marker-alt mr-2 text-blue-400"></i>Lomé, TOGO</p>
+                    </div>
+
+                    <div class="contact-info-card p-6" data-aos="fade-left" data-aos-delay="200">
+                        <h2 class="text-2xl font-bold mb-6 text-blue-400">Horaires de Disponibilité</h2>
+                        <div class="space-y-3 text-blue-200">
+                            <p><span class="font-semibold text-blue-400">Lundi - Vendredi:</span> 9h00 - 18h00</p>
+                            <p><span class="font-semibold text-blue-400">Samedi:</span> 10h00 - 15h00</p>
+                            <p><span class="font-semibold text-blue-400">Dimanche:</span> Sur rendez-vous</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black bg-opacity-50 text-white py-8 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 ALIFOE Kokou BAUDOIN. Tous droits réservés.</p>
+            <p class="mt-2 text-gray-400">Technicien Réseau & Développeur passionné</p>
+        </div>
+    </footer>
+
+    <!-- Bouton WhatsApp flottant -->
+    <a href="https://wa.me/22897734381" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>    </a>
+    <script>
+        // Initialiser AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Toggle Menu Mobile
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Initialiser la carte
+        const map = L.map('map').setView([6.1375, 1.2125], 13); // Coordonnées de Lomé
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Ajouter un marqueur
+        L.marker([6.1375, 1.2125]).addTo(map)
+            .bindPopup('ALIFOE Kokou BAUDOIN<br>Lomé, TOGO')
+            .openPopup();        // Gestion du formulaire de contact
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contactForm');
+            const formMessage = document.getElementById('formMessage');
+            
+            if (!form || !formMessage) {
+                console.error('Éléments du formulaire non trouvés');
+                return;
+            }
+
+            // Fonction pour afficher les messages
+            function showMessage(message, type) {
+                formMessage.textContent = message;
+                formMessage.className = `block rounded-lg p-4 mb-4 text-center text-white ${
+                    type === 'success' ? 'bg-green-600' :
+                    type === 'error' ? 'bg-red-600' :
+                    'bg-blue-600'
+                }`;
+                formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+
+            // Fonction de validation du formulaire
+            function validateForm(formData) {
+                const email = formData.get('email');
+                const message = formData.get('message');
+                const name = formData.get('name');
+                
+                if (!email || !email.includes('@')) {
+                    showMessage('Veuillez entrer une adresse email valide.', 'error');
+                    return false;
+                }
+                if (!message || message.trim().length < 10) {
+                    showMessage('Le message doit contenir au moins 10 caractères.', 'error');
+                    return false;
+                }
+                if (!name || name.trim().length < 2) {
+                    showMessage('Veuillez entrer votre nom complet.', 'error');
+                    return false;
+                }
+                return true;
+            }
+
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const submitButton = form.querySelector('button[type="submit"]');
+                const formData = new FormData(this);
+                if (!validateForm(formData)) {
+                    return;
+                }
+                submitButton.disabled = true;
+                submitButton.textContent = 'Envoi en cours...';
+                showMessage('Envoi en cours...', 'info');
+                try {
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+                    const responseData = await response.json();
+                    if (response.ok) {
+                        showMessage('Message envoyé avec succès ! Je vous répondrai dans les plus brefs délais.', 'success');
+                        form.reset();
+                        setTimeout(() => {
+                            formMessage.className = 'hidden';
+                        }, 5000);
+                    } else {
+                        throw new Error(responseData.error || 'Erreur lors de l\'envoi du formulaire');
+                    }
+                } catch (error) {
+                    console.error('Erreur:', error);
+                    showMessage(
+                        'Une erreur est survenue. Veuillez réessayer ou me contacter directement par email à Alifoebaudoin228@gmail.com',
+                        'error'
+                    );
+                } finally {
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Envoyer le message';
+                }
+            });
+
+            // Réinitialiser le message lors de la saisie
+            form.addEventListener('input', function() {
+                formMessage.className = 'hidden';
+            });
+        });
+    </script>
+</body>
+</html>

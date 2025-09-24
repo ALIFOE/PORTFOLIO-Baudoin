@@ -1,0 +1,399 @@
+/* Animations au défilement */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Effets de survol sur les cartes */
+.skill-card {
+    transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Effet de gradient animé pour le hero */
+.hero-gradient {
+    background: linear-gradient(135deg, #000000, #1e3a8a, #9333ea);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at center, rgba(255,255,255,1) 1.2px, transparent 2.4px),
+        radial-gradient(circle at center, rgba(255,255,255,0.9) 0.8px, transparent 1.6px),
+        radial-gradient(circle at center, rgba(255,255,255,0.8) 0.5px, transparent 1px);
+    background-size: 50px 50px, 35px 35px, 20px 20px;
+    background-position: 0 0, 17px 17px, 8px 8px;
+    opacity: 0.5;
+    animation: twinkle 3s ease-in-out infinite;
+}
+
+/* Animations pour les éléments flottants */
+@keyframes float-slow {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    25% { transform: translateY(-10px) translateX(5px); }
+    50% { transform: translateY(-5px) translateX(-5px); }
+    75% { transform: translateY(10px) translateX(2px); }
+}
+
+@keyframes float-slower {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    25% { transform: translateY(-15px) translateX(-7px); }
+    50% { transform: translateY(-7px) translateX(7px); }
+    75% { transform: translateY(15px) translateX(-3px); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    25% { transform: translateY(-20px) translateX(10px); }
+    50% { transform: translateY(-10px) translateX(-10px); }
+    75% { transform: translateY(20px) translateX(5px); }
+}
+
+.animate-float-slow {
+    animation: float-slow 8s ease-in-out infinite;
+}
+
+.animate-float-slower {
+    animation: float-slower 12s ease-in-out infinite;
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Animation du gradient qui se déplace */
+@keyframes gradient-xy {
+    0% { background-position: 0% 0%; }
+    25% { background-position: 100% 0%; }
+    50% { background-position: 100% 100%; }
+    75% { background-position: 0% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+.animate-gradient-xy {
+    animation: gradient-xy 15s ease infinite;
+}
+
+.stars::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at center, rgba(255,255,255,0.7) 0.4px, transparent 0.8px);
+    background-size: 15px 15px;
+    background-position: 4px 4px;
+    opacity: 0.8;
+    animation: microTwinkle 2s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.9; }
+    50% { opacity: 1; }
+    25%, 75% { opacity: 0.95; }
+}
+
+@keyframes microTwinkle {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Style de la navigation */
+.modern-nav {
+    padding: 1rem 2rem;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.nav-scrolled {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 0.8rem 2rem;
+}
+
+.nav-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: linear-gradient(to right, #60a5fa, #3b82f6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.nav-link {
+    color: #f8fafc;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    position: relative;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 50%;
+    background: linear-gradient(to right, #60a5fa, #3b82f6);
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+    border-radius: 2px;
+}
+
+.nav-link:hover {
+    color: #60a5fa;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Style du hero */
+.hero-content {
+    min-height: 100vh;
+    padding: 6rem 2rem 2rem 2rem; /* Ajout de padding-top pour éviter la navbar */
+    display: flex;
+    align-items: center;
+}
+
+.hello-text {
+    color: #60a5fa; /* Bleu plus clair */
+    font-size: 1.5rem;
+    font-family: monospace;
+    margin-bottom: 1rem;
+    text-shadow: 
+        0 0 10px rgba(96, 165, 250, 0.5),
+        2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    color: #ffffff; /* Blanc pur */
+    text-shadow: 
+        0 0 20px rgba(255, 255, 255, 0.3),
+        3px 3px 6px rgba(0, 0, 0, 0.4),
+        -1px -1px 2px rgba(96, 165, 250, 0.2);
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    color: #e2e8f0; /* Gris très clair */
+    max-width: 600px;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    text-shadow: 
+        0 0 10px rgba(0, 0, 0, 0.3),
+        1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajout d'ombres pour tous les autres textes de la section accueil */
+#accueil h1:not(.hero-title) {
+    text-shadow: 
+        0 0 15px rgba(255, 255, 255, 0.2),
+        2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#accueil p:not(.hero-description):not(.hello-text) {
+    text-shadow: 
+        0 0 8px rgba(255, 255, 255, 0.2),
+        1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Effet de glassmorphism pour la navigation */
+.glass-nav {
+    backdrop-filter: blur(10px);
+    background-color: rgba(30, 58, 138, 0.9);
+}
+
+/* Effet d'étoiles */
+.starry-bg {
+    background: linear-gradient(-45deg, #1e3a8a, #1e40af, #2563eb, #3b82f6);
+    position: relative;
+    overflow: hidden;
+}
+
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at center, rgba(255,255,255,0.2) 0.5px, transparent 1px),
+        radial-gradient(circle at center, rgba(255,255,255,0.15) 0.3px, transparent 0.6px);
+    background-size: 20px 20px, 12px 12px;
+    background-position: 0 0, 6px 6px;
+    opacity: 0.3;
+    animation: twinkle 8s ease-in-out infinite;
+}
+
+.stars::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at center, rgba(255,255,255,0.1) 0.2px, transparent 0.4px);
+    background-size: 8px 8px;
+    background-position: 4px 4px;
+    opacity: 0.2;
+    animation: microTwinkle 6s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.4; }
+}
+
+@keyframes microTwinkle {
+    0%, 100% { opacity: 0.15; }
+    50% { opacity: 0.3; }
+}
+
+/* Style pour l'image de profil */
+.profile-image {
+    width: 400px;
+    height: 500px;
+    object-fit: cover;
+    animation: float 3s ease-in-out infinite;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-15px) rotate(2deg);
+    }
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+.profile-image:hover {
+    transform: scale(1.05) translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.4);
+}
+
+/* Style du menu mobile */
+.mobile-menu-btn {
+    color: #f8fafc;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.mobile-menu-btn:hover {
+    color: #60a5fa;
+}
+
+.mobile-menu {
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-menu a {
+    color: #f8fafc;
+    padding: 0.8rem 1.5rem;
+    display: block;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu a:hover {
+    background: rgba(96, 165, 250, 0.1);
+    color: #116ad0;
+    transform: translateX(10px);
+}
+
+/* Style de la section contact */
+.contact-text {
+    color: #116ad0 !important;
+    text-shadow: 0 0 10px rgba(96, 165, 250, 0.3);
+}
+
+#contact p {
+    color: #116ad0;
+}
+
+#contact .contact-info a,
+#contact .contact-info span {
+    color: #116ad0;
+    transition: color 0.3s ease;
+}
+
+#contact .contact-info a:hover {
+    color: #116ad0;
+}
+
+#contact .centers-interet p {
+    color: #116ad0;
+}
+
+/* Bouton WhatsApp flottant */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.4);
+    background-color: #128C7E;
+}

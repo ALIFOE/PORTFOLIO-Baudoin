@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Vos styles personnalisés existants */
+@layer components {
+  /* Animation au défilement */
+  .fade-in {
+    @apply opacity-0 transform translate-y-5 transition-all duration-700 ease-out;
+  }
+
+  .fade-in.visible {
+    @apply opacity-100 translate-y-0;
+  }
+
+  /* Style de la navigation */
+  .modern-nav {
+    @apply bg-opacity-20 backdrop-blur-lg border-b border-white border-opacity-10;
+  }
+
+  .nav-brand {
+    @apply bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent;
+  }
+
+  .nav-link {
+    @apply text-white hover:text-blue-400 transition-colors;
+  }
+}
