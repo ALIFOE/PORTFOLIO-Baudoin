@@ -1,13 +1,50 @@
 /* Animations au défilement */
 .fade-in {
-    opacity: 0;
+    opacity: 0.01; /* Légèrement visible au début */
     transform: translateY(20px);
     transition: all 0.6s ease-out;
+    will-change: opacity, transform;
 }
 
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Animations pour la timeline */
+.slide-in-left {
+    opacity: 0.01; /* Légèrement visible au début */
+    transform: translateX(-50px); /* Distance réduite */
+    transition: all 0.8s ease-out;
+    will-change: opacity, transform;
+}
+
+.slide-in-right {
+    opacity: 0.01; /* Légèrement visible au début */
+    transform: translateX(50px); /* Distance réduite */
+    transition: all 0.8s ease-out;
+    will-change: opacity, transform;
+}
+
+.slide-in-left.slide-visible,
+.slide-in-right.slide-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Style pour la timeline */
+.timeline-dot {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--custom-orange), #ff6b6b);
+    box-shadow: 0 0 0 4px rgba(255, 107, 107, 0.2);
+    transition: all 0.3s ease;
+}
+
+.timeline-dot:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 0 6px rgba(255, 107, 107, 0.3);
 }
 
 /* Effets de survol sur les cartes */

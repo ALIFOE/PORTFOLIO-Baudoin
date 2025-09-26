@@ -16,7 +16,8 @@ window.addEventListener('scroll', function() {
 
 // Animation au défilement
 document.addEventListener('DOMContentLoaded', function() {
-    const observer = new IntersectionObserver((entries) => {
+    // Observer pour les éléments fade-in
+    const fadeObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
@@ -26,5 +27,30 @@ document.addEventListener('DOMContentLoaded', function() {
         threshold: 0.1
     });
 
-    document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+    // Observer pour les éléments slide-in-left
+    const slideLeftObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('slide-visible');
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    // Observer pour les éléments slide-in-right
+    const slideRightObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('slide-visible');
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    // Application des observers
+    document.querySelectorAll('.fade-in').forEach((el) => fadeObserver.observe(el));
+    document.querySelectorAll('.slide-in-left').forEach((el) => slideLeftObserver.observe(el));
+    document.querySelectorAll('.slide-in-right').forEach((el) => slideRightObserver.observe(el));
 });
