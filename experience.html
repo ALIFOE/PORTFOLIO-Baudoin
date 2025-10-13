@@ -47,22 +47,57 @@
     </nav>
 
     <!-- Header Section -->
-    <header class="hero-gradient text-white min-h-[60vh] flex items-center">
-        <div class="stars"></div>
-        <div class="container mx-auto px-4 pt-24 md:pt-32">
-            <div class="text-center space-y-6 relative z-10">
-                <h1 class="text-4xl md:text-6xl font-bold mb-4 text-center fade-in">Mon Expérience Professionnelle</h1>
-                <p class="text-xl md:text-2xl text-center text-blue-200 max-w-3xl mx-auto fade-in">
-                    Un parcours diversifié dans le domaine de la technologie et du développement
+    <header class="hero-gradient text-white min-h-[75vh] flex items-center relative overflow-hidden">
+        <div class="stars absolute inset-0"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-black/50 to-transparent"></div>
+        <div class="floating-particles absolute inset-0"></div>
+        <div class="container mx-auto px-4 pt-24 md:pt-32 relative z-10">
+            <div class="text-center space-y-8 relative">
+                <div class="relative inline-block">
+                    <h1 class="text-4xl md:text-7xl font-bold mb-4 text-center fade-in bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-200 to-white animate-gradient">
+                        Mon Expérience Professionnelle
+                    </h1>
+                    <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-48 h-1 bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
+                </div>
+                <p class="text-xl md:text-2xl text-center text-blue-200 max-w-3xl mx-auto fade-in leading-relaxed">
+                    Un parcours diversifié dans le domaine de la technologie et du développement,
+                    <span class="block mt-2 text-white/80">façonné par la passion et l'innovation</span>
                 </p>
-                <div class="mt-8">
-                    <a href="#experience-content" class="inline-block animate-bounce">
-                        <i class="fas fa-chevron-down text-2xl text-blue-200"></i>
+                <div class="mt-12">
+                    <a href="#experience-content" class="group inline-flex flex-col items-center transition-all duration-300 hover:transform hover:translate-y-2">
+                        <span class="text-blue-200 text-sm mb-2 opacity-0 group-hover:opacity-100 transition-opacity">Découvrir</span>
+                        <i class="fas fa-chevron-down text-2xl text-blue-200 animate-bounce"></i>
                     </a>
                 </div>
             </div>
         </div>
     </header>
+
+    <style>
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .animate-gradient {
+            background-size: 200% auto;
+            animation: gradient 8s linear infinite;
+        }
+
+        .floating-particles {
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.2) 1px, transparent 1px),
+                radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+            background-size: 40px 40px;
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% { background-position: 0 0; }
+            100% { background-position: 40px 40px; }
+        }
+    </style>
 
     <!-- Expérience Section -->
     <section id="experience-content" class="py-20 bg-white">
@@ -80,17 +115,65 @@
                 <!-- Timeline d'expérience -->
                 <div class="relative">
                     <!-- Ligne verticale de timeline -->
-                    <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-custom-orange to-blue-500"></div>
+                    <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1">
+                        <div class="h-full bg-gradient-to-b from-custom-orange to-blue-500 animate-pulse"></div>
+                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-custom-orange rounded-full animate-ping"></div>
+                        <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-4 h-4 bg-blue-500 rounded-full animate-ping"></div>
+                    </div>
 
                     <!-- Expériences -->
-                    <div class="space-y-16">
+                    <div class="space-y-16 relative">
+                        <style>
+                            .experience-card {
+                                position: relative;
+                                overflow: hidden;
+                            }
+                            
+                            .experience-card::before {
+                                content: '';
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+                                transform: translateX(-100%);
+                                transition: transform 0.6s;
+                            }
+                            
+                            .experience-card:hover::before {
+                                transform: translateX(100%);
+                            }
+
+                            .number-badge {
+                                position: relative;
+                                overflow: hidden;
+                                transition: all 0.3s ease;
+                            }
+
+                            .number-badge::after {
+                                content: '';
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                background: radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, transparent 70%);
+                                opacity: 0;
+                                transition: opacity 0.3s ease;
+                            }
+
+                            .number-badge:hover::after {
+                                opacity: 1;
+                            }
+                        </style>
                         <!-- DEEZPRO -->
                         <div class="fade-in relative">
                             <div class="md:flex items-center">
                                 <div class="md:w-1/2 md:pr-12">
-                                    <div class="bg-gradient-to-r from-gray-50 to-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 border-l-4 border-custom-orange">
+                                    <div class="experience-card group bg-gradient-to-r from-gray-50 to-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-500 border-l-4 border-custom-orange hover:border-l-8 hover:translate-x-1 hover:bg-gradient-to-r hover:from-orange-50 hover:to-white">
                                         <div class="flex items-center mb-4">
-                                            <i class="fas fa-hashtag text-2xl text-custom-orange mr-4"></i>
+                                            <i class="fas fa-hashtag text-2xl text-custom-orange mr-4 group-hover:scale-110 transition-transform"></i>
                                             <h3 class="text-2xl font-bold text-dark-blue">Community Manager</h3>
                                         </div>
                                         <p class="text-custom-orange font-semibold mb-2">DEEZPRO</p>
@@ -116,6 +199,38 @@
                                                 <span>Interaction avec la communauté et gestion de la e-réputation</span>
                                             </li>
                                         </ul>
+                                        <!-- Section Responsable DEEZPRO -->
+                                        <div class="mt-6 relative">
+                                            <div class="absolute inset-0 bg-gradient-to-r from-orange-100/50 to-orange-50/50 rounded-lg filter blur-xl"></div>
+                                            <div class="relative p-6 bg-white/90 rounded-lg border border-orange-200 shadow-lg backdrop-blur-sm">
+                                                <div class="flex items-center mb-4">
+                                                    <div class="w-10 h-10 bg-gradient-to-br from-custom-orange to-orange-300 rounded-full flex items-center justify-center shadow-lg">
+                                                        <i class="fas fa-user-tie text-white"></i>
+                                                    </div>
+                                                    <h5 class="font-semibold text-gray-800 ml-3 text-lg">Responsable</h5>
+                                                </div>
+                                                <div class="space-y-3">
+                                                    <div class="flex items-center group">
+                                                        <div class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mr-3 group-hover:bg-orange-200 transition-colors">
+                                                            <i class="fas fa-user text-custom-orange"></i>
+                                                        </div>
+                                                        <span class="font-medium text-gray-800">[Nom du responsable]</span>
+                                                    </div>
+                                                    <div class="flex items-center group">
+                                                        <div class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mr-3 group-hover:bg-orange-200 transition-colors">
+                                                            <i class="fas fa-envelope text-custom-orange"></i>
+                                                        </div>
+                                                        <a href="mailto:" class="text-gray-700 hover:text-custom-orange transition-colors">[Email du responsable]</a>
+                                                    </div>
+                                                    <div class="flex items-center group">
+                                                        <div class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mr-3 group-hover:bg-orange-200 transition-colors">
+                                                            <i class="fas fa-phone text-custom-orange"></i>
+                                                        </div>
+                                                        <a href="tel:" class="text-gray-700 hover:text-custom-orange transition-colors">[Numéro de téléphone]</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="hidden md:block w-12 text-center">
@@ -157,8 +272,39 @@
                                                 <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
                                                 <span>Diffusion et gestion des contenus audiovisuels</span>
                                             </li>
-
                                         </ul>
+                                        <!-- Section Responsable COMPASSION -->
+                                        <div class="mt-6 relative">
+                                            <div class="absolute inset-0 bg-gradient-to-r from-blue-100/50 to-blue-50/50 rounded-lg filter blur-xl"></div>
+                                            <div class="relative p-6 bg-white/90 rounded-lg border border-blue-200 shadow-lg backdrop-blur-sm">
+                                                <div class="flex items-center mb-4">
+                                                    <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-300 rounded-full flex items-center justify-center shadow-lg">
+                                                        <i class="fas fa-user-tie text-white"></i>
+                                                    </div>
+                                                    <h5 class="font-semibold text-gray-800 ml-3 text-lg">Responsable</h5>
+                                                </div>
+                                                <div class="space-y-3">
+                                                    <div class="flex items-center group">
+                                                        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3 group-hover:bg-blue-200 transition-colors">
+                                                            <i class="fas fa-user text-blue-500"></i>
+                                                        </div>
+                                                        <span class="font-medium text-gray-800">[Nom du responsable]</span>
+                                                    </div>
+                                                    <div class="flex items-center group">
+                                                        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3 group-hover:bg-blue-200 transition-colors">
+                                                            <i class="fas fa-envelope text-blue-500"></i>
+                                                        </div>
+                                                        <a href="mailto:" class="text-gray-700 hover:text-blue-500 transition-colors">[Email du responsable]</a>
+                                                    </div>
+                                                    <div class="flex items-center group">
+                                                        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3 group-hover:bg-blue-200 transition-colors">
+                                                            <i class="fas fa-phone text-blue-500"></i>
+                                                        </div>
+                                                        <a href="tel:" class="text-gray-700 hover:text-blue-500 transition-colors">[Numéro de téléphone]</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="hidden md:block w-12 text-center">
@@ -170,7 +316,7 @@
                         </div>
 
                         <!-- IMS -->
-                        <div class="fade-in relative">
+                        <!-- <div class="fade-in relative">
                             <div class="md:flex items-center">
                                 <div class="md:w-1/2 md:pr-12">
                                     <div class="bg-gradient-to-r from-gray-50 to-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 border-l-4 border-custom-orange">
@@ -209,7 +355,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
                         <!-- MECAD et SCAJFE -->
                         <div class="fade-in relative">
@@ -243,6 +389,38 @@
                                                 <span>Installation et configuration des solutions système et logicielles</span>
                                             </li>
                                         </ul>
+                                        <!-- Section Responsable MECAD -->
+                                        <div class="mt-6 relative">
+                                            <div class="absolute inset-0 bg-gradient-to-r from-blue-100/50 to-blue-50/50 rounded-lg filter blur-xl"></div>
+                                            <div class="relative p-6 bg-white/90 rounded-lg border border-blue-200 shadow-lg backdrop-blur-sm">
+                                                <div class="flex items-center mb-4">
+                                                    <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-300 rounded-full flex items-center justify-center shadow-lg">
+                                                        <i class="fas fa-user-tie text-white"></i>
+                                                    </div>
+                                                    <h5 class="font-semibold text-gray-800 ml-3 text-lg">Responsable</h5>
+                                                </div>
+                                                <div class="space-y-3">
+                                                    <div class="flex items-center group">
+                                                        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3 group-hover:bg-blue-200 transition-colors">
+                                                            <i class="fas fa-user text-blue-500"></i>
+                                                        </div>
+                                                        <span class="font-medium text-gray-800">GABIAM Kodjo</span>
+                                                    </div>
+                                                    <div class="flex items-center group">
+                                                        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3 group-hover:bg-blue-200 transition-colors">
+                                                            <i class="fas fa-envelope text-blue-500"></i>
+                                                        </div>
+                                                        <a href="mailto:" class="text-gray-700 hover:text-blue-500 transition-colors">[Email du responsable]</a>
+                                                    </div>
+                                                    <div class="flex items-center group">
+                                                        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3 group-hover:bg-blue-200 transition-colors">
+                                                            <i class="fas fa-phone text-blue-500"></i>
+                                                        </div>
+                                                        <a href="tel:" class="text-gray-700 hover:text-blue-500 transition-colors">+228 92 72 17 90</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="hidden md:block w-12 text-center">
@@ -285,6 +463,38 @@
                                                 <span>Formation et accompagnement des utilisateurs</span>
                                             </li>
                                         </ul>
+                                            <!-- Section Responsable CDEJ SHALOM -->
+                                            <div class="mt-6 relative">
+                                                <div class="absolute inset-0 bg-gradient-to-r from-orange-100/50 to-orange-50/50 rounded-lg filter blur-xl"></div>
+                                                <div class="relative p-6 bg-white/90 rounded-lg border border-orange-200 shadow-lg backdrop-blur-sm">
+                                                    <div class="flex items-center mb-4">
+                                                        <div class="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-300 rounded-full flex items-center justify-center shadow-lg">
+                                                            <i class="fas fa-user-tie text-white"></i>
+                                                        </div>
+                                                        <h5 class="font-semibold text-gray-800 ml-3 text-lg">Responsable</h5>
+                                                    </div>
+                                                    <div class="space-y-3">
+                                                        <div class="flex items-center group">
+                                                            <div class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mr-3 group-hover:bg-orange-200 transition-colors">
+                                                                <i class="fas fa-user text-orange-500"></i>
+                                                            </div>
+                                                            <span class="font-medium text-gray-800">ABOTCHI Mawuena </span>
+                                                        </div>
+                                                        <div class="flex items-center group">
+                                                            <div class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mr-3 group-hover:bg-orange-200 transition-colors">
+                                                                <i class="fas fa-envelope text-orange-500"></i>
+                                                            </div>
+                                                            <a href="mailto:" class="text-gray-700 hover:text-orange-500 transition-colors">mawuenaabotchi9@gmail.com </a>
+                                                        </div>
+                                                        <div class="flex items-center group">
+                                                            <div class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mr-3 group-hover:bg-orange-200 transition-colors">
+                                                                <i class="fas fa-phone text-orange-500"></i>
+                                                            </div>
+                                                            <a href="tel:" class="text-gray-700 hover:text-orange-500 transition-colors">+228 92 48 20 78</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                     </div>
                                 </div>
                                 <div class="hidden md:block w-12 text-center">
@@ -297,31 +507,154 @@
                     </div>
                 </div>
 
+                <!-- Engagement Bénévole -->
+                <div class="mt-16 fade-in">
+                    <div class="bg-gradient-to-r from-orange-50 to-white p-8 rounded-xl shadow-xl">
+                        <h3 class="text-2xl font-bold text-custom-orange mb-8 text-center relative">
+                            Engagement Bénévole
+                            <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-custom-orange to-blue-500 mt-2"></div>
+                        </h3>
+                        <div class="space-y-8">
+                            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mr-4">
+                                        <i class="fas fa-network-wired text-custom-orange text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-lg font-semibold text-gray-800">Chargé de Système Informatique et Réseau 
+                                            <span class="text-custom-orange ml-2">| 2021 - Présent</span>
+                                        </h4>
+                                        <p class="text-gray-700 font-medium">CDEJ SHALOM - Lomé, Togo</p>
+                                    </div>
+                                </div>
+                                <ul class="space-y-2 text-gray-600 mt-4">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-custom-orange mt-1 mr-2"></i>
+                                        <span>Création et gestion du réseau internet de l'organisation</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-custom-orange mt-1 mr-2"></i>
+                                        <span>Formation du personnel aux outils informatiques</span>
+                                    </li>
+                                </ul>
+                                <div class="mt-6 relative">
+                                    <div class="absolute inset-0 bg-gradient-to-r from-orange-100/50 to-orange-50/50 rounded-lg filter blur-xl"></div>
+                                    <div class="relative p-6 bg-white/90 rounded-lg border border-orange-200 shadow-lg backdrop-blur-sm">
+                                        <div class="flex items-center mb-4">
+                                            <div class="w-10 h-10 bg-gradient-to-br from-custom-orange to-orange-300 rounded-full flex items-center justify-center shadow-lg">
+                                                <i class="fas fa-user-tie text-white"></i>
+                                            </div>
+                                            <h5 class="font-semibold text-gray-800 ml-3 text-lg">Responsable</h5>
+                                        </div>
+                                        <div class="space-y-3">
+                                            <div class="flex items-center group">
+                                                <div class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mr-3 group-hover:bg-orange-200 transition-colors">
+                                                    <i class="fas fa-user text-custom-orange"></i>
+                                                </div>
+                                                <span class="font-medium text-gray-800">Mawuena ABOTCHI</span>
+                                            </div>
+                                            <div class="flex items-center group">
+                                                <div class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mr-3 group-hover:bg-orange-200 transition-colors">
+                                                    <i class="fas fa-envelope text-custom-orange"></i>
+                                                </div>
+                                                <a href="mailto:mawuenaabotchi9@gmail.com" class="text-gray-700 hover:text-custom-orange transition-colors">mawuenaabotchi9@gmail.com</a>
+                                            </div>
+                                            <div class="flex items-center group">
+                                                <div class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mr-3 group-hover:bg-orange-200 transition-colors">
+                                                    <i class="fas fa-phone text-custom-orange"></i>
+                                                </div>
+                                                <a href="tel:+22892482078" class="text-gray-700 hover:text-custom-orange transition-colors">+228 92 48 20 78</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                        <i class="fas fa-globe text-blue-500 text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-lg font-semibold text-gray-800">Web Master
+                                            <span class="text-blue-500 ml-2">| Janvier 2025 - Présent</span>
+                                        </h4>
+                                        <p class="text-gray-700 font-medium">ONG MDH (Mobilisation pour le Développement Humain) - Lomé, Togo</p>
+                                    </div>
+                                </div>
+                                <ul class="space-y-2 text-gray-600 mt-4">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                                        <span>Gestion de la présence en ligne de l'organisation</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                                        <span>Développement de la stratégie de communication digitale</span>
+                                    </li>
+                                </ul>
+                                <div class="mt-6 relative">
+                                    <div class="absolute inset-0 bg-gradient-to-r from-blue-100/50 to-blue-50/50 rounded-lg filter blur-xl"></div>
+                                    <div class="relative p-6 bg-white/90 rounded-lg border border-blue-200 shadow-lg backdrop-blur-sm">
+                                        <div class="flex items-center mb-4">
+                                            <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-300 rounded-full flex items-center justify-center shadow-lg">
+                                                <i class="fas fa-user-tie text-white"></i>
+                                            </div>
+                                            <h5 class="font-semibold text-gray-800 ml-3 text-lg">Responsable</h5>
+                                        </div>
+                                        <div class="space-y-3">
+                                            <div class="flex items-center group">
+                                                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3 group-hover:bg-blue-200 transition-colors">
+                                                    <i class="fas fa-user text-blue-500"></i>
+                                                </div>
+                                                <span class="font-medium text-gray-800">Saoute ATARMILA</span>
+                                            </div>
+                                            <div class="flex items-center group">
+                                                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3 group-hover:bg-blue-200 transition-colors">
+                                                    <i class="fas fa-envelope text-blue-500"></i>
+                                                </div>
+                                                <a href="mailto:modehumain@gmail.com" class="text-gray-700 hover:text-blue-500 transition-colors">modehumain@gmail.com</a>
+                                            </div>
+                                            <div class="flex items-center group">
+                                                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3 group-hover:bg-blue-200 transition-colors">
+                                                    <i class="fas fa-phone text-blue-500"></i>
+                                                </div>
+                                                <a href="tel:+22892129549" class="text-gray-700 hover:text-blue-500 transition-colors">+228 92 12 95 49</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Résumé des compétences -->
                 <div class="mt-20 fade-in">
                     <div class="bg-gradient-to-r from-gray-50 to-white p-8 rounded-xl shadow-xl">
-                        <h3 class="text-2xl font-bold text-dark-blue mb-6 text-center">Compétences Clés Développées</h3>
-                        <div class="grid md:grid-cols-3 gap-6">
-                            <div class="p-4 text-center">
-                                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <i class="fas fa-cogs text-2xl text-custom-orange"></i>
+                        <h3 class="text-2xl font-bold text-dark-blue mb-8 text-center relative">
+                            Compétences Clés Développées
+                            <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-custom-orange to-blue-500 mt-2"></div>
+                        </h3>
+                        <div class="grid md:grid-cols-3 gap-8">
+                            <div class="group p-6 text-center bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                                <div class="w-20 h-20 bg-gradient-to-br from-orange-100 to-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300">
+                                    <i class="fas fa-cogs text-3xl text-custom-orange group-hover:text-blue-500 transition-colors"></i>
                                 </div>
-                                <h4 class="font-bold text-dark-blue mb-2">Gestion Technique</h4>
-                                <p class="text-gray-600">Maintenance, dépannage et optimisation des systèmes</p>
+                                <h4 class="font-bold text-dark-blue mb-3 text-lg">Gestion Technique</h4>
+                                <p class="text-gray-600 leading-relaxed">Maintenance, dépannage et optimisation des systèmes avec expertise approfondie</p>
                             </div>
-                            <div class="p-4 text-center">
-                                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <i class="fas fa-users text-2xl text-custom-orange"></i>
+                            <div class="group p-6 text-center bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                                <div class="w-20 h-20 bg-gradient-to-br from-orange-100 to-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300">
+                                    <i class="fas fa-users text-3xl text-custom-orange group-hover:text-blue-500 transition-colors"></i>
                                 </div>
-                                <h4 class="font-bold text-dark-blue mb-2">Support Utilisateur</h4>
-                                <p class="text-gray-600">Formation, assistance et résolution de problèmes</p>
+                                <h4 class="font-bold text-dark-blue mb-3 text-lg">Support Utilisateur</h4>
+                                <p class="text-gray-600 leading-relaxed">Formation personnalisée, assistance proactive et résolution efficace des problèmes</p>
                             </div>
-                            <div class="p-4 text-center">
-                                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <i class="fas fa-project-diagram text-2xl text-custom-orange"></i>
+                            <div class="group p-6 text-center bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                                <div class="w-20 h-20 bg-gradient-to-br from-orange-100 to-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300">
+                                    <i class="fas fa-project-diagram text-3xl text-custom-orange group-hover:text-blue-500 transition-colors"></i>
                                 </div>
-                                <h4 class="font-bold text-dark-blue mb-2">Gestion de Projets</h4>
-                                <p class="text-gray-600">Coordination et suivi des projets informatiques</p>
+                                <h4 class="font-bold text-dark-blue mb-3 text-lg">Gestion de Projets</h4>
+                                <p class="text-gray-600 leading-relaxed">Coordination stratégique et suivi rigoureux des projets informatiques</p>
                             </div>
                         </div>
                     </div>
