@@ -1,3 +1,28 @@
+/* Styles de navigation */
+.nav-link {
+    position: relative;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+}
+
+.nav-link.active {
+    color: #FFA500; /* Orange */
+    font-weight: 600;
+    background: rgba(255, 165, 0, 0.1);
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #FFA500, transparent);
+}
+
 /* Animations au défilement */
 .fade-in {
     opacity: 0.01; /* Légèrement visible au début */
@@ -95,6 +120,22 @@
     25% { transform: translateY(-15px) translateX(-7px); }
     50% { transform: translateY(-7px) translateX(7px); }
     75% { transform: translateY(15px) translateX(-3px); }
+}
+
+/* Animation du gradient pour le titre */
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.gradient-text {
+    background: linear-gradient(to right, #ffffff, #60a5fa, #ffffff);
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: gradient 8s linear infinite;
 }
 
 @keyframes float {
