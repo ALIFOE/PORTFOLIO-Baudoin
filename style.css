@@ -1,28 +1,3 @@
-/* Styles de navigation */
-.nav-link {
-    position: relative;
-    transition: all 0.3s ease;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-}
-
-.nav-link.active {
-    color: #FFA500; /* Orange */
-    font-weight: 600;
-    background: rgba(255, 165, 0, 0.1);
-}
-
-.nav-link.active::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(to right, transparent, #FFA500, transparent);
-}
-
 /* Animations au défilement */
 .fade-in {
     opacity: 0.01; /* Légèrement visible au début */
