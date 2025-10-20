@@ -108,9 +108,9 @@
             </div>
         </div>
                         <div class="p-6">
-                            <h3 class="text-2xl font-bold text-white mb-3">CERFER - Gestion de Formation</h3>
+                            <h3 class="text-2xl font-bold text-white mb-3">CREFER - Gestion de Formation</h3>
                             <p class="text-gray-300 mb-4">
-                                Application de gestion complète pour l'école CERFER, spécialisée en énergies renouvelables.
+                                Application de gestion complète pour l'école CREFER, spécialisée en énergies renouvelables.
                             </p>
                             <div class="space-y-3">
                                 <div class="flex items-start">
@@ -132,7 +132,7 @@
                                 <span class="px-3 py-1 bg-black/20 backdrop-blur-sm rounded-full text-sm text-gray-300">Bootstrap</span>
                             </div>
                             <div class="mt-6 flex gap-4">
-                                <button onclick="openProjectModal('cerfer')" class="flex-1 bg-gradient-to-r from-custom-orange to-red-500 text-white text-center py-2 rounded-lg hover:from-red-500 hover:to-custom-orange transition-all duration-300">
+                                <button onclick="openProjectModal('CREFER')" class="flex-1 bg-gradient-to-r from-custom-orange to-red-500 text-white text-center py-2 rounded-lg hover:from-red-500 hover:to-custom-orange transition-all duration-300">
                                     <i class="fas fa-info-circle mr-2"></i>Plus de détails
                                 </button>
                                 <a href="#" class="w-12 h-12 flex items-center justify-center border-2 border-custom-orange text-custom-orange rounded-lg hover:bg-custom-orange hover:text-white transition-colors duration-300" title="Voir sur GitHub">
@@ -382,12 +382,12 @@
 
         // Fonction helper pour les détails des projets
         function getProjectDetails(projectId) {
-            // Exemple pour le projet CERFER
+            // Exemple pour le projet CREFER
             const projects = {
-                'cerfer': {
-                    title: 'CERFER - Gestion de Formation',
+                'CREFER': {
+                    title: 'CREFER - Gestion de Formation',
                     image: 'logo  v 02 concept tech.png',
-                    description: 'Application complète de gestion pour l\'école CERFER, spécialisée dans les énergies renouvelables. Cette solution offre une plateforme centralisée pour la gestion des formations, des utilisateurs et des interventions techniques.',
+                    description: 'Application complète de gestion pour l\'école CREFER, spécialisée dans les énergies renouvelables. Cette solution offre une plateforme centralisée pour la gestion des formations, des utilisateurs et des interventions techniques.',
                     technologies: ['Laravel', 'MySQL', 'Bootstrap', 'JavaScript', 'PHP'],
                     features: [
                         'Système multi-rôles avec authentification sécurisée',

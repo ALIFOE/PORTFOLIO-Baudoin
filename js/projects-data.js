@@ -3,10 +3,25 @@ const projectsData = {
     // Projets de la timeline
     timelineProjects: [
         {
-            id: 'cerfer',
+            id: 'design-deezpro',
             year: '2023',
-            title: 'CERFER - Gestion de Formation',
-            description: 'Application web de gestion des formations professionnelles pour le CERFER',
+            title: 'Designs DEEZPRO',
+            description: 'Collection complète de designs créatifs réalisés pour DEEZPRO',
+            technologies: [
+                { name: 'Photoshop', class: 'bg-blue-100 text-blue-600' },
+                { name: 'Illustrator', class: 'bg-custom-orange/20 text-custom-orange' }
+            ],
+            links: {
+                demo: '#galerie',
+                github: '#'
+            },
+            position: 'right'
+        },
+        {
+            id: 'CREFER',
+            year: '2023',
+            title: 'CREFER - Gestion de Formation',
+            description: 'Application web de gestion des formations professionnelles pour le CREFER',
             technologies: [
                 { name: 'Laravel', class: 'bg-custom-orange/20 text-custom-orange' },
                 { name: 'PHP', class: 'bg-blue-100 text-blue-600' }
@@ -37,10 +52,36 @@ const projectsData = {
     // Projets en vedette
     featuredProjects: [
         {
-            id: 'cerfer',
-            title: 'CERFER - Gestion de Formation',
-            shortDescription: 'Application de gestion complète pour l\'école CERFER',
-            fullDescription: 'Application de gestion complète pour l\'école CERFER, spécialisée en énergies renouvelables.',
+            id: 'design-deezpro',
+            title: 'Designs DEEZPRO',
+            shortDescription: 'Collection complète de designs créatifs réalisés pour DEEZPRO',
+            fullDescription: 'Collection complète de designs créatifs réalisés pour DEEZPRO, comprenant des visuels promotionnels, des annonces et des supports marketing variés.',
+            image: 'img/designs/deezpro/cover.png',
+            category: 'design',
+            badgeColor: 'emerald-500',
+            badgeText: 'Design',
+            features: [
+                'Visuels promotionnels',
+                'Design d\'annonces',
+                'Supports marketing',
+                'Identité visuelle'
+            ],
+            technologies: ['Photoshop', 'Illustrator', 'InDesign'],
+            gallery: [
+                'img/designs/deezpro/design1.png',
+                'img/designs/deezpro/design2.png',
+                'img/designs/deezpro/design3.png'
+            ],
+            links: {
+                demo: '#galerie',
+                github: '#'
+            }
+        },
+        {
+            id: 'CREFER',
+            title: 'CREFER - Gestion de Formation',
+            shortDescription: 'Application de gestion complète pour l\'école CREFER',
+            fullDescription: 'Application de gestion complète pour l\'école CREFER, spécialisée en énergies renouvelables.',
             image: 'logo  v 02 concept tech.png',
             category: 'application',
             badgeColor: 'custom-orange',
