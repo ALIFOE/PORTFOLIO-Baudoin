@@ -111,7 +111,7 @@
         <div id="featured-projects" class="container mx-auto px-4 pb-20">
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Projet CREFER -->
-                <div class="project-card" data-category="application">
+                <!-- <div class="project-card" data-category="application">
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
                         <div class="relative group cursor-pointer" onclick="openProjectModal('CREFER')">
                             <img src="img/projects/logo_crefer.png" alt="Projet CREFER" class="w-full h-32 object-cover transition-transform duration-300 group-hover:scale-105">
@@ -127,7 +127,7 @@
                             </div>
                         </div>
                         <div class="p-6">
-                            <h3 class="text-2xl font-bold text-blue-900 mb-3">CREFER - Gestion de Formation</h3>
+                            <h3 class="text-2xl font-bold text-blue-900 mb-3">CREFER</h3>
                             <p class="text-gray-300 mb-4">
                                 Application de gestion complète pour l'école CREFER, spécialisée en énergies renouvelables.
                             </p>
@@ -160,10 +160,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Projet MDH -->
-                <div class="project-card" data-category="web">
+                <!-- <div class="project-card" data-category="web">
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
                         <div class="relative group cursor-pointer" onclick="openProjectModal('mdh')">
                             <img src="logos/MDH-Logo.png" alt="Projet MDH" class="w-full h-32 object-cover transition-transform duration-300 group-hover:scale-105">
@@ -212,7 +212,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Projet Design DEEZPRO -->
                 <div class="project-card" data-category="design">
@@ -255,7 +255,7 @@
                                 <span class="px-3 py-1 bg-black/20 backdrop-blur-sm rounded-full text-sm text-gray-300">Conception visuelle</span>
                             </div>
                             <div class="mt-6 flex gap-4">
-                                <button onclick="openProjectModal('design-deezpro')" class="flex-1 bg-gradient-to-r from-emerald-700 to-emerald-500 text-white text-center py-2 rounded-lg hover:from-emerald-800 hover:to-emerald-600 transition-all duration-300">
+                                <button onclick="openProjectModal('design-deezpro')" class="flex-1 bg-gradient-to-r from-emerald-700 to-emerald-500 text-black text-center py-2 rounded-lg hover:from-emerald-800 hover:to-emerald-600 transition-all duration-300">
                                     <i class="fas fa-images mr-2"></i>Voir la galerie
                                 </button>
                             </div>
@@ -267,7 +267,9 @@
                 <div class="project-card" data-category="application">
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
                         <div class="relative group cursor-pointer" onclick="openProjectModal('parking')">
-                            <img src="1123g" alt="Gestion de Garage" class="w-full h-32 object-cover transition-transform duration-300 group-hover:scale-105">
+                            <div class="w-full h-32 bg-gradient-to-br from-orange-500 to-orange-700 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 relative">
+                                <i class="fas fa-parking text-white text-5xl opacity-30"></i>
+                            </div>
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                                 <span class="text-white text-lg font-medium transform -translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                                     <i class="fas fa-search mr-2"></i>Voir les détails
@@ -314,11 +316,105 @@
                         </div>
                     </div>
                 </div>
-                                    <!-- <i class="fas fa-external-link-alt mr-2"></i>Voir le projet
+
+                <!-- Projet CREFER.tech -->
+                <div class="project-card" data-category="web">
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                        <div class="relative group cursor-pointer" onclick="openProjectModal('crefer-tech')">
+                            <div class="w-full h-32 bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 relative">
+                                <img src="img/projects/logo_crefer.pn" alt="CREFER.tech" class="h-24 object-contain drop-shadow-lg" onerror="this.style.display='none'; document.getElementById('crefer-icon').style.display='block'">
+                                <i class="fas fa-leaf text-white text-5xl opacity-30" id="crefer-icon" style="display:none;"></i>
+                            </div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <span class="text-black text-lg font-medium transform -translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                                    <i class="fas fa-external-link-alt mr-2"></i>Visiter le site
+                                </span>
+                            </div>
+                            <div class="absolute top-4 right-4">
+                                <span class="bg-blue-600/80 backdrop-blur-sm text-white px-4 py-1 rounded-full text-sm font-medium">
+                                    Web
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-blue-900 mb-3">CREFER.tech</h3>
+                            <p class="text-gray-300 mb-4">
+                                Plateforme digitale innovante pour les énergies renouvelables avec ressources et outils professionnels.
+                            </p>
+                            <div class="space-y-3">
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-300">Apprentissage interactif</span>
+                                </div>  
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-300">Ressources documentaires</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-300">Communauté active</span>
+                                </div>
+                            </div>
+                            <div class="mt-6 flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-black/20 backdrop-blur-sm rounded-full text-sm text-gray-300">React</span>
+                                <span class="px-3 py-1 bg-black/20 backdrop-blur-sm rounded-full text-sm text-gray-300">Node.js</span>
+                                <span class="px-3 py-1 bg-black/20 backdrop-blur-sm rounded-full text-sm text-gray-300">MongoDB</span>
+                            </div>
+                            <div class="mt-6 flex gap-4">
+                                <a href="https://crefer.tech" target="_blank" class="flex-1 bg-gradient-to-r from-blue-600 to-blue-800 text-black text-center py-2 rounded-lg hover:from-blue-700 hover:to-blue-900 transition-all duration-300">
+                                    <i class="fas fa-external-link-alt mr-2"></i>Visiter le site
                                 </a>
-                                <a href="#" class="w-12 h-12 flex items-center justify-center border-2 border-custom-orange text-custom-orange rounded-lg hover:bg-custom-orange hover:text-white transition-colors duration-300">
-                                    <i class="fab fa-github text-xl"></i>
-                                </a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet Mode Humain ONG -->
+                <div class="project-card" data-category="web">
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                        <div class="relative group cursor-pointer" onclick="openProjectModal('modehumain-org')">
+                            <div class="w-full h-32 bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+                                <i class="fas fa-heart text-white text-5xl opacity-30"></i>
+                            </div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <span class="text-white text-lg font-medium transform -translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                                    <i class="fas fa-external-link-alt mr-2"></i>Visiter le site
+                                </span>
+                            </div>
+                            <div class="absolute top-4 right-4">
+                                <span class="bg-emerald-500/80 backdrop-blur-sm text-white px-4 py-1 rounded-full text-sm font-medium">
+                                    Web
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-blue-900 mb-3">Mode Humain - ONG</h3>
+                            <p class="text-gray-300 mb-4">
+                                Site moderne de l'ONG humanitaire Mode Humain présentant leurs actions et impact social.
+                            </p>
+                            <div class="space-y-3">
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-emerald-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-300">Présentation des missions</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-emerald-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-300">Système de donations</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-emerald-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-300">Blog d'actualités</span>
+                                </div>
+                            </div>
+                            <div class="mt-6 flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-black/20 backdrop-blur-sm rounded-full text-sm text-gray-300">HTML5</span>
+                                <span class="px-3 py-1 bg-black/20 backdrop-blur-sm rounded-full text-sm text-gray-300">CSS3</span>
+                                <span class="px-3 py-1 bg-black/20 backdrop-blur-sm rounded-full text-sm text-gray-300">WordPress</span>
+                            </div>
+                            <div class="mt-6 flex gap-4">
+                                <a href="https://modehumain.org" target="_blank" class="flex-1 bg-gradient-to-r from-emerald-600 to-teal-700 text-black text-center py-2 rounded-lg hover:from-emerald-700 hover:to-teal-800 transition-all duration-300">
+                                    <i class="fas fa-external-link-alt mr-2"></i>Visiter le site
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -348,7 +444,7 @@
     </div>
 
     <style>
-    /* Animations */
+    /* Animations et transitions fluides */
     .fade-in {
         opacity: 0;
         transform: translateY(20px);
@@ -368,57 +464,74 @@
 
     .filter-btn {
         position: relative;
-        transition: all 0.3s ease;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         overflow: hidden;
+        will-change: transform;
     }
 
     .filter-btn:hover {
-        transform: translateY(-4px);
+        transform: translateY(-6px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
     }
 
     .filter-btn[data-filter="all"].active {
-        background-color: #4F46E5;
+        background: linear-gradient(135deg, #4F46E5, #7C3AED);
         color: white;
         border-color: #4F46E5;
+        box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3);
     }
 
     .filter-btn[data-filter="web"].active {
-        background-color: #3B82F6;
+        background: linear-gradient(135deg, #3B82F6, #1D4ED8);
         color: white;
         border-color: #3B82F6;
+        box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
     }
 
     .filter-btn[data-filter="application"].active {
-        background-color: #8B5CF6;
+        background: linear-gradient(135deg, #8B5CF6, #6D28D9);
         color: white;
         border-color: #8B5CF6;
+        box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
     }
 
     .filter-btn[data-filter="design"].active {
-        background-color: #10B981;
+        background: linear-gradient(135deg, #10B981, #059669);
         color: white;
         border-color: #10B981;
+        box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
     }
 
     .filter-btn:active {
-        transform: translateY(0);
+        transform: translateY(-2px);
     }
     
     .project-card {
         opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        transform: translateY(30px) scale(0.95);
+        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        will-change: transform, opacity;
     }
     
     .project-card.visible {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
     }
 
     .project-card:hover {
-        transform: translateY(-10px) scale(1.02);
+        transform: translateY(-12px) scale(1.02);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    }
+
+    .project-card .bg-white {
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .project-card:hover .bg-white {
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
     }
     
+    /* Améliorations pour le modal */
     .project-modal {
         display: none;
         position: fixed;
@@ -426,11 +539,21 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
+        background-color: rgba(0, 0, 0, 0.5);
         z-index: 1000;
         opacity: 0;
         transition: all 0.3s ease;
-        backdrop-filter: blur(5px);
+        backdrop-filter: blur(8px);
+        animation: fadeInBackdrop 0.3s ease forwards;
+    }
+    
+    @keyframes fadeInBackdrop {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
     }
     
     .project-modal.active {
@@ -448,13 +571,14 @@
         max-height: 90vh;
         overflow-y: auto;
         position: relative;
-        transform: translateY(20px);
-        transition: all 0.3s ease;
+        transform: translateY(40px) scale(0.95);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        border: 1px solid rgba(255, 255, 255, 0.5);
     }
     
     .project-modal.active .modal-content {
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
     }
     
     .image-gallery {
@@ -470,13 +594,13 @@
         object-fit: cover;
         border-radius: 1rem;
         cursor: pointer;
-        transition: all 0.3s ease;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     }
     
     .gallery-img:hover {
-        transform: scale(1.05);
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        transform: scale(1.08) rotate(1deg);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
     }
 
     .project-tag {
@@ -488,12 +612,12 @@
         font-weight: 500;
         color: #4b5563;
         background-color: #f3f4f6;
-        transition: all 0.3s ease;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .project-tag:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 12px -2px rgba(0, 0, 0, 0.1);
     }
 
     .scroll-indicator {
@@ -528,7 +652,7 @@
     }
     
     .slide-in {
-        animation: slideIn 0.5s ease forwards;
+        animation: slideIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
     }
 
     @keyframes gradientBG {
@@ -553,12 +677,45 @@
     }
 
     .card-hover-effect {
-        transition: all 0.3s ease;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .card-hover-effect:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        transform: translateY(-12px);
+        box-shadow: 0 25px 50px -5px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Fluidité supplémentaire pour les images de projet */
+    .project-card img {
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .project-card:hover img {
+        transform: scale(1.1) rotate(0.5deg);
+    }
+
+    /* Fluidité pour les boutons */
+    button, a.bg-gradient-to-r {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    button:active, a.bg-gradient-to-r:active {
+        transform: scale(0.98);
+    }
+
+    /* Optimisation pour le contraste et la lisibilité */
+    .project-card .bg-white {
+        background-color: #ffffff;
+    }
+
+    /* Smooth scroll behavior */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Amélioration des transitions de grille */
+    .grid {
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
     </style>
 
@@ -766,7 +923,57 @@
                     gallery: [],
                     videos: []
                 },
-                // Ajoutez d'autres projets ici
+                'parking': {
+                    title: 'Smart Parking - Gestion de Parking',
+                    image: 'img/projects/parking.png',
+                    description: 'Solution complète et innovante de gestion de parking avec réservation en ligne et suivi en temps réel. Plateforme intelligente permettant aux utilisateurs de trouver, réserver et gérer leurs places de parking facilement.',
+                    technologies: ['Laravel', 'Vue.js', 'MySQL', 'JavaScript', 'API REST'],
+                    features: [
+                        'Système de réservation en temps réel',
+                        'Suivi GPS des places disponibles',
+                        'Interface mobile responsive',
+                        'Tableau de bord administrateur',
+                        'Système de paiement intégré',
+                        'Notifications et rappels automatiques',
+                        'Historique et rapports d\'utilisation'
+                    ],
+                    demoUrl: '#',
+                    githubUrl: '#'
+                },
+                'crefer-tech': {
+                    title: 'CREFER.tech - Plateforme Énergies Renouvelables',
+                    image: 'img/projects/crefer-tech.png',
+                    description: 'Plateforme digitale innovante dédiée aux solutions technologiques en énergies renouvelables. Offrant ressources documentaires, formations interactives et outils professionnels pour experts et entreprises du secteur.',
+                    technologies: ['React', 'Node.js', 'MongoDB', 'TailwindCSS', 'JWT'],
+                    features: [
+                        'Plateforme d\'apprentissage interactif avec vidéos',
+                        'Ressources documentaires complètes et téléchargeables',
+                        'Outils de calcul et de simulation techniques',
+                        'Communauté professionnelle active avec forums',
+                        'Actualités du secteur en temps réel',
+                        'Certification professionnelle en ligne',
+                        'Système de notifications personnalisées'
+                    ],
+                    demoUrl: 'https://crefer.tech',
+                    githubUrl: '#'
+                },
+                'modehumain-org': {
+                    title: 'Mode Humain - Plateforme ONG Humanitaire',
+                    image: 'logos/MDH-Logo.png',
+                    description: 'Site web moderne et impactant pour l\'organisation humanitaire Mode Humain. Présentant leurs missions, leurs actions et permettant la mobilisation communautaire autour de causes humanitaires importantes.',
+                    technologies: ['HTML5', 'CSS3', 'JavaScript', 'WordPress', 'WooCommerce'],
+                    features: [
+                        'Présentation complète des missions et projets',
+                        'Système d\'appels à projet transparent',
+                        'Plateforme de donations sécurisée',
+                        'Blog d\'actualités et témoignages',
+                        'Galerie de projets avec photos et vidéos',
+                        'Formulaire d\'engagement volontaire',
+                        'Intégration réseaux sociaux'
+                    ],
+                    demoUrl: 'https://modehumain.org',
+                    githubUrl: '#'
+                }
             };
             
             return projects[projectId] || null;
@@ -826,23 +1033,23 @@
         // Fonction de suivi des événements pour les projets
         document.addEventListener('DOMContentLoaded', function() {
             // Suivre les clics sur les projets
-            document.querySelectorAll('.bg-white').forEach(function(project) {
-                const projectTitle = project.querySelector('h2').textContent;
+            document.querySelectorAll('.project-card').forEach(function(project) {
+                const titleElement = project.querySelector('h3');
+                if (!titleElement) return;
                 
-                // Suivi du bouton "Voir le projet"
-                project.querySelector('a.bg-blue-600').addEventListener('click', function() {
-                    gtag('event', 'project_view', {
-                        'event_category': 'Projects',
-                        'event_label': projectTitle
-                    });
-                });
-
-                // Suivi du bouton "En savoir plus"
-                project.querySelector('a.border-blue-700').addEventListener('click', function() {
-                    gtag('event', 'project_info', {
-                        'event_category': 'Projects',
-                        'event_label': projectTitle
-                    });
+                const title = titleElement.textContent;
+                
+                // Suivi de tous les boutons et liens dans la carte
+                const buttons = project.querySelectorAll('button, a[href]');
+                buttons.forEach(function(button) {
+                    if (button && button.addEventListener) {
+                        button.addEventListener('click', function() {
+                            gtag('event', 'project_interaction', {
+                                'event_category': 'Projects',
+                                'event_label': title
+                            });
+                        });
+                    }
                 });
             });
         });

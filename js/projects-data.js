@@ -136,6 +136,52 @@ const projectsData = {
                 demo: '#',
                 github: '#'
             }
+        },
+        {
+            id: 'crefer-tech',
+            title: 'CREFER.tech',
+            shortDescription: 'Plateforme digitale pour les énergies renouvelables',
+            fullDescription: 'Plateforme innovante dédiée aux solutions technologiques en énergies renouvelables, offrant ressources, formations et outils pour professionnels et entreprises du secteur.',
+            image: 'img/projects/crefer-tech.png',
+            category: 'web',
+            badgeColor: 'blue-600',
+            badgeText: 'Web',
+            features: [
+                'Plateforme d\'apprentissage interactif',
+                'Ressources documentaires complètes',
+                'Outils de gestion technique',
+                'Communauté professionnelle active',
+                'Actualités du secteur en temps réel'
+            ],
+            technologies: ['React', 'Node.js', 'MongoDB', 'TailwindCSS'],
+            gallery: [],
+            links: {
+                demo: 'https://crefer.tech',
+                github: '#'
+            }
+        },
+        {
+            id: 'modehumain-org',
+            title: 'Mode Humain - ONG',
+            shortDescription: 'Site d\'une ONG humanitaire dédiée à l\'aide sociale',
+            fullDescription: 'Plateforme web moderne pour l\'organisation humanitaire Mode Humain, présentant leurs missions, leurs actions et permettant la mobilisation communautaire autour de causes humanitaires.',
+            image: 'logos/MDH-Logo.png',
+            category: 'web',
+            badgeColor: 'emerald-500',
+            badgeText: 'Web',
+            features: [
+                'Présentation des missions',
+                'Appels à projet et donations',
+                'Blog d\'actualités',
+                'Galerie de projets',
+                'Formulaire d\'engagement volontaire'
+            ],
+            technologies: ['HTML5', 'CSS3', 'JavaScript', 'WordPress'],
+            gallery: [],
+            links: {
+                demo: 'https://modehumain.org',
+                github: '#'
+            }
         }
     ]
 };
