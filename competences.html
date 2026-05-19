@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compétences - ALIFOE Kokou BAUDOIN</title>
+    <title>Compétences — ALIFOE Kokou BAUDOIN</title>
     <link rel="icon" type="image/png" href="logo  v 02 concept tech.png">
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1QRQVFF021"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -13,254 +12,280 @@
         gtag('js', new Date());
         gtag('config', 'G-1QRQVFF021');
     </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Styles -->
     <link href="dist/output.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
     <script src="js/main.js" defer></script>
 </head>
-<body class="bg-gray-50 text-gray-800">
-    <!-- Navigation -->
-    <nav id="mainNav" class="modern-nav fixed w-full top-0 z-50 py-2">
+<body>
+
+    <!-- NAVIGATION -->
+    <nav id="mainNav" class="modern-nav fixed w-full top-0 z-50">
         <div class="container mx-auto flex justify-between items-center">
             <a href="index.html" class="nav-brand"><img src="logo  v 02 concept tech.png" alt="conceptTech" class="h-12"></a>
-            <div class="hidden md:flex space-x-6">
-                <a href="index.html" class="nav-link">Accueil</a>
-                <a href="about.html" class="nav-link">À propos</a>
-                <a href="experience.html" class="nav-link">Expérience</a>
+            <div class="hidden md:flex space-x-1">
+                <a href="index.html"       class="nav-link">Accueil</a>
+                <a href="about.html"       class="nav-link">À propos</a>
+                <a href="experience.html"  class="nav-link">Expérience</a>
                 <a href="competences.html" class="nav-link text-custom-orange font-bold">Compétences</a>
-                <a href="formation.html" class="nav-link">Formation</a>
-                <a href="mesprojets.html" class="nav-link">Mes Projets</a>
-                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="formation.html"   class="nav-link">Formation</a>
+                <a href="mesprojets.html"  class="nav-link">Mes Projets</a>
+                <a href="contact.html"     class="nav-link">Contact</a>
             </div>
-            <button class="md:hidden mobile-menu-btn" onclick="toggleMenu()">
-                <i class="fas fa-bars"></i>
-            </button>
+            <button class="md:hidden mobile-menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
         </div>
         <div id="mobile-menu" class="mobile-menu md:hidden hidden">
-            <a href="index.html" class="hover:text-blue-400">Accueil</a>
-            <a href="about.html" class="hover:text-blue-400">À propos</a>
-            <a href="experience.html" class="hover:text-blue-400">Expérience</a>
-            <a href="competences.html" class="hover:text-custom-orange font-bold">Compétences</a>
-            <a href="formation.html" class="hover:text-blue-400">Formation</a>
-            <a href="mesprojets.html" class="hover:text-blue-400">Mes Projets</a>
-            <a href="contact.html" class="hover:text-blue-400">Contact</a>
+            <a href="index.html">Accueil</a>
+            <a href="about.html">À propos</a>
+            <a href="experience.html">Expérience</a>
+            <a href="competences.html" style="color:var(--orange);">Compétences</a>
+            <a href="formation.html">Formation</a>
+            <a href="mesprojets.html">Mes Projets</a>
+            <a href="contact.html">Contact</a>
         </div>
     </nav>
 
-    <!-- Header Section -->
-    <header class="hero-gradient text-white min-h-[60vh] flex items-center">
+    <!-- HEADER -->
+    <header class="hero-gradient text-white flex items-center" style="min-height:55vh;">
         <div class="stars"></div>
-        <div class="container mx-auto px-4 pt-24 md:pt-32">
-            <div class="text-center space-y-6 relative z-10">
-                <h1 class="text-4xl md:text-6xl font-bold mb-4 text-center fade-in">Mes Compétences</h1>
-                <p class="text-xl md:text-2xl text-center text-blue-200 max-w-3xl mx-auto fade-in">
+        <div class="container mx-auto px-6 pt-28 pb-16 relative z-10">
+            <div class="text-center space-y-5">
+                <span class="section-tag fade-in">Expertise</span>
+                <h1 class="text-4xl md:text-6xl font-bold fade-in" style="font-family:var(--font-heading);">
+                    Mes <span style="color:var(--orange);">Compétences</span>
+                </h1>
+                <p class="text-lg md:text-xl max-w-2xl mx-auto fade-in" style="color:#94a3b8;">
                     Un ensemble de compétences techniques et professionnelles au service de vos projets
                 </p>
-                <div class="mt-8">
+                <div class="pt-4">
                     <a href="#skills-content" class="inline-block animate-bounce">
-                        <i class="fas fa-chevron-down text-2xl text-blue-200"></i>
+                        <i class="fas fa-chevron-down text-xl" style="color:#60a5fa;"></i>
                     </a>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Compétences Section -->
-    <section id="skills-content" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
+    <!-- CONTENU COMPÉTENCES -->
+    <section id="skills-content" class="py-20" style="background:var(--bg-surface);">
+        <div class="container mx-auto px-6">
             <div class="max-w-6xl mx-auto">
-                <!-- Introduction -->
-                <div class="text-center mb-16 fade-in">
-                    <h2 class="text-3xl md:text-4xl font-bold text-dark-blue mb-6">Expertise Technique</h2>
-                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                        Une combinaison unique de compétences techniques et créatives, 
-                        forgée par l'expérience et une formation continue
+
+                <!-- Intro -->
+                <div class="section-header fade-in">
+                    <span class="section-tag">Technique</span>
+                    <h2 class="section-title">Expertise <span style="color:var(--orange);">Technique</span></h2>
+                    <p style="color:var(--text-secondary);max-width:600px;margin:0 auto;font-size:1rem;line-height:1.75;">
+                        Une combinaison unique de compétences techniques et créatives, forgée par l'expérience et une formation continue.
                     </p>
+                    <div class="section-divider"></div>
                 </div>
 
-                <!-- Compétences Principales -->
-                <div class="mb-20">
-                    <div class="grid md:grid-cols-3 gap-8">
-                        <!-- Développement -->
-                        <div class="fade-in">
-                            <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                                <div class="text-center mb-6">
-                                    <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                        <i class="fas fa-code text-4xl text-custom-orange"></i>
-                                    </div>
-                                    <h3 class="text-2xl font-bold text-dark-blue">Développement</h3>
+                <!-- Cartes compétences principales -->
+                <div class="grid md:grid-cols-3 gap-6 mb-14">
+
+                    <!-- Développement -->
+                    <div class="card fade-in">
+                        <div class="card-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 style="font-size:1.2rem;margin-bottom:1.5rem;">Développement</h3>
+                        <div class="space-y-4">
+                            <div class="skill-bar-container">
+                                <div class="skill-bar-header">
+                                    <span class="skill-name">HTML / CSS / JS / PHP</span>
+                                    <span class="skill-percent">90%</span>
                                 </div>
-                                <div class="space-y-4">
-                                    <div class="relative pt-1">
-                                        <div class="flex items-center justify-between mb-2">
-                                            <span class="text-sm font-semibold text-gray-700">HTML/CSS/JavaScript/PHP</span>
-                                            <span class="text-sm font-semibold text-custom-orange">90%</span>
-                                        </div>
-                                        <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200">
-                                            <div style="width: 90%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-custom-orange"></div>
-                                        </div>
-                                    </div>
-                                    <div class="relative pt-1">
-                                        <div class="flex items-center justify-between mb-2">
-                                            <span class="text-sm font-semibold text-gray-700">Flutter/Dart</span>
-                                            <span class="text-sm font-semibold text-custom-orange">85%</span>
-                                        </div>
-                                        <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200">
-                                            <div style="width: 85%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-custom-orange"></div>
-                                        </div>
-                                    </div>
-                                    <div class="relative pt-1">
-                                        <div class="flex items-center justify-between mb-2">
-                                            <span class="text-sm font-semibold text-gray-700">WordPress</span>
-                                            <span class="text-sm font-semibold text-custom-orange">80%</span>
-                                        </div>
-                                        <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200">
-                                            <div style="width: 80%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-custom-orange"></div>
-                                        </div>
-                                    </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar-header">
+                                    <span class="skill-name">Flutter / Dart</span>
+                                    <span class="skill-percent">85%</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar-header">
+                                    <span class="skill-name">WordPress</span>
+                                    <span class="skill-percent">80%</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="80"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar-header">
+                                    <span class="skill-name">React / Node.js</span>
+                                    <span class="skill-percent">75%</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="75"></div>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- Réseau & Maintenance -->
-                        <div class="fade-in">
-                            <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                                <div class="text-center mb-6">
-                                    <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                        <i class="fas fa-network-wired text-4xl text-custom-orange"></i>
-                                    </div>
-                                    <h3 class="text-2xl font-bold text-dark-blue">Réseau & Maintenance</h3>
+                    <!-- Réseau & Maintenance -->
+                    <div class="card fade-in">
+                        <div class="card-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h3 style="font-size:1.2rem;margin-bottom:1.5rem;">Réseau &amp; Maintenance</h3>
+                        <div class="space-y-4">
+                            <div class="skill-bar-container">
+                                <div class="skill-bar-header">
+                                    <span class="skill-name">Configuration Réseau</span>
+                                    <span class="skill-percent">95%</span>
                                 </div>
-                                <div class="space-y-4">
-                                    <div class="relative pt-1">
-                                        <div class="flex items-center justify-between mb-2">
-                                            <span class="text-sm font-semibold text-gray-700">Configuration Réseau</span>
-                                            <span class="text-sm font-semibold text-custom-orange">95%</span>
-                                        </div>
-                                        <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200">
-                                            <div style="width: 95%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-custom-orange"></div>
-                                        </div>
-                                    </div>
-                                    <div class="relative pt-1">
-                                        <div class="flex items-center justify-between mb-2">
-                                            <span class="text-sm font-semibold text-gray-700">Maintenance Système</span>
-                                            <span class="text-sm font-semibold text-custom-orange">90%</span>
-                                        </div>
-                                        <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200">
-                                            <div style="width: 90%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-custom-orange"></div>
-                                        </div>
-                                    </div>
-                                    <div class="relative pt-1">
-                                        <div class="flex items-center justify-between mb-2">
-                                            <span class="text-sm font-semibold text-gray-700">Support Technique</span>
-                                            <span class="text-sm font-semibold text-custom-orange">85%</span>
-                                        </div>
-                                        <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200">
-                                            <div style="width: 85%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-custom-orange"></div>
-                                        </div>
-                                    </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="95"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar-header">
+                                    <span class="skill-name">Maintenance Système</span>
+                                    <span class="skill-percent">90%</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar-header">
+                                    <span class="skill-name">Support Technique</span>
+                                    <span class="skill-percent">85%</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar-header">
+                                    <span class="skill-name">Mikrotik / Cisco</span>
+                                    <span class="skill-percent">80%</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="80"></div>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- Audio & Streaming -->
-                        <div class="fade-in">
-                            <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                                <div class="text-center mb-6">
-                                    <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                        <i class="fas fa-volume-up text-4xl text-custom-orange"></i>
-                                    </div>
-                                    <h3 class="text-2xl font-bold text-dark-blue">Audio & Streaming</h3>
+                    <!-- Audio & Streaming -->
+                    <div class="card fade-in">
+                        <div class="card-icon">
+                            <i class="fas fa-volume-up"></i>
+                        </div>
+                        <h3 style="font-size:1.2rem;margin-bottom:1.5rem;">Audio &amp; Streaming</h3>
+                        <div class="space-y-4">
+                            <div class="skill-bar-container">
+                                <div class="skill-bar-header">
+                                    <span class="skill-name">Sonorisation Live</span>
+                                    <span class="skill-percent">85%</span>
                                 </div>
-                                <div class="space-y-4">
-                                    <div class="relative pt-1">
-                                        <div class="flex items-center justify-between mb-2">
-                                            <span class="text-sm font-semibold text-gray-700">Sonorisation Live</span>
-                                            <span class="text-sm font-semibold text-custom-orange">85%</span>
-                                        </div>
-                                        <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200">
-                                            <div style="width: 85%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-custom-orange"></div>
-                                        </div>
-                                    </div>
-                                    <div class="relative pt-1">
-                                        <div class="flex items-center justify-between mb-2">
-                                            <span class="text-sm font-semibold text-gray-700">Streaming</span>
-                                            <span class="text-sm font-semibold text-custom-orange">80%</span>
-                                        </div>
-                                        <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200">
-                                            <div style="width: 80%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-custom-orange"></div>
-                                        </div>
-                                    </div>
-                                    <div class="relative pt-1">
-                                        <div class="flex items-center justify-between mb-2">
-                                            <span class="text-sm font-semibold text-gray-700">Production Audio</span>
-                                            <span class="text-sm font-semibold text-custom-orange">75%</span>
-                                        </div>
-                                        <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200">
-                                            <div style="width: 75%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-custom-orange"></div>
-                                        </div>
-                                    </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar-header">
+                                    <span class="skill-name">Streaming</span>
+                                    <span class="skill-percent">80%</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="80"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar-header">
+                                    <span class="skill-name">Production Audio</span>
+                                    <span class="skill-percent">75%</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="75"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar-header">
+                                    <span class="skill-name">OBS / V-MIX</span>
+                                    <span class="skill-percent">80%</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="80"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Compétences Complémentaires -->
-                <div class="grid md:grid-cols-2 gap-8 mb-16">
-                    <!-- Design & Créativité -->
-                    <div class="fade-in">
-                        <div class="bg-gradient-to-r from-gray-50 to-white p-8 rounded-xl shadow-xl border-l-4 border-custom-orange">
-                            <div class="flex items-center mb-6">
-                                <i class="fas fa-palette text-3xl text-custom-orange mr-4"></i>
-                                <h3 class="text-2xl font-bold text-dark-blue">Design & Créativité</h3>
+                <!-- Compétences complémentaires -->
+                <div class="grid md:grid-cols-2 gap-6 mb-14">
+
+                    <!-- Design -->
+                    <div class="card fade-in" style="border-left:3px solid var(--orange);">
+                        <div class="flex items-center gap-3 mb-5">
+                            <div style="width:40px;height:40px;border-radius:8px;background:var(--orange-dim);border:1px solid var(--border-accent);display:flex;align-items:center;justify-content:center;">
+                                <i class="fas fa-palette" style="color:var(--orange);"></i>
                             </div>
-                            <div class="grid grid-cols-2 gap-4">
-                                <div class="flex items-center space-x-2">
-                                    <i class="fas fa-check-circle text-custom-orange"></i>
-                                    <span>Adobe Photoshop</span>
-                                </div>
-                                <div class="flex items-center space-x-2">
-                                    <i class="fas fa-check-circle text-custom-orange"></i>
-                                    <span>Adobe Illustrator</span>
-                                </div>
-                                <div class="flex items-center space-x-2">
-                                    <i class="fas fa-check-circle text-custom-orange"></i>
-                                    <span>Adobe Audition</span>
-                                </div>
-                                <div class="flex items-center space-x-2">
-                                    <i class="fas fa-check-circle text-custom-orange"></i>
-                                    <span>Mixcraft-Acoustica</span>
-                                </div>
+                            <h3 style="font-size:1.15rem;font-weight:700;color:var(--text-primary);">Design &amp; Créativité</h3>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="flex items-center gap-2" style="color:var(--text-secondary);font-size:0.875rem;">
+                                <i class="fas fa-check-circle" style="color:var(--orange);font-size:0.75rem;"></i> Adobe Photoshop
+                            </div>
+                            <div class="flex items-center gap-2" style="color:var(--text-secondary);font-size:0.875rem;">
+                                <i class="fas fa-check-circle" style="color:var(--orange);font-size:0.75rem;"></i> Adobe Illustrator
+                            </div>
+                            <div class="flex items-center gap-2" style="color:var(--text-secondary);font-size:0.875rem;">
+                                <i class="fas fa-check-circle" style="color:var(--orange);font-size:0.75rem;"></i> Adobe Audition
+                            </div>
+                            <div class="flex items-center gap-2" style="color:var(--text-secondary);font-size:0.875rem;">
+                                <i class="fas fa-check-circle" style="color:var(--orange);font-size:0.75rem;"></i> Mixcraft / Acoustica
+                            </div>
+                            <div class="flex items-center gap-2" style="color:var(--text-secondary);font-size:0.875rem;">
+                                <i class="fas fa-check-circle" style="color:var(--orange);font-size:0.75rem;"></i> DaVinci Resolve
+                            </div>
+                            <div class="flex items-center gap-2" style="color:var(--text-secondary);font-size:0.875rem;">
+                                <i class="fas fa-check-circle" style="color:var(--orange);font-size:0.75rem;"></i> Filmora
                             </div>
                         </div>
                     </div>
 
                     <!-- Langues -->
-                    <div class="fade-in">
-                        <div class="bg-gradient-to-r from-gray-50 to-white p-8 rounded-xl shadow-xl border-l-4 border-blue-500">
-                            <div class="flex items-center mb-6">
-                                <i class="fas fa-language text-3xl text-blue-500 mr-4"></i>
-                                <h3 class="text-2xl font-bold text-dark-blue">Compétences Linguistiques</h3>
+                    <div class="card fade-in" style="border-left:3px solid var(--blue-light);">
+                        <div class="flex items-center gap-3 mb-5">
+                            <div style="width:40px;height:40px;border-radius:8px;background:var(--blue-dim);border:1px solid rgba(59,130,246,0.2);display:flex;align-items:center;justify-content:center;">
+                                <i class="fas fa-language" style="color:var(--blue-light);"></i>
                             </div>
-                            <div class="space-y-4">
-                                <div>
-                                    <div class="flex items-center justify-between mb-2">
-                                        <span class="font-semibold">Français</span>
-                                        <span class="text-custom-orange">Langue maternelle</span>
-                                    </div>
-                                    <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200">
-                                        <div class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-custom-orange w-full"></div>
-                                    </div>
+                            <h3 style="font-size:1.15rem;font-weight:700;color:var(--text-primary);">Compétences Linguistiques</h3>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="skill-bar-container">
+                                <div class="skill-bar-header">
+                                    <span class="skill-name">Français</span>
+                                    <span class="skill-percent" style="color:var(--blue-light);">Langue maternelle</span>
                                 </div>
-                                <div>
-                                    <div class="flex items-center justify-between mb-2">
-                                        <span class="font-semibold">Anglais</span>
-                                        <span class="text-blue-500">Débutant</span>
-                                    </div>
-                                    <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200">
-                                        <div class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500" style="width: 40%"></div>
-                                    </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="100" style="background:linear-gradient(90deg,var(--blue),var(--blue-light));"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar-header">
+                                    <span class="skill-name">Anglais</span>
+                                    <span class="skill-percent" style="color:var(--blue-light);">Débutant</span>
+                                </div>
+                                <div class="skill-bar-track">
+                                    <div class="skill-bar-fill" data-width="40" style="background:linear-gradient(90deg,var(--blue),var(--blue-light));"></div>
                                 </div>
                             </div>
                         </div>
@@ -269,87 +294,134 @@
 
                 <!-- Outils & Technologies -->
                 <div class="fade-in">
-                    <div class="bg-gradient-to-r from-gray-50 to-white p-8 rounded-xl shadow-xl">
-                        <h3 class="text-2xl font-bold text-dark-blue mb-8 text-center">Outils & Technologies Maîtrisés</h3>
+                    <div class="card" style="padding:2.5rem;">
+                        <h3 style="font-family:var(--font-heading);font-size:1.4rem;font-weight:700;color:var(--text-primary);text-align:center;margin-bottom:2.5rem;">
+                            Outils &amp; Technologies Maîtrisés
+                        </h3>
                         <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+
                             <div class="text-center">
-                                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <i class="fas fa-laptop-code text-2xl text-custom-orange"></i>
+                                <div style="width:60px;height:60px;border-radius:12px;background:var(--orange-dim);border:1px solid var(--border-accent);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;">
+                                    <i class="fas fa-laptop-code" style="color:var(--orange);font-size:1.4rem;"></i>
                                 </div>
-                                <h4 class="font-bold text-dark-blue">Développement Web</h4>
-                                <p class="text-sm text-gray-600 mt-2">HTML5, CSS3, JavaScript, React</p>
+                                <h4 style="font-size:0.85rem;font-weight:600;color:var(--text-primary);margin-bottom:0.35rem;">Développement Web</h4>
+                                <p style="font-size:0.75rem;color:var(--text-muted);">HTML5, CSS3, JS, React</p>
                             </div>
+
                             <div class="text-center">
-                                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <i class="fas fa-mobile-alt text-2xl text-custom-orange"></i>
+                                <div style="width:60px;height:60px;border-radius:12px;background:var(--orange-dim);border:1px solid var(--border-accent);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;">
+                                    <i class="fas fa-mobile-alt" style="color:var(--orange);font-size:1.4rem;"></i>
                                 </div>
-                                <h4 class="font-bold text-dark-blue">Développement Mobile</h4>
-                                <p class="text-sm text-gray-600 mt-2">Flutter, React Native, App Inventor</p>
+                                <h4 style="font-size:0.85rem;font-weight:600;color:var(--text-primary);margin-bottom:0.35rem;">Développement Mobile</h4>
+                                <p style="font-size:0.75rem;color:var(--text-muted);">Flutter, React Native</p>
                             </div>
+
                             <div class="text-center">
-                                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <i class="fas fa-server text-2xl text-custom-orange"></i>
+                                <div style="width:60px;height:60px;border-radius:12px;background:var(--orange-dim);border:1px solid var(--border-accent);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;">
+                                    <i class="fas fa-server" style="color:var(--orange);font-size:1.4rem;"></i>
                                 </div>
-                                <h4 class="font-bold text-dark-blue">Infrastructure</h4>
-                                <p class="text-sm text-gray-600 mt-2">Mikrotik, Cisco, Windows Server</p>
+                                <h4 style="font-size:0.85rem;font-weight:600;color:var(--text-primary);margin-bottom:0.35rem;">Infrastructure</h4>
+                                <p style="font-size:0.75rem;color:var(--text-muted);">Mikrotik, Cisco, Windows Server</p>
                             </div>
+
                             <div class="text-center">
-                                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <i class="fas fa-tools text-2xl text-custom-orange"></i>
+                                <div style="width:60px;height:60px;border-radius:12px;background:var(--orange-dim);border:1px solid var(--border-accent);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;">
+                                    <i class="fas fa-tools" style="color:var(--orange);font-size:1.4rem;"></i>
                                 </div>
-                                <h4 class="font-bold text-dark-blue">Outils</h4>
-                                <p class="text-sm text-gray-600 mt-2">Git, VS Code, Adobe Creative Suite</p>
+                                <h4 style="font-size:0.85rem;font-weight:600;color:var(--text-primary);margin-bottom:0.35rem;">Outils Dev</h4>
+                                <p style="font-size:0.75rem;color:var(--text-muted);">Git, VS Code, Adobe Suite</p>
                             </div>
+
                             <div class="text-center">
-                                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <i class="fas fa-photo-video text-2xl text-custom-orange"></i>
+                                <div style="width:60px;height:60px;border-radius:12px;background:var(--orange-dim);border:1px solid var(--border-accent);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;">
+                                    <i class="fas fa-photo-video" style="color:var(--orange);font-size:1.4rem;"></i>
                                 </div>
-                                <h4 class="font-bold text-dark-blue">Outils Multimédia</h4>
-                                <p class="text-sm text-gray-600 mt-2">OBS Studio, V-MIX, DaVinci Resolve, Adobe Audition, Filmora, Mixcraft Studio</p>
+                                <h4 style="font-size:0.85rem;font-weight:600;color:var(--text-primary);margin-bottom:0.35rem;">Multimédia</h4>
+                                <p style="font-size:0.75rem;color:var(--text-muted);">OBS, V-MIX, DaVinci, Filmora</p>
                             </div>
+
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-black text-white py-8">
-        <div class="container mx-auto px-4 text-center">
-            <p>&copy; 2025 ALIFOE Kokou BAUDOIN. Tous droits réservés.</p>
-            <p class="mt-2 text-gray-400">Technicien Réseau & Développeur passionné</p>
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-10 mb-2">
+                <div>
+                    <div class="footer-brand">ALIFOE Baudoin</div>
+                    <p class="footer-tagline">Développeur Full Stack & Architecte Solutions Digitales, basé à Lomé, Togo.</p>
+                    <div class="footer-socials">
+                        <a href="https://linkedin.com/in/baudoin-kokou-alifoe-110197231" target="_blank" class="footer-social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://wa.me/22897734381" target="_blank" class="footer-social-link"><i class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:Alifoebaudoin228@gmail.com" class="footer-social-link"><i class="fas fa-envelope"></i></a>
+                        <a href="https://github.com" target="_blank" class="footer-social-link"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <div class="footer-nav-title">Navigation</div>
+                    <a href="index.html"       class="footer-nav-link"><i class="fas fa-home" style="color:var(--orange);width:16px;"></i> Accueil</a>
+                    <a href="about.html"       class="footer-nav-link"><i class="fas fa-user" style="color:var(--orange);width:16px;"></i> À propos</a>
+                    <a href="experience.html"  class="footer-nav-link"><i class="fas fa-briefcase" style="color:var(--orange);width:16px;"></i> Expérience</a>
+                    <a href="competences.html" class="footer-nav-link"><i class="fas fa-code" style="color:var(--orange);width:16px;"></i> Compétences</a>
+                    <a href="formation.html"   class="footer-nav-link"><i class="fas fa-graduation-cap" style="color:var(--orange);width:16px;"></i> Formation</a>
+                    <a href="mesprojets.html"  class="footer-nav-link"><i class="fas fa-project-diagram" style="color:var(--orange);width:16px;"></i> Mes Projets</a>
+                    <a href="contact.html"     class="footer-nav-link"><i class="fas fa-paper-plane" style="color:var(--orange);width:16px;"></i> Contact</a>
+                </div>
+                <div>
+                    <div class="footer-nav-title">Contact direct</div>
+                    <p class="footer-nav-link"><i class="fas fa-map-marker-alt" style="color:var(--orange);width:16px;"></i> Lomé, Togo</p>
+                    <a href="tel:+22897734381" class="footer-nav-link"><i class="fas fa-phone" style="color:var(--orange);width:16px;"></i> +228 97 73 43 81</a>
+                    <a href="mailto:Alifoebaudoin228@gmail.com" class="footer-nav-link"><i class="fas fa-envelope" style="color:var(--orange);width:16px;"></i> Alifoebaudoin228@gmail.com</a>
+                    <a href="https://wa.me/22897734381" target="_blank" class="footer-nav-link"><i class="fab fa-whatsapp" style="color:#25d366;width:16px;"></i> WhatsApp</a>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <p class="footer-copy">&copy; 2025 <span>ALIFOE Kokou BAUDOIN</span> — Tous droits réservés.</p>
         </div>
     </footer>
 
-    <!-- Bouton WhatsApp flottant -->
-    <a href="https://wa.me/22897734381" target="_blank" class="whatsapp-float">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <a href="https://wa.me/22897734381" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+    <button id="scrollTop" class="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-arrow-up"></i></button>
 
     <script>
         function toggleMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
+            document.getElementById('mobile-menu').classList.toggle('hidden');
         }
+        const nav = document.getElementById('mainNav');
+        const scrollBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('nav-scrolled', window.scrollY > 50);
+            scrollBtn.classList.toggle('visible', window.scrollY > 400);
+        });
 
-        // Animation au défilement
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+        /* Fade-in + skill bar animation */
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    /* Animate skill bars inside this element */
+                    e.target.querySelectorAll('.skill-bar-fill[data-width]').forEach(bar => {
+                        bar.style.width = bar.dataset.width + '%';
+                    });
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.15 });
 
-        document.querySelectorAll('.fade-in').forEach(element => {
-            observer.observe(element);
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        /* Also animate bars visible on load */
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.skill-bar-fill[data-width]').forEach(bar => {
+                const card = bar.closest('.card, .fade-in');
+                if (!card || card.classList.contains('visible')) {
+                    bar.style.width = bar.dataset.width + '%';
+                }
+            });
         });
     </script>
 </body>

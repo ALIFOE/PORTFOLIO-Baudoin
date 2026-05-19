@@ -13,24 +13,29 @@
         gtag('js', new Date());
         gtag('config', 'G-1QRQVFF021');
     </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Styles -->
     <link href="dist/output.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
     <script src="js/main.js" defer></script>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body>
     <!-- Navigation -->
     <nav id="mainNav" class="modern-nav fixed w-full top-0 z-50 py-2">
         <div class="container mx-auto flex justify-between items-center">
             <a href="index.html" class="nav-brand"><img src="logo  v 02 concept tech.png" alt="conceptTech" class="h-12"></a>
-            <div class="hidden md:flex space-x-6">
-                <a href="index.html" class="nav-link">Accueil</a>
-                <a href="about.html" class="nav-link">À propos</a>
-                <a href="experience.html" class="nav-link text-custom-orange font-bold">Expérience</a>
+            <div class="hidden md:flex space-x-1">
+                <a href="index.html"       class="nav-link">Accueil</a>
+                <a href="about.html"       class="nav-link">À propos</a>
+                <a href="experience.html"  class="nav-link text-custom-orange font-bold">Expérience</a>
                 <a href="competences.html" class="nav-link">Compétences</a>
-                <a href="formation.html" class="nav-link">Formation</a>
-                <a href="mesprojets.html" class="nav-link">Mes Projets</a>
-                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="formation.html"   class="nav-link">Formation</a>
+                <a href="mesprojets.html"  class="nav-link">Mes Projets</a>
+                <a href="contact.html"     class="nav-link">Contact</a>
             </div>
             <button class="md:hidden mobile-menu-btn" onclick="toggleMenu()">
                 <i class="fas fa-bars"></i>
@@ -113,7 +118,7 @@
     </style>
 
     <!-- Expérience Section -->
-    <section id="experience-content" class="py-20 bg-white">
+    <section id="experience-content" class="py-20" style="background:var(--bg-surface);">
         <div class="container mx-auto px-4">
             <div class="max-w-6xl mx-auto">
                 <!-- Introduction -->
@@ -126,16 +131,9 @@
                 </div>
 
                 <!-- Timeline d'expérience -->
-                <div class="relative">
-                    <!-- Ligne verticale de timeline -->
-                    <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1">
-                        <div class="h-full bg-gradient-to-b from-custom-orange to-blue-500 animate-pulse"></div>
-                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-custom-orange rounded-full animate-ping"></div>
-                        <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-4 h-4 bg-blue-500 rounded-full animate-ping"></div>
-                    </div>
-
+                <div>
                     <!-- Expériences -->
-                    <div class="space-y-16 relative">
+                    <div class="grid md:grid-cols-2 gap-6">
                         <style>
                             .experience-card {
                                 position: relative;
@@ -181,10 +179,8 @@
                             }
                         </style>
                         <!-- DEEZPRO -->
-                        <div class="fade-in relative">
-                            <div class="md:flex items-center">
-                                <div class="md:w-1/2 md:pr-12">
-                                    <div class="experience-card group bg-gradient-to-r from-gray-50 to-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-500 border-l-4 border-custom-orange hover:border-l-8 hover:translate-x-1 hover:bg-gradient-to-r hover:from-orange-50 hover:to-white">
+                        <div class="fade-in">
+                            <div class="experience-card group bg-gradient-to-r from-gray-50 to-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-500 border-l-4 border-custom-orange hover:border-l-8 hover:translate-x-1 hover:bg-gradient-to-r hover:from-orange-50 hover:to-white">
                                         <img src="logos/logo-DeezPro.png" alt="DEEZPRO" class="company-logo">
                                         <div class="flex items-center mb-4">
                                             <i class="fas fa-comments text-2xl text-custom-orange mr-4 group-hover:scale-110 transition-transform"></i>
@@ -193,7 +189,7 @@
                                         <p class="text-custom-orange font-semibold mb-2">DEEZPRO</p>
                                         <p class="text-gray-600 mb-4 flex items-center">
                                             <i class="far fa-calendar-alt mr-2"></i>
-                                            Août 2025 - Présent
+                                            Août 2025 - Decembre 2025
                                         </p>
                                         <ul class="text-gray-600 space-y-3">
                                             <li class="flex items-start">
@@ -251,21 +247,84 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="hidden md:block w-12 text-center">
-                                    <div class="w-12 h-12 bg-custom-orange rounded-full flex items-center justify-center text-white text-xl font-bold">
-                                        5
-                                    </div>
-                                </div>
                             </div>
                         </div>
 
-                        <!-- COMPASSION -->
-                        <div class="fade-in relative">
-                            <div class="md:flex items-center">
-                                <div class="md:w-1/2 md:pl-12 ml-auto">
-                                    <div class="bg-gradient-to-r from-gray-50 to-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 border-l-4 border-blue-500">
+                        <!-- COMPASSION STAGE WEB MOBILE -->
+                        <div class="fade-in">
+                            <div class="bg-gradient-to-r from-gray-50 to-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 border-l-4" style="border-color:#10b981;">
+                                        <div class="flex items-center justify-between mb-3">
+                                            <img src="logos/compassion-logo.png" alt="COMPASSION INTERNATIONAL TOGO" class="company-logo" style="margin-bottom:0;">
+                                            <span style="display:inline-flex;align-items:center;gap:0.4rem;background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.3);color:#10b981;padding:0.3rem 0.9rem;border-radius:50px;font-size:0.75rem;font-weight:700;letter-spacing:0.5px;">
+                                                <span style="width:7px;height:7px;border-radius:50%;background:#10b981;animation:pulse 1.6s ease-in-out infinite;display:inline-block;"></span>
+                                                EN COURS
+                                            </span>
+                                        </div>
+                                        <div class="flex items-center mb-4">
+                                            <i class="fas fa-laptop-code text-2xl mr-4" style="color:#10b981;"></i>
+                                            <h3 class="text-2xl font-bold text-dark-blue">Stagiaire — Développement Web & Mobile</h3>
+                                        </div>
+                                        <p class="font-semibold mb-2" style="color:#10b981;">COMPASSION INTERNATIONAL TOGO</p>
+                                        <p class="text-gray-600 mb-4 flex items-center">
+                                            <i class="far fa-calendar-alt mr-2"></i>
+                                            2025 - Présent
+                                        </p>
+                                        <ul class="text-gray-600 space-y-3">
+                                            <li class="flex items-start">
+                                                <i class="fas fa-check-circle mt-1 mr-2" style="color:#10b981;"></i>
+                                                <span>Conception et développement d'applications web & mobile pour l'organisation</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i class="fas fa-check-circle mt-1 mr-2" style="color:#10b981;"></i>
+                                                <span>Intégration d'interfaces utilisateur modernes et responsives</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i class="fas fa-check-circle mt-1 mr-2" style="color:#10b981;"></i>
+                                                <span>Développement de fonctionnalités back-end et APIs REST</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i class="fas fa-check-circle mt-1 mr-2" style="color:#10b981;"></i>
+                                                <span>Collaboration avec l'équipe technique sur les outils digitaux internes</span>
+                                            </li>
+                                        </ul>
+                                        <!-- Section Responsable stage -->
+                                        <div class="mt-6 relative">
+                                            <div class="absolute inset-0 bg-gradient-to-r from-blue-100/50 to-blue-50/50 rounded-lg filter blur-xl"></div>
+                                            <div class="relative p-6 bg-white/90 rounded-lg border border-blue-200 shadow-lg backdrop-blur-sm">
+                                                <div class="flex items-center mb-4">
+                                                    <div class="w-10 h-10 rounded-full flex items-center justify-center shadow-lg" style="background:linear-gradient(135deg,#10b981,#34d399);">
+                                                        <i class="fas fa-user-tie text-white"></i>
+                                                    </div>
+                                                    <h5 class="font-semibold text-gray-800 ml-3 text-lg">Responsable</h5>
+                                                </div>
+                                                <div class="space-y-3">
+                                                    <div class="flex items-center group">
+                                                        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3 group-hover:bg-blue-200 transition-colors">
+                                                            <i class="fas fa-user text-blue-500"></i>
+                                                        </div>
+                                                        <span class="font-medium text-gray-800">Dr. Olivier AHONON (Directeur National de CITG)</span>
+                                                    </div>
+                                                    <div class="flex items-center group">
+                                                        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3 group-hover:bg-blue-200 transition-colors">
+                                                            <i class="fas fa-envelope text-blue-500"></i>
+                                                        </div>
+                                                        <a href="mailto:CITogo@tg.ci.org" class="text-gray-700 hover:text-blue-500 transition-colors">CITogo@tg.ci.org</a>
+                                                    </div>
+                                                    <div class="flex items-center group">
+                                                        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3 group-hover:bg-blue-200 transition-colors">
+                                                            <i class="fas fa-phone text-blue-500"></i>
+                                                        </div>
+                                                        <a href="tel:+22899900505" class="text-gray-700 hover:text-blue-500 transition-colors">+228 99 90 05 05</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                            </div>
+                        </div>
+
+                        <!-- COMPASSION MULTIMEDIA -->
+                        <div class="fade-in">
+                            <div class="bg-gradient-to-r from-gray-50 to-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 border-l-4 border-blue-500">
                                         <img src="logos/compassion-logo.png" alt="COMPASSION INTERNATIONAL TOGO" class="company-logo">
                                         <div class="flex items-center mb-4">
                                             <i class="fas fa-photo-video text-2xl text-blue-500 mr-4"></i>
@@ -326,13 +385,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="hidden md:block w-12 text-center">
-                                    <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white text-xl font-bold">
-                                        4
-                                    </div>
-                                </div>
                             </div>
                         </div>
 
@@ -379,10 +431,8 @@
                         </div> -->
 
                         <!-- MECAD et SCAJFE -->
-                        <div class="fade-in relative">
-                            <div class="md:flex items-center">
-                                <div class="md:w-1/2 md:pl-12 ml-auto">
-                                    <div class="bg-gradient-to-r from-gray-50 to-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 border-l-4 border-blue-500">
+                        <div class="fade-in">
+                            <div class="bg-gradient-to-r from-gray-50 to-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 border-l-4 border-blue-500">
                                         <div class="flex items-center mb-4">
                                             <i class="fas fa-desktop text-2xl text-blue-500 mr-4"></i>
                                             <h3 class="text-2xl font-bold text-dark-blue">Technicien de Maintenance Informatique</h3>
@@ -442,21 +492,12 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="hidden md:block w-12 text-center">
-                                    <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white text-xl font-bold">
-                                        2
-                                    </div>
-                                </div>
                             </div>
                         </div>
 
                         <!-- CDEJ SHALOM -->
-                        <div class="fade-in relative">
-                            <div class="md:flex items-center">
-                                <div class="md:w-1/2 md:pr-12">
-                                    <div class="bg-gradient-to-r from-gray-50 to-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 border-l-4 border-custom-orange">
+                        <div class="fade-in">
+                            <div class="bg-gradient-to-r from-gray-50 to-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 border-l-4 border-custom-orange">
                                         <img src="logos/logo-CDEJ.png" alt="CDEJ SHALOM" class="company-logo">
                                         <div class="flex items-center mb-4">
                                             <i class="fas fa-server text-2xl text-custom-orange mr-4"></i>
@@ -517,13 +558,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                    </div>
-                                </div>
-                                <div class="hidden md:block w-12 text-center">
-                                    <div class="w-12 h-12 bg-custom-orange rounded-full flex items-center justify-center text-white text-xl font-bold">
-                                        1
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -536,7 +570,7 @@
                             Engagement Bénévole
                             <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-custom-orange to-blue-500 mt-2"></div>
                         </h3>
-                        <div class="space-y-8">
+                        <div class="grid md:grid-cols-2 gap-6">
                             <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
                                 <img src="logo-CDEJ.png" alt="CDEJ SHALOM" class="company-logo mb-4">
                                 <div class="flex items-center mb-4">
@@ -688,42 +722,63 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-black text-white py-8">
-        <div class="container mx-auto px-4 text-center">
-            <p>&copy; 2025 ALIFOE Kokou BAUDOIN. Tous droits réservés.</p>
-            <p class="mt-2 text-gray-400">Technicien Réseau & Développeur passionné</p>
+    <footer class="site-footer">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-10 mb-2">
+                <div>
+                    <div class="footer-brand">ALIFOE Baudoin</div>
+                    <p class="footer-tagline">Développeur Full Stack & Architecte Solutions Digitales, basé à Lomé, Togo.</p>
+                    <div class="footer-socials">
+                        <a href="https://linkedin.com/in/baudoin-kokou-alifoe-110197231" target="_blank" class="footer-social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://wa.me/22897734381" target="_blank" class="footer-social-link"><i class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:Alifoebaudoin228@gmail.com" class="footer-social-link"><i class="fas fa-envelope"></i></a>
+                        <a href="https://github.com" target="_blank" class="footer-social-link"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <div class="footer-nav-title">Navigation</div>
+                    <a href="index.html"       class="footer-nav-link"><i class="fas fa-home" style="color:var(--orange);width:16px;"></i> Accueil</a>
+                    <a href="about.html"       class="footer-nav-link"><i class="fas fa-user" style="color:var(--orange);width:16px;"></i> À propos</a>
+                    <a href="experience.html"  class="footer-nav-link"><i class="fas fa-briefcase" style="color:var(--orange);width:16px;"></i> Expérience</a>
+                    <a href="competences.html" class="footer-nav-link"><i class="fas fa-code" style="color:var(--orange);width:16px;"></i> Compétences</a>
+                    <a href="formation.html"   class="footer-nav-link"><i class="fas fa-graduation-cap" style="color:var(--orange);width:16px;"></i> Formation</a>
+                    <a href="mesprojets.html"  class="footer-nav-link"><i class="fas fa-project-diagram" style="color:var(--orange);width:16px;"></i> Mes Projets</a>
+                    <a href="contact.html"     class="footer-nav-link"><i class="fas fa-paper-plane" style="color:var(--orange);width:16px;"></i> Contact</a>
+                </div>
+                <div>
+                    <div class="footer-nav-title">Contact direct</div>
+                    <p class="footer-nav-link"><i class="fas fa-map-marker-alt" style="color:var(--orange);width:16px;"></i> Lomé, Togo</p>
+                    <a href="tel:+22897734381" class="footer-nav-link"><i class="fas fa-phone" style="color:var(--orange);width:16px;"></i> +228 97 73 43 81</a>
+                    <a href="mailto:Alifoebaudoin228@gmail.com" class="footer-nav-link"><i class="fas fa-envelope" style="color:var(--orange);width:16px;"></i> Alifoebaudoin228@gmail.com</a>
+                    <a href="https://wa.me/22897734381" target="_blank" class="footer-nav-link"><i class="fab fa-whatsapp" style="color:#25d366;width:16px;"></i> WhatsApp</a>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <p class="footer-copy">&copy; 2025 <span>ALIFOE Kokou BAUDOIN</span> — Tous droits réservés.</p>
         </div>
     </footer>
 
-    <!-- Bouton WhatsApp flottant -->
-    <a href="https://wa.me/22897734381" target="_blank" class="whatsapp-float">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <!-- WhatsApp flottant -->
+    <a href="https://wa.me/22897734381" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+    <!-- Scroll to top -->
+    <button id="scrollTop" class="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-arrow-up"></i></button>
 
     <script>
         function toggleMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
+            document.getElementById('mobile-menu').classList.toggle('hidden');
         }
-
-        // Animation au défilement
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-
+        const nav = document.getElementById('mainNav');
+        const scrollBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('nav-scrolled', window.scrollY > 50);
+            scrollBtn.classList.toggle('visible', window.scrollY > 400);
+        });
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('visible');
             });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(element => {
-            observer.observe(element);
-        });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>

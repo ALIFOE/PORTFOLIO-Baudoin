@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formation - ALIFOE Kokou BAUDOIN</title>
+    <title>Formation — ALIFOE Kokou BAUDOIN</title>
     <link rel="icon" type="image/png" href="logo  v 02 concept tech.png">
-    
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1QRQVFF021"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -13,236 +12,233 @@
         gtag('js', new Date());
         gtag('config', 'G-1QRQVFF021');
     </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Styles -->
     <link href="dist/output.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
     <script src="js/main.js" defer></script>
 </head>
-<body class="bg-gray-50 text-gray-800">
-    <!-- Navigation -->
-    <nav id="mainNav" class="modern-nav fixed w-full top-0 z-50 py-2">
+<body>
+
+    <!-- NAVIGATION -->
+    <nav id="mainNav" class="modern-nav fixed w-full top-0 z-50">
         <div class="container mx-auto flex justify-between items-center">
             <a href="index.html" class="nav-brand"><img src="logo  v 02 concept tech.png" alt="conceptTech" class="h-12"></a>
-            <div class="hidden md:flex space-x-6">
-                <a href="index.html" class="nav-link">Accueil</a>
-                <a href="about.html" class="nav-link">À propos</a>
-                <a href="experience.html" class="nav-link">Expérience</a>
+            <div class="hidden md:flex space-x-1">
+                <a href="index.html"       class="nav-link">Accueil</a>
+                <a href="about.html"       class="nav-link">À propos</a>
+                <a href="experience.html"  class="nav-link">Expérience</a>
                 <a href="competences.html" class="nav-link">Compétences</a>
-                <a href="formation.html" class="nav-link text-custom-orange font-bold">Formation</a>
-                <a href="mesprojets.html" class="nav-link">Mes Projets</a>
-                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="formation.html"   class="nav-link text-custom-orange font-bold">Formation</a>
+                <a href="mesprojets.html"  class="nav-link">Mes Projets</a>
+                <a href="contact.html"     class="nav-link">Contact</a>
             </div>
-            <button class="md:hidden mobile-menu-btn" onclick="toggleMenu()">
-                <i class="fas fa-bars"></i>
-            </button>
+            <button class="md:hidden mobile-menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
         </div>
         <div id="mobile-menu" class="mobile-menu md:hidden hidden">
-            <a href="index.html" class="hover:text-blue-400">Accueil</a>
-            <a href="about.html" class="hover:text-blue-400">À propos</a>
-            <a href="experience.html" class="hover:text-blue-400">Expérience</a>
-            <a href="competences.html" class="hover:text-blue-400">Compétences</a>
-            <a href="formation.html" class="hover:text-custom-orange font-bold">Formation</a>
-            <a href="mesprojets.html" class="hover:text-blue-400">Mes Projets</a>
-            <a href="contact.html" class="hover:text-blue-400">Contact</a>
+            <a href="index.html">Accueil</a>
+            <a href="about.html">À propos</a>
+            <a href="experience.html">Expérience</a>
+            <a href="competences.html">Compétences</a>
+            <a href="formation.html" style="color:var(--orange);">Formation</a>
+            <a href="mesprojets.html">Mes Projets</a>
+            <a href="contact.html">Contact</a>
         </div>
     </nav>
 
-    <!-- Header Section -->
-    <header class="hero-gradient text-white min-h-[60vh] flex items-center">
+    <!-- HEADER -->
+    <header class="hero-gradient text-white flex items-center" style="min-height:55vh;">
         <div class="stars"></div>
-        <div class="container mx-auto px-4 pt-24 md:pt-32">
-            <div class="text-center space-y-6 relative z-10">
-                <h1 class="text-4xl md:text-6xl font-bold mb-4 text-center fade-in">Formation & Certifications</h1>
-                <p class="text-xl md:text-2xl text-center text-blue-200 max-w-3xl mx-auto fade-in">
+        <div class="container mx-auto px-6 pt-28 pb-16 relative z-10">
+            <div class="text-center space-y-5">
+                <span class="section-tag fade-in">Parcours Académique</span>
+                <h1 class="text-4xl md:text-6xl font-bold fade-in" style="font-family:var(--font-heading);">
+                    Formation &amp; <span style="color:var(--orange);">Certifications</span>
+                </h1>
+                <p class="text-lg md:text-xl max-w-2xl mx-auto fade-in" style="color:#94a3b8;">
                     Un parcours académique solide enrichi par des certifications professionnelles reconnues
                 </p>
-                <div class="mt-8">
+                <div class="pt-4">
                     <a href="#formation-content" class="inline-block animate-bounce">
-                        <i class="fas fa-chevron-down text-2xl text-blue-200"></i>
+                        <i class="fas fa-chevron-down text-xl" style="color:#60a5fa;"></i>
                     </a>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Formation Section -->
-    <section id="formation-content" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="max-w-6xl mx-auto">
-                <!-- Introduction -->
-                <div class="text-center mb-16 fade-in">
-                    <h2 class="text-3xl md:text-4xl font-bold text-dark-blue mb-6">Parcours Éducatif</h2>
-                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                        Une formation continue alliant excellence académique et certifications professionnelles 
-                        pour rester à la pointe de la technologie
+    <!-- CONTENU -->
+    <section id="formation-content" class="py-20" style="background:var(--bg-surface);">
+        <div class="container mx-auto px-6">
+            <div class="max-w-5xl mx-auto">
+
+                <!-- Titre section -->
+                <div class="section-header fade-in">
+                    <span class="section-tag">Éducation</span>
+                    <h2 class="section-title">Parcours <span style="color:var(--orange);">Éducatif</span></h2>
+                    <p style="color:var(--text-secondary);max-width:600px;margin:0 auto;font-size:1rem;line-height:1.75;">
+                        Une formation continue alliant excellence académique et certifications professionnelles.
                     </p>
+                    <div class="section-divider"></div>
                 </div>
 
                 <!-- Timeline Formation -->
-                <div class="relative mb-20">
-                    <!-- Ligne verticale de timeline -->
-                    <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-custom-orange to-blue-500"></div>
-
-                    <!-- Formation Académique -->
-                    <div class="space-y-16">
-                        <!-- BTS -->
-                        <div class="fade-in relative">
-                            <div class="md:flex items-center">
-                                <!-- <div class="md:w-1/2 md:pr-12 mb-8 md:mb-0">
-                                    <div class="bg-gradient-to-r from-gray-50 to-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 border-l-4 border-custom-orange">
-                                        <div class="flex items-center mb-4">
-                                            <div class="w-12 h-12 bg-custom-orange rounded-full flex items-center justify-center text-white mr-4">
-                                                <i class="fas fa-graduation-cap text-xl"></i>
-                                            </div>
-                                            <div>
-                                                <h3 class="text-2xl font-bold text-dark-blue">BTS Système Réseau Informatique</h3>
-                                                <p class="text-custom-orange">École IPNET - En cours</p>
-                                            </div>
-                                        </div>
-                                        <div class="pl-16">
-                                            <p class="text-gray-600 mb-4">Formation approfondie couvrant les aspects essentiels de l'informatique moderne :</p>
-                                            <ul class="space-y-2 text-gray-600">
-                                                <li class="flex items-start">
-                                                    <i class="fas fa-check-circle text-custom-orange mt-1 mr-2"></i>
-                                                    <span>Administration système et réseau avancée</span>
-                                                </li>
-                                                <li class="flex items-start">
-                                                    <i class="fas fa-check-circle text-custom-orange mt-1 mr-2"></i>
-                                                    <span>Sécurité informatique </span>
-                                                </li>
-                                                <li class="flex items-start">
-                                                    <i class="fas fa-check-circle text-custom-orange mt-1 mr-2"></i>
-                                                    <span>Gestion d'infrastructure IT</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div> -->
-                                <div class="hidden md:block w-12 text-center">
-                                    <div class="w-12 h-12 bg-custom-orange rounded-full flex items-center justify-center text-white text-xl font-bold">
-                                        1
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="mb-16">
+                    <div class="grid md:grid-cols-2 gap-6">
 
                         <!-- BAC F2 -->
-                        <div class="fade-in relative">
-                            <div class="md:flex items-center">
-                                <div class="md:w-1/2 md:pl-12 ml-auto">
-                                    <div class="bg-gradient-to-r from-gray-50 to-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 border-l-4 border-blue-500">
-                                        <div class="flex items-center mb-4">
-                                            <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white mr-4">
-                                                <i class="fas fa-school text-xl"></i>
-                                            </div>
-                                            <div>
-                                                <h3 class="text-2xl font-bold text-dark-blue">BAC série F2</h3>
-                                                <p class="text-blue-500">ITEM GBEYENDZI - 2020-2021</p>
-                                            </div>
-                                        </div>
-                                        <div class="pl-16">
-                                            <p class="text-gray-600 mb-4">Spécialisation en électronique et systèmes numériques avec focus sur :</p>
-                                            <ul class="space-y-2 text-gray-600">
-                                                <li class="flex items-start">
-                                                    <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
-                                                    <span>Électronique numérique et analogique</span>
-                                                </li>
-                                                <li class="flex items-start">
-                                                    <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
-                                                    <span>Systèmes embarqués</span>
-                                                </li>
-                                                <li class="flex items-start">
-                                                    <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
-                                                    <span>Automatismes industriels</span>
-                                                </li>
-                                            </ul>
-                                        </div>
+                        <div class="fade-in">
+                            <div class="card" style="border-left:3px solid var(--blue-light);height:100%;">
+                                <div class="flex items-start gap-4 mb-4">
+                                    <div style="width:48px;height:48px;border-radius:10px;background:var(--blue-dim);border:1px solid rgba(59,130,246,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                        <i class="fas fa-school" style="color:var(--blue-light);font-size:1.1rem;"></i>
+                                    </div>
+                                    <div>
+                                        <h3 style="font-family:var(--font-heading);font-size:1.1rem;font-weight:700;color:var(--text-primary);margin-bottom:0.25rem;">BAC Série F2</h3>
+                                        <p style="color:var(--blue-light);font-size:0.85rem;font-weight:500;">ITEM GBEYENDZI — 2020-2021</p>
                                     </div>
                                 </div>
-                                <div class="hidden md:block w-12 text-center">
-                                    <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white text-xl font-bold">
-                                        2
-                                    </div>
-                                </div>
+                                <p style="color:var(--text-secondary);font-size:0.875rem;margin-bottom:0.75rem;line-height:1.7;">
+                                    Spécialisation en électronique et systèmes numériques :
+                                </p>
+                                <ul class="space-y-1">
+                                    <li class="flex items-start gap-2" style="color:var(--text-secondary);font-size:0.85rem;">
+                                        <i class="fas fa-check-circle" style="color:var(--blue-light);margin-top:2px;font-size:0.75rem;"></i>
+                                        Électronique numérique et analogique
+                                    </li>
+                                    <li class="flex items-start gap-2" style="color:var(--text-secondary);font-size:0.85rem;">
+                                        <i class="fas fa-check-circle" style="color:var(--blue-light);margin-top:2px;font-size:0.75rem;"></i>
+                                        Systèmes embarqués
+                                    </li>
+                                    <li class="flex items-start gap-2" style="color:var(--text-secondary);font-size:0.85rem;">
+                                        <i class="fas fa-check-circle" style="color:var(--blue-light);margin-top:2px;font-size:0.75rem;"></i>
+                                        Automatismes industriels
+                                    </li>
+                                </ul>
                             </div>
                         </div>
+
+                        <!-- BTS -->
+                        <div class="fade-in">
+                            <div class="card" style="border-left:3px solid var(--orange);height:100%;">
+                                <div class="flex items-start gap-4 mb-4">
+                                    <div style="width:48px;height:48px;border-radius:10px;background:var(--orange-dim);border:1px solid var(--border-accent);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                        <i class="fas fa-graduation-cap" style="color:var(--orange);font-size:1.1rem;"></i>
+                                    </div>
+                                    <div>
+                                        <h3 style="font-family:var(--font-heading);font-size:1.1rem;font-weight:700;color:var(--text-primary);margin-bottom:0.25rem;">BTS Système Réseau Informatique</h3>
+                                        <p style="color:var(--orange);font-size:0.85rem;font-weight:500;">École IPNET — En cours</p>
+                                    </div>
+                                </div>
+                                <p style="color:var(--text-secondary);font-size:0.875rem;margin-bottom:0.75rem;line-height:1.7;">
+                                    Formation approfondie en informatique moderne :
+                                </p>
+                                <ul class="space-y-1">
+                                    <li class="flex items-start gap-2" style="color:var(--text-secondary);font-size:0.85rem;">
+                                        <i class="fas fa-check-circle" style="color:var(--orange);margin-top:2px;font-size:0.75rem;"></i>
+                                        Administration système et réseau avancée
+                                    </li>
+                                    <li class="flex items-start gap-2" style="color:var(--text-secondary);font-size:0.85rem;">
+                                        <i class="fas fa-check-circle" style="color:var(--orange);margin-top:2px;font-size:0.75rem;"></i>
+                                        Sécurité informatique
+                                    </li>
+                                    <li class="flex items-start gap-2" style="color:var(--text-secondary);font-size:0.85rem;">
+                                        <i class="fas fa-check-circle" style="color:var(--orange);margin-top:2px;font-size:0.75rem;"></i>
+                                        Gestion d'infrastructure IT
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
-                <!-- Certifications -->
-                <div class="mb-20">
-                    <h2 class="text-3xl font-bold text-dark-blue text-center mb-12">Certifications Professionnelles</h2>
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <!-- Certifications Techniques -->
-                        <div class="space-y-6 fade-in">
-                            <div class="bg-gradient-to-r from-gray-50 to-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-                                <div class="flex items-center mb-4">
-                                    <div class="w-12 h-12 bg-custom-orange rounded-full flex items-center justify-center text-white mr-4">
-                                        <i class="fas fa-network-wired text-xl"></i>
-                                    </div>
-                                    <div class="flex items-center gap-4">
-                                        <div>
-                                            <h4 class="text-xl font-bold text-dark-blue">Network Technician Career Path</h4>
-                                            <p class="text-custom-orange">Cisco Networking Academy - 2024</p>
-                                        </div>
-                                        <img src="nt.png" alt="Logo Cisco" class="h-12 object-contain">
-                                    </div>
-                                </div>
-                                <div class="pl-16">
-                                    <p class="text-gray-600">Certification complète en administration et maintenance des réseaux, couvrant les protocoles et technologies Cisco.</p>
-                                </div>
-                            </div>
+                <!-- CERTIFICATIONS -->
+                <div class="mb-14">
+                    <div class="section-header fade-in" style="margin-bottom:2.5rem;">
+                        <span class="section-tag">Certifications</span>
+                        <h2 class="section-title">Certifications <span style="color:var(--orange);">Professionnelles</span></h2>
+                        <div class="section-divider"></div>
+                    </div>
 
-                            <div class="bg-gradient-to-r from-gray-50 to-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-                                <div class="flex items-center mb-4">
-                                    <div class="w-12 h-12 bg-custom-orange rounded-full flex items-center justify-center text-white mr-4">
-                                        <i class="fas fa-code text-xl"></i>
-                                    </div>
-                                    <div class="flex items-center gap-4">
-                                        <div>
-                                            <h4 class="text-xl font-bold text-dark-blue">Développement Web & Mobile</h4>
-                                            <p class="text-custom-orange">Organisation Internationale de la Francophonie - 2025</p>
-                                        </div>
-                                        <img src="Logo_OIF.png" alt="Logo OIF" class="h-12 object-contain">
-                                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+
+                        <!-- Certification 1 -->
+                        <div class="card fade-in">
+                            <div class="flex items-start gap-4">
+                                <div style="width:48px;height:48px;border-radius:10px;background:var(--orange-dim);border:1px solid var(--border-accent);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                    <i class="fas fa-network-wired" style="color:var(--orange);"></i>
                                 </div>
-                                <div class="pl-16">
-                                    <p class="text-gray-600">Formation intensive en développement d'applications modernes avec focus sur les technologies actuelles.</p>
+                                <div class="flex-1">
+                                    <div class="flex items-center justify-between flex-wrap gap-2 mb-1">
+                                        <h4 style="font-family:var(--font-heading);font-size:1rem;font-weight:700;color:var(--text-primary);">Network Technician Career Path</h4>
+                                        <img src="nt.png" alt="Cisco" style="height:36px;object-fit:contain;filter:brightness(0.9);border-radius:4px;">
+                                    </div>
+                                    <p style="color:var(--orange);font-size:0.8rem;font-weight:500;margin-bottom:0.5rem;">Cisco Networking Academy — 2024</p>
+                                    <p style="color:var(--text-secondary);font-size:0.85rem;line-height:1.7;">
+                                        Certification complète en administration et maintenance des réseaux, couvrant les protocoles et technologies Cisco.
+                                    </p>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Autres Certifications -->
-                        <div class="space-y-6 fade-in">
-                            <div class="bg-gradient-to-r from-gray-50 to-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-                                <div class="flex items-center mb-4">
-                                    <div class="w-12 h-12 bg-custom-orange rounded-full flex items-center justify-center text-white mr-4">
-                                        <i class="fas fa-laptop-code text-xl"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="text-xl font-bold text-dark-blue">Compétence Numérique</h4>
-                                        <p class="text-custom-orange">Université de Montréal - 2023</p>
-                                    </div>
-                                    <img src="UM.png" alt="Logo Université de Montréal" class="h-12 object-contain">
+                        <!-- Certification 2 -->
+                        <div class="card fade-in">
+                            <div class="flex items-start gap-4">
+                                <div style="width:48px;height:48px;border-radius:10px;background:var(--orange-dim);border:1px solid var(--border-accent);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                    <i class="fas fa-code" style="color:var(--orange);"></i>
                                 </div>
-                                <div class="pl-16">
-                                    <p class="text-gray-600">Certification en transformation digitale et maîtrise des outils numériques modernes.</p>
+                                <div class="flex-1">
+                                    <div class="flex items-center justify-between flex-wrap gap-2 mb-1">
+                                        <h4 style="font-family:var(--font-heading);font-size:1rem;font-weight:700;color:var(--text-primary);">Développement Web &amp; Mobile</h4>
+                                        <img src="Logo_OIF.png" alt="OIF" style="height:36px;object-fit:contain;filter:brightness(0.9);border-radius:4px;">
+                                    </div>
+                                    <p style="color:var(--orange);font-size:0.8rem;font-weight:500;margin-bottom:0.5rem;">Organisation Internationale de la Francophonie — 2025</p>
+                                    <p style="color:var(--text-secondary);font-size:0.85rem;line-height:1.7;">
+                                        Formation intensive en développement d'applications modernes avec focus sur les technologies actuelles.
+                                    </p>
                                 </div>
                             </div>
+                        </div>
 
-                            <div class="bg-gradient-to-r from-gray-50 to-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-                                <div class="flex items-center mb-4">
-                                    <div class="w-12 h-12 bg-custom-orange rounded-full flex items-center justify-center text-white mr-4">
-                                        <i class="fas fa-microphone-alt text-xl"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="text-xl font-bold text-dark-blue">Technique de Son Live</h4>
-                                        <p class="text-custom-orange">Formation Professionnelle - 2023</p>
-                                    </div>
-                                    <img src="son png.png" alt="Logo OIF" class="h-12 object-contain">
+                        <!-- Certification 3 -->
+                        <div class="card fade-in">
+                            <div class="flex items-start gap-4">
+                                <div style="width:48px;height:48px;border-radius:10px;background:var(--orange-dim);border:1px solid var(--border-accent);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                    <i class="fas fa-laptop-code" style="color:var(--orange);"></i>
                                 </div>
-                                <div class="pl-16">
-                                    <p class="text-gray-600">Formation spécialisée en sonorisation événementielle et techniques de streaming professionnel.</p>
+                                <div class="flex-1">
+                                    <div class="flex items-center justify-between flex-wrap gap-2 mb-1">
+                                        <h4 style="font-family:var(--font-heading);font-size:1rem;font-weight:700;color:var(--text-primary);">Compétence Numérique</h4>
+                                        <img src="UM.png" alt="Université de Montréal" style="height:36px;object-fit:contain;filter:brightness(0.9);border-radius:4px;">
+                                    </div>
+                                    <p style="color:var(--orange);font-size:0.8rem;font-weight:500;margin-bottom:0.5rem;">Université de Montréal — 2023</p>
+                                    <p style="color:var(--text-secondary);font-size:0.85rem;line-height:1.7;">
+                                        Certification en transformation digitale et maîtrise des outils numériques modernes.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Certification 4 -->
+                        <div class="card fade-in">
+                            <div class="flex items-start gap-4">
+                                <div style="width:48px;height:48px;border-radius:10px;background:var(--orange-dim);border:1px solid var(--border-accent);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                    <i class="fas fa-microphone-alt" style="color:var(--orange);"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex items-center justify-between flex-wrap gap-2 mb-1">
+                                        <h4 style="font-family:var(--font-heading);font-size:1rem;font-weight:700;color:var(--text-primary);">Technique de Son Live</h4>
+                                        <img src="son png.png" alt="Son Live" style="height:36px;object-fit:contain;filter:brightness(0.9);border-radius:4px;">
+                                    </div>
+                                    <p style="color:var(--orange);font-size:0.8rem;font-weight:500;margin-bottom:0.5rem;">Formation Professionnelle — 2023</p>
+                                    <p style="color:var(--text-secondary);font-size:0.85rem;line-height:1.7;">
+                                        Formation spécialisée en sonorisation événementielle et techniques de streaming professionnel.
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -251,81 +247,94 @@
 
                 <!-- Formation Continue -->
                 <div class="fade-in">
-                    <div class="bg-gradient-to-r from-gray-50 to-white p-8 rounded-xl shadow-xl text-center">
-                        <h3 class="text-2xl font-bold text-dark-blue mb-6">Formation Continue</h3>
-                        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                            Je maintiens mes connaissances à jour à travers une veille technologique constante 
-                            et des formations en ligne sur des plateformes comme Coursera, Udemy et OpenClassrooms.
+                    <div class="card" style="text-align:center;padding:2.5rem;">
+                        <div style="width:56px;height:56px;border-radius:12px;background:var(--orange-dim);border:1px solid var(--border-accent);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;">
+                            <i class="fas fa-infinity" style="color:var(--orange);font-size:1.3rem;"></i>
+                        </div>
+                        <h3 style="font-family:var(--font-heading);font-size:1.4rem;font-weight:700;color:var(--text-primary);margin-bottom:0.75rem;">Formation Continue</h3>
+                        <p style="color:var(--text-secondary);max-width:600px;margin:0 auto 2rem;line-height:1.8;">
+                            Je maintiens mes connaissances à jour à travers une veille technologique constante
+                            et des formations en ligne sur Coursera, Udemy et OpenClassrooms.
                         </p>
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8">
-                            <div class="p-4">
-                                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <i class="fas fa-laptop-code text-2xl text-custom-orange"></i>
-                                </div>
-                                <p class="text-sm font-medium">Développement Web</p>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <div style="padding:1rem;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:10px;">
+                                <i class="fas fa-laptop-code" style="color:var(--orange);font-size:1.4rem;margin-bottom:0.5rem;display:block;"></i>
+                                <p style="font-size:0.8rem;color:var(--text-secondary);">Développement Web</p>
                             </div>
-                            <div class="p-4">
-                                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <i class="fas fa-mobile-alt text-2xl text-custom-orange"></i>
-                                </div>
-                                <p class="text-sm font-medium">Applications Mobiles</p>
+                            <div style="padding:1rem;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:10px;">
+                                <i class="fas fa-mobile-alt" style="color:var(--orange);font-size:1.4rem;margin-bottom:0.5rem;display:block;"></i>
+                                <p style="font-size:0.8rem;color:var(--text-secondary);">Applications Mobiles</p>
                             </div>
-                            <div class="p-4">
-                                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <i class="fas fa-cloud text-2xl text-custom-orange"></i>
-                                </div>
-                                <p class="text-sm font-medium">Cloud Computing</p>
+                            <div style="padding:1rem;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:10px;">
+                                <i class="fas fa-cloud" style="color:var(--orange);font-size:1.4rem;margin-bottom:0.5rem;display:block;"></i>
+                                <p style="font-size:0.8rem;color:var(--text-secondary);">Cloud Computing</p>
                             </div>
-                            <div class="p-4">
-                                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <i class="fas fa-shield-alt text-2xl text-custom-orange"></i>
-                                </div>
-                                <p class="text-sm font-medium">Cybersécurité</p>
+                            <div style="padding:1rem;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:10px;">
+                                <i class="fas fa-shield-alt" style="color:var(--orange);font-size:1.4rem;margin-bottom:0.5rem;display:block;"></i>
+                                <p style="font-size:0.8rem;color:var(--text-secondary);">Cybersécurité</p>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-black text-white py-8">
-        <div class="container mx-auto px-4 text-center">
-            <p>&copy; 2025 ALIFOE Kokou BAUDOIN. Tous droits réservés.</p>
-            <p class="mt-2 text-gray-400">Technicien Réseau & Développeur passionné</p>
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-10 mb-2">
+                <div>
+                    <div class="footer-brand">ALIFOE Baudoin</div>
+                    <p class="footer-tagline">Développeur Full Stack & Architecte Solutions Digitales, basé à Lomé, Togo.</p>
+                    <div class="footer-socials">
+                        <a href="https://linkedin.com/in/baudoin-kokou-alifoe-110197231" target="_blank" class="footer-social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://wa.me/22897734381" target="_blank" class="footer-social-link"><i class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:Alifoebaudoin228@gmail.com" class="footer-social-link"><i class="fas fa-envelope"></i></a>
+                        <a href="https://github.com" target="_blank" class="footer-social-link"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <div class="footer-nav-title">Navigation</div>
+                    <a href="index.html"       class="footer-nav-link"><i class="fas fa-home" style="color:var(--orange);width:16px;"></i> Accueil</a>
+                    <a href="about.html"       class="footer-nav-link"><i class="fas fa-user" style="color:var(--orange);width:16px;"></i> À propos</a>
+                    <a href="experience.html"  class="footer-nav-link"><i class="fas fa-briefcase" style="color:var(--orange);width:16px;"></i> Expérience</a>
+                    <a href="competences.html" class="footer-nav-link"><i class="fas fa-code" style="color:var(--orange);width:16px;"></i> Compétences</a>
+                    <a href="formation.html"   class="footer-nav-link"><i class="fas fa-graduation-cap" style="color:var(--orange);width:16px;"></i> Formation</a>
+                    <a href="mesprojets.html"  class="footer-nav-link"><i class="fas fa-project-diagram" style="color:var(--orange);width:16px;"></i> Mes Projets</a>
+                    <a href="contact.html"     class="footer-nav-link"><i class="fas fa-paper-plane" style="color:var(--orange);width:16px;"></i> Contact</a>
+                </div>
+                <div>
+                    <div class="footer-nav-title">Contact direct</div>
+                    <p class="footer-nav-link"><i class="fas fa-map-marker-alt" style="color:var(--orange);width:16px;"></i> Lomé, Togo</p>
+                    <a href="tel:+22897734381" class="footer-nav-link"><i class="fas fa-phone" style="color:var(--orange);width:16px;"></i> +228 97 73 43 81</a>
+                    <a href="mailto:Alifoebaudoin228@gmail.com" class="footer-nav-link"><i class="fas fa-envelope" style="color:var(--orange);width:16px;"></i> Alifoebaudoin228@gmail.com</a>
+                    <a href="https://wa.me/22897734381" target="_blank" class="footer-nav-link"><i class="fab fa-whatsapp" style="color:#25d366;width:16px;"></i> WhatsApp</a>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <p class="footer-copy">&copy; 2025 <span>ALIFOE Kokou BAUDOIN</span> — Tous droits réservés.</p>
         </div>
     </footer>
 
-    <!-- Bouton WhatsApp flottant -->
-    <a href="https://wa.me/22897734381" target="_blank" class="whatsapp-float">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <a href="https://wa.me/22897734381" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+    <button id="scrollTop" class="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-arrow-up"></i></button>
 
     <script>
         function toggleMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
+            document.getElementById('mobile-menu').classList.toggle('hidden');
         }
-
-        // Animation au défilement
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(element => {
-            observer.observe(element);
+        const nav = document.getElementById('mainNav');
+        const scrollBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('nav-scrolled', window.scrollY > 50);
+            scrollBtn.classList.toggle('visible', window.scrollY > 400);
         });
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>

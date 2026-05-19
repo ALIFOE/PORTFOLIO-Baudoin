@@ -1,10 +1,15 @@
 .filter-btn {
-    background-color: #f3f4f6;
-    color: #4b5563;
+    background-color: rgba(255, 255, 255, 0.06);
+    color: #94a3b8;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
     will-change: transform;
+    border-radius: 50px;
+    padding: 0.5rem 1.25rem;
+    font-size: 0.85rem;
+    font-weight: 500;
 }
 
 .filter-btn::after {
@@ -29,9 +34,10 @@
 }
 
 .filter-btn.active {
-    background: linear-gradient(135deg, #ff6b6b, #4dabf7);
+    background: linear-gradient(135deg, #f97316, #ea580c);
     color: white;
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+    border-color: transparent;
+    box-shadow: 0 8px 25px rgba(249, 115, 22, 0.35);
     transform: translateY(-2px);
 }
 
@@ -96,20 +102,21 @@
 .project-tag {
     display: inline-flex;
     align-items: center;
-    padding: 0.5rem 1rem;
+    padding: 0.35rem 0.875rem;
     border-radius: 9999px;
-    font-size: 0.875rem;
+    font-size: 0.8rem;
     font-weight: 600;
-    color: #4b5563;
-    background-color: #f3f4f6;
+    color: #f97316;
+    background-color: rgba(249, 115, 22, 0.1);
+    border: 1px solid rgba(249, 115, 22, 0.2);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform, box-shadow;
 }
 
 .project-tag:hover {
-    transform: translateY(-4px) scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
-    background-color: #e5e7eb;
+    transform: translateY(-2px) scale(1.04);
+    background-color: rgba(249, 115, 22, 0.18);
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.2);
 }
 
 .scroll-indicator {
