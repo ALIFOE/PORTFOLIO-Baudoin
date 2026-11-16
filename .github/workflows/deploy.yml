@@ -10,6 +10,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  actions: read
 
 concurrency:
   group: "pages"
@@ -39,6 +40,22 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist
+      # Tant que Pages est réglé sur « Deploy from a branch », GitHub publie aussi la
+      # racine du dépôt (le code source, inutilisable) à chaque push. On attend la fin
+      # de ce déploiement pour que le site construit (dist) soit publié en dernier.
+      # Inutile une fois Settings > Pages > Source réglé sur « GitHub Actions ».
+      - name: Wait for the branch-based Pages deployment (if any)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for i in $(seq 1 40); do
+            status=$(gh api "repos/$GITHUB_REPOSITORY/actions/runs?head_sha=$GITHUB_SHA&per_page=50" \
+              --jq '[.workflow_runs[] | select(.path == "dynamic/pages/pages-build-deployment")][0].status // "none"')
+            echo "pages-build-deployment: $status"
+            if [ "$status" = "completed" ]; then break; fi
+            if [ "$status" = "none" ] && [ "$i" -ge 6 ]; then break; fi
+            sleep 10
+          done
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
