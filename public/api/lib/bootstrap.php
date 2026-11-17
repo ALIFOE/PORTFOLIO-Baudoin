@@ -74,6 +74,7 @@ function config(?string $key = null, mixed $default = null): mixed
                 $loaded = require $file;
                 if (is_array($loaded)) {
                     $cfg = $loaded;
+                    relocate_config($file, $apiDir);
                     break;
                 }
             }
@@ -95,6 +96,29 @@ function config(?string $key = null, mixed $default = null): mixed
         $value = $value[$part];
     }
     return $value;
+}
+
+/**
+ * Configuration envoyée dans api/config.php (hébergeur sans accès au-dessus de la
+ * racine web) : déplacée au premier appel vers l'emplacement recommandé, hors de la
+ * racine web. Elle n'y est plus exposée, et un redéploiement qui remplace tout le
+ * site ne l'efface plus.
+ */
+function relocate_config(string $file, string $apiDir): void
+{
+    $preferred = dirname($apiDir, 2) . '/portfolio-api.config.php';
+    if ($file !== $apiDir . '/config.php' || is_file($preferred) || !is_writable(dirname($preferred))) {
+        return;
+    }
+    $tmp = $preferred . '.' . bin2hex(random_bytes(4)) . '.tmp';
+    if (@copy($file, $tmp)) {
+        @chmod($tmp, 0600);
+        if (@rename($tmp, $preferred)) {
+            @unlink($file);
+            return;
+        }
+    }
+    @unlink($tmp);
 }
 
 /* ------------------------------------------------------------------
@@ -293,7 +317,38 @@ function slugify(string $text, int $max = 80): string
 function uploads_dir(): string
 {
     $dir = (string) config('uploads_dir', '');
-    return rtrim($dir !== '' ? $dir : dirname(__DIR__, 2) . '/uploads', '/\\');
+    return rtrim($dir !== '' ? $dir : public_uploads_path(), '/\\');
+}
+
+/** Adresse publique des fichiers : <racine web>/uploads */
+function public_uploads_path(): string
+{
+    return dirname(__DIR__, 2) . '/uploads';
+}
+
+/**
+ * Quand uploads_dir est hors de la racine web (il survit alors aux redéploiements),
+ * les adresses /uploads/… sont servies par api/file.php (règle du .htaccess racine).
+ * Si l'hébergeur autorise les liens symboliques, un lien <racine web>/uploads est
+ * créé à la place, pour que le serveur web les serve directement.
+ */
+function ensure_uploads_link(): void
+{
+    $dir = uploads_dir();
+    $link = public_uploads_path();
+    if ($dir === $link || !function_exists('symlink') || is_link($link) || file_exists($link)) {
+        return;
+    }
+    try {
+        if (!is_dir($dir)) {
+            @mkdir($dir, 0755, true);
+        }
+        if (is_dir($dir)) {
+            @symlink($dir, $link);
+        }
+    } catch (Throwable) {
+        // lien impossible : api/file.php sert les fichiers
+    }
 }
 
 /** Taille en octets d'une valeur php.ini (« 128M » → 134217728). */

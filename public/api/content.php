@@ -14,6 +14,10 @@ require __DIR__ . '/lib/content.php';
 
 require_method('GET');
 
+// Chaque visite commence par cet appel : le lien vers les fichiers envoyés est
+// rétabli avant que la page n'affiche ses images (voir ensure_uploads_link)
+ensure_uploads_link();
+
 $content = [];
 foreach (stored_sections(db()) as $section => $entry) {
     $content[$section] = $entry['data'];

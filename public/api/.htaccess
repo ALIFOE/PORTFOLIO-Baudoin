@@ -1,4 +1,4 @@
-# API du portfolio : seuls contact.php, content.php et admin.php sont appelés par le site.
+# API du portfolio : contact.php, content.php, admin.php et file.php sont appelés par le site.
 Options -Indexes
 
 <FilesMatch "^config(\.sample)?\.php$">

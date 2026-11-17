@@ -86,6 +86,27 @@ php scripts/admin-account.php --user=Baudoin --password=NOUVEAU_MOT_DE_PASSE
 # en production : ajouter --config=chemin/vers/portfolio-api.config.php
 ```
 
+### Site en ligne : https://baudoin.hezouwe.com
+
+Sous-domaine de hezouwe.com sur l'hébergement Hostinger (compte `u920095541`),
+base `u920095541_baudoin`. Organisation sur le serveur :
+
+```
+domains/baudoin.hezouwe.com/
+├── portfolio-api.config.php   configuration (hors de la racine web)
+├── uploads/                   photos, vidéos et CV envoyés depuis l'admin
+└── public_html/               contenu de dist/ (remplacé à chaque mise en ligne)
+```
+
+Comme la configuration et les fichiers envoyés sont **hors de `public_html/`**, une mise
+en ligne qui remplace tout le contenu de `public_html/` (déploiement Hostinger) ne les
+efface pas. Les adresses `/uploads/…` sont servies par `api/file.php` (règle du
+`.htaccess` racine). Pour mettre à jour le site : `npm run build`, puis déployer `dist/`
+**sans fichier de configuration**.
+
+Une configuration envoyée dans `api/config.php` est déplacée automatiquement à côté de
+`public_html/` au premier appel.
+
 ### Mise en ligne (hébergement PHP + MySQL, ex. Hostinger)
 
 1. Créer une base MySQL et son utilisateur dans le panneau de l'hébergeur.

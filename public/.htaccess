@@ -1,0 +1,8 @@
+# Fichiers envoyés depuis l'administration : quand leur dossier est rangé hors de la
+# racine web (clé uploads_dir de la configuration, pour survivre aux redéploiements),
+# les adresses /uploads/… sont servies par api/file.php.
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^uploads/(.+)$ api/file.php?path=$1 [L,QSA]
+</IfModule>

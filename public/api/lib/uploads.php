@@ -130,6 +130,7 @@ function handle_upload(PDO $pdo, string $purpose): array
 
     $sub = $purpose === 'cv' ? 'cv' : gmdate('Y/m');
     $dir = ensure_upload_dir($sub);
+    ensure_uploads_link();
     $original = clean(basename((string) $file['name']), 190);
     $base = slugify(pathinfo($original, PATHINFO_FILENAME), 60) ?: ($purpose === 'cv' ? 'cv' : $kind);
     $name = $base . '-' . bin2hex(random_bytes(4));
