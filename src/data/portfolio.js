@@ -345,6 +345,8 @@ export const defaultContent = {
       { name: 'CDEJ SHALOM', logo: 'asset:logos/cdej.png' },
       { name: 'ONG MDH', logo: 'asset:logos/mdh.png' },
       { name: 'CREFER', logo: 'asset:logos/crefer.png' },
+      { name: 'COOP CA HEZOUWE', logo: 'asset:logos/hezouwe.png' },
+      { name: 'REJEPPAT — Réseau des Jeunes Producteurs et Professionnels Agricoles du Togo', logo: 'asset:logos/rejeppat.png' },
       { name: 'Organisation Internationale de la Francophonie', logo: 'asset:logos/oif.png' },
       { name: 'Université de Montréal', logo: 'asset:logos/udem.png' },
       { name: 'Cisco Networking Academy', logo: 'asset:logos/cisco.png' },

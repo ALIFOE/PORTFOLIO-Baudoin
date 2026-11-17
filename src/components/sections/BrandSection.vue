@@ -13,6 +13,10 @@ const columns = computed(() => {
   for (let i = 0; i < orgs.length; i += 2) cols.push(orgs.slice(i, i + 2))
   return cols
 })
+// 4 colonnes par ligne (template) ; au-delà, toutes les colonnes sur une même ligne,
+// et sur petit écran chaque colonne devient une ligne de deux logos (grille régulière)
+const many = computed(() => columns.value.length > 4)
+const colClass = computed(() => (many.value ? 'col-lg col-12' : 'col-xl-3 col-lg-3 col-md-6'))
 </script>
 
 <template>
@@ -21,12 +25,12 @@ const columns = computed(() => {
       <div class="section-title text-center">
         <h2 v-split class="style-3" v-html="title"></h2>
       </div>
-      <div class="row g-0">
+      <div class="row g-0" :class="{ 'brand-wall--many': many }">
         <div
           v-for="(col, i) in columns"
           :key="i"
-          v-anim="`${0.2 + i * 0.2}s`"
-          class="col-xl-3 col-lg-3 col-md-6"
+          v-anim="`${0.2 + (i % 5) * 0.15}s`"
+          :class="colClass"
         >
           <div class="brand-items bb-right">
             <div v-for="(org, j) in col" :key="org.name + j" class="brand-image" :class="{ 'bb-bottom': j === 0 }">

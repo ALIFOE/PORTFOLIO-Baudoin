@@ -288,6 +288,24 @@ img {
   .brand-section-light .brand-items .brand-image {
     height: 160px;
   }
+  /* Plus de 8 logos : chaque paire de logos devient une ligne de deux */
+  .brand-wall--many .brand-items {
+    display: flex;
+  }
+  .brand-wall--many .brand-items.bb-right {
+    border-right: 0;
+  }
+  .brand-wall--many > div:not(:last-child) .brand-items {
+    border-bottom: 1px solid rgb(29, 29, 29);
+  }
+  .brand-wall--many .brand-items .brand-image {
+    flex: 1 1 50%;
+    min-width: 0;
+  }
+  .brand-wall--many .brand-items .brand-image.bb-bottom {
+    border-bottom: 0;
+    border-right: 1px solid rgb(29, 29, 29);
+  }
 }
 
 /* ---------- Bloc d'appel à l'action ---------- */
