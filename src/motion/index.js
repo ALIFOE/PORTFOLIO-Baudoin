@@ -42,6 +42,14 @@ export function createSmoother() {
   return smoother
 }
 
+/** Retour au défilement natif (administration : formulaires longs, barres collantes). */
+export function destroySmoother() {
+  if (!smoother) return
+  smoother.kill()
+  smoother = null
+  ScrollTrigger.refresh()
+}
+
 export const getSmoother = () => smoother
 
 export function scrollToTop(animated = true) {

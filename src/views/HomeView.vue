@@ -1,8 +1,8 @@
 <script setup>
-import { experiences } from '@/data/portfolio'
+import { content } from '@/content'
 import HeroSection from '@/components/sections/HeroSection.vue'
+import DomainsSection from '@/components/sections/DomainsSection.vue'
 import FeaturedProjects from '@/components/sections/FeaturedProjects.vue'
-import ExpertiseSection from '@/components/sections/ExpertiseSection.vue'
 import WorkPositions from '@/components/sections/WorkPositions.vue'
 import BrandSection from '@/components/sections/BrandSection.vue'
 import ProcessSection from '@/components/sections/ProcessSection.vue'
@@ -11,9 +11,9 @@ import ContactSection from '@/components/sections/ContactSection.vue'
 
 <template>
   <HeroSection />
+  <DomainsSection />
   <FeaturedProjects />
-  <ExpertiseSection />
-  <WorkPositions title="Expériences <br> professionnelles" :items="experiences.slice(0, 4)" more />
+  <WorkPositions title="Expériences <br> professionnelles" :items="content.experience.experiences.slice(0, 4)" more />
   <BrandSection />
   <ProcessSection />
   <ContactSection />

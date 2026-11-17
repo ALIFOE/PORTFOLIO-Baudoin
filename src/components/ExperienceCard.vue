@@ -1,4 +1,6 @@
 <script setup>
+import { media } from '@/content'
+
 defineProps({
   job: { type: Object, required: true },
   variant: { type: String, default: '' },
@@ -10,16 +12,16 @@ const tel = (n) => `tel:${n.replace(/[^\d+]/g, '')}`
   <article class="waypoint-box-items experience-card" :class="variant">
     <div class="experience-card__head">
       <span>{{ job.company }}</span>
-      <img v-if="job.logo" :src="job.logo" :alt="job.company" class="experience-card__logo" loading="lazy" />
+      <img v-if="media(job.logo)" :src="media(job.logo)" :alt="job.company" class="experience-card__logo" loading="lazy" />
     </div>
     <h3 class="title">
       {{ job.role }}
       <em v-if="job.current" class="badge-current">En cours</em>
     </h3>
     <ul class="experience-card__tasks">
-      <li v-for="t in job.tasks" :key="t">{{ t }}</li>
+      <li v-for="(t, i) in job.tasks" :key="i">{{ t }}</li>
     </ul>
-    <div v-if="job.reference" class="experience-card__ref">
+    <div v-if="job.reference?.name" class="experience-card__ref">
       <small>Référence</small>
       <strong>{{ job.reference.name }}</strong>
       <span v-if="job.reference.role" class="ref-role">{{ job.reference.role }}</span>

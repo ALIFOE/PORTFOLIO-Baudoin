@@ -1,7 +1,9 @@
 <script setup>
-import { computed } from 'vue'
-import { projects, categoryLabel, domainOf } from '@/data/portfolio'
+import { computed, ref } from 'vue'
+import { categoryLabel, domainOf } from '@/data/portfolio'
+import { content, media, findDomain } from '@/content'
 import PageHeader from '@/components/PageHeader.vue'
+import MediaLightbox from '@/components/MediaLightbox.vue'
 import CtaSection from '@/components/sections/CtaSection.vue'
 import NotFoundView from '@/views/NotFoundView.vue'
 
@@ -9,8 +11,9 @@ const props = defineProps({ slug: { type: String, required: true } })
 
 // La route vérifie que le projet existe à l'entrée (voir router/index.js) ;
 // si l'adresse est modifiée à la main d'un projet à l'autre, on affiche la page 404.
-const index = computed(() => projects.findIndex((p) => p.slug === props.slug))
-const project = computed(() => projects[index.value])
+const index = computed(() => content.projects.findIndex((p) => p.slug === props.slug))
+const project = computed(() => content.projects[index.value])
+const domain = computed(() => (project.value ? findDomain(project.value.domain) : null))
 
 // Fonctionnalités réparties sur deux colonnes, comme dans le template
 const featureColumns = computed(() => {
@@ -19,10 +22,21 @@ const featureColumns = computed(() => {
   return [list.slice(0, half), list.slice(half)].filter((col) => col.length)
 })
 
-// Deux projets suivants (en boucle)
-const others = computed(() =>
-  [1, 2].map((step) => projects[(index.value + step) % projects.length]).filter((p) => p && p.slug !== props.slug),
+// Image principale + galerie, consultables en grand
+const images = computed(() =>
+  [project.value?.image, ...(project.value?.gallery ?? [])]
+    .map(media)
+    .filter(Boolean)
+    .map((src, i) => ({ kind: 'image', full: src, title: i ? `${project.value.title} — aperçu ${i + 1}` : project.value.title })),
 )
+const gallery = computed(() => images.value.slice(1))
+const openIndex = ref(null)
+
+// Deux projets suivants (en boucle)
+const others = computed(() => {
+  const list = content.projects
+  return [1, 2].map((step) => list[(index.value + step) % list.length]).filter((p, i, arr) => p && p.slug !== props.slug && arr.indexOf(p) === i)
+})
 </script>
 
 <template>
@@ -38,9 +52,16 @@ const others = computed(() =>
         <div class="portfolio-details-wrapper-1">
           <div class="row">
             <div class="col-xl-12">
-              <div v-anim class="details-thumb details-thumb--hero">
-                <img :src="project.image" :alt="project.title" />
-              </div>
+              <button
+                v-if="images.length"
+                v-anim
+                type="button"
+                class="details-thumb details-thumb--hero"
+                aria-label="Agrandir l'image"
+                @click="openIndex = 0"
+              >
+                <img :src="images[0].full" :alt="project.title" />
+              </button>
 
               <div class="details-box-item">
                 <div v-anim="'.3s'" class="details-box">
@@ -48,8 +69,11 @@ const others = computed(() =>
                   <p>{{ categoryLabel(project.category) }}</p>
                 </div>
                 <div v-anim="'.5s'" class="details-box">
-                  <span>Domaine</span>
-                  <p>{{ project.subtitle }}</p>
+                  <span>{{ domain ? 'Domaine' : 'Secteur' }}</span>
+                  <p v-if="domain">
+                    <router-link :to="`/realisations/${domain.slug}`">{{ domain.shortTitle || domain.title }}</router-link>
+                  </p>
+                  <p v-else>{{ project.subtitle }}</p>
                 </div>
                 <div v-anim="'.7s'" class="details-box">
                   <span>{{ project.demoUrl ? 'Site en ligne' : 'Diffusion' }}</span>
@@ -60,7 +84,7 @@ const others = computed(() =>
                 </div>
               </div>
 
-              <h2 v-split>{{ project.title }} — {{ project.subtitle }}</h2>
+              <h2 v-split>{{ project.title }}<template v-if="project.subtitle"> — {{ project.subtitle }}</template></h2>
 
               <div class="row g-4">
                 <div v-anim="'.2s'" class="col-lg-6">
@@ -76,39 +100,45 @@ const others = computed(() =>
                 </div>
                 <div v-anim="'.3s'" class="col-lg-6">
                   <div class="right-content">
-                    <span>Fonctionnalités clés</span>
-                    <div class="list-item">
-                      <ul v-for="(col, c) in featureColumns" :key="c" class="list">
-                        <li v-for="feature in col" :key="feature">
-                          <i class="fa-solid fa-arrow-up-right"></i>
-                          {{ feature }}
-                        </li>
+                    <template v-if="featureColumns.length">
+                      <span>Fonctionnalités clés</span>
+                      <div class="list-item">
+                        <ul v-for="(col, c) in featureColumns" :key="c" class="list">
+                          <li v-for="(feature, k) in col" :key="k">
+                            <i class="fa-solid fa-arrow-up-right"></i>
+                            {{ feature }}
+                          </li>
+                        </ul>
+                      </div>
+                    </template>
+
+                    <template v-if="project.technologies.length">
+                      <span>Technologies</span>
+                      <div class="tech-tags">
+                        <span v-for="tech in project.technologies" :key="tech">{{ tech }}</span>
+                      </div>
+                    </template>
+
+                    <template v-if="project.highlights.length">
+                      <span>Points forts</span>
+                      <ul class="list-2 mb-0">
+                        <li v-for="(h, k) in project.highlights" :key="k">{{ h }}</li>
                       </ul>
-                    </div>
-
-                    <span>Technologies</span>
-                    <div class="tech-tags">
-                      <span v-for="tech in project.technologies" :key="tech">{{ tech }}</span>
-                    </div>
-
-                    <span>Points forts</span>
-                    <ul class="list-2 mb-0">
-                      <li v-for="h in project.highlights" :key="h">{{ h }}</li>
-                    </ul>
+                    </template>
                   </div>
                 </div>
               </div>
 
-              <div v-if="project.gallery.length" class="row g-4 project-gallery">
+              <div v-if="gallery.length" class="row g-4 project-gallery">
                 <div
-                  v-for="(img, g) in project.gallery"
+                  v-for="(img, g) in gallery"
                   :key="g"
                   v-anim="`${0.2 + g * 0.2}s`"
-                  :class="project.gallery.length > 1 ? 'col-lg-6 col-md-6' : 'col-12'"
+                  :class="gallery.length > 1 ? 'col-lg-6 col-md-6' : 'col-12'"
                 >
-                  <div class="details-thumb">
-                    <img :src="img" :alt="`${project.title} — aperçu ${g + 2}`" loading="lazy" />
-                  </div>
+                  <button type="button" class="details-thumb" aria-label="Agrandir l'image" @click="openIndex = g + 1">
+                    <img :src="img.full" :alt="img.title" loading="lazy" />
+                  </button>
                 </div>
               </div>
 
@@ -129,14 +159,14 @@ const others = computed(() =>
           <div v-for="(p, i) in others" :key="p.slug" v-anim="`${0.2 + i * 0.2}s`" class="col-lg-6 col-md-6">
             <div class="portfolio-card-items-new-2">
               <router-link :to="`/projets/${p.slug}`" class="portfolio-thumb" :aria-label="p.title">
-                <img :src="p.image" :alt="p.title" loading="lazy" />
+                <img :src="media(p.image)" :alt="p.title" loading="lazy" />
               </router-link>
               <div class="portfolio-content">
                 <h2 class="title">
                   <router-link :to="`/projets/${p.slug}`">{{ p.title }}</router-link>
                 </h2>
                 <span>{{ p.subtitle }}</span>
-                <h3>
+                <h3 v-if="p.technologies.length">
                   <span>Technologies :</span>
                   {{ p.technologies.join(', ') }}
                 </h3>
@@ -147,6 +177,7 @@ const others = computed(() =>
       </div>
     </section>
 
+    <MediaLightbox v-model="openIndex" :items="images" />
     <CtaSection />
   </template>
   <NotFoundView v-else />

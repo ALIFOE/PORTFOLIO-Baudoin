@@ -1,10 +1,11 @@
 <script setup>
 import footerShape from '@/assets/img/template/footer-shape.png'
-import { navigation, profile, socials } from '@/data/portfolio'
+import { navigation } from '@/data/portfolio'
+import { content, links, socials } from '@/content'
 import { scrollToTop } from '@/motion'
 
 const year = new Date().getFullYear()
-const links = navigation.filter((n) => n.to !== '/')
+const pages = navigation.filter((n) => n.to !== '/')
 </script>
 
 <template>
@@ -21,7 +22,7 @@ const links = navigation.filter((n) => n.to !== '/')
                 <h3>Navigation</h3>
               </div>
               <ul class="list-area">
-                <li v-for="item in links" :key="item.to">
+                <li v-for="item in pages" :key="item.to">
                   <router-link :to="item.to">
                     <i class="icon-footer-arrow"></i>
                     {{ item.label }}
@@ -34,9 +35,16 @@ const links = navigation.filter((n) => n.to !== '/')
           <div v-anim="'.5s'" class="col-xxl-4 col-xl-5 col-lg-6 col-md-7">
             <div class="footer-widget-items">
               <div class="widget-head">
-                <h3>Suivez-moi</h3>
+                <h3>Mes domaines</h3>
               </div>
-              <div class="social-list">
+              <ul class="footer-domains">
+                <li v-for="(d, i) in content.domains" :key="d.slug">
+                  <router-link :to="`/realisations/${d.slug}`">
+                    <em>{{ String(i + 1).padStart(2, '0') }}</em>{{ d.title }}
+                  </router-link>
+                </li>
+              </ul>
+              <div class="social-list mt-4">
                 <div class="social-icon-area mb-0">
                   <a
                     v-for="s in socials"
@@ -51,7 +59,6 @@ const links = navigation.filter((n) => n.to !== '/')
                   </a>
                 </div>
               </div>
-              <p class="footer-about mt-4">{{ profile.title }}, basé à {{ profile.location }}. Disponible pour tout projet innovant.</p>
             </div>
           </div>
 
@@ -61,12 +68,12 @@ const links = navigation.filter((n) => n.to !== '/')
                 <h3>Contact direct</h3>
               </div>
               <ul class="footer-contact">
-                <li><i class="fa-solid fa-location-dot"></i>{{ profile.location }}</li>
-                <li>
-                  <i class="fa-solid fa-phone"></i><a :href="profile.phoneHref">{{ profile.phone }}</a>
+                <li><i class="fa-solid fa-location-dot"></i>{{ content.profile.location }}</li>
+                <li v-if="content.profile.phone">
+                  <i class="fa-solid fa-phone"></i><a :href="links.phone">{{ content.profile.phone }}</a>
                 </li>
-                <li>
-                  <i class="fa-regular fa-envelope"></i><a :href="`mailto:${profile.email}`">{{ profile.email }}</a>
+                <li v-if="content.profile.email">
+                  <i class="fa-regular fa-envelope"></i><a :href="links.email">{{ content.profile.email }}</a>
                 </li>
               </ul>
               <div class="footer-button mt-4">
@@ -77,7 +84,7 @@ const links = navigation.filter((n) => n.to !== '/')
         </div>
       </div>
       <div class="footer-bottom-wrapper">
-        <p>© {{ year }} {{ profile.fullName }} — Tous droits réservés.</p>
+        <p>© {{ year }} {{ content.profile.fullName }} — Tous droits réservés.</p>
         <button type="button" class="theme-btn" @click="scrollToTop()">Retour en haut</button>
       </div>
     </div>

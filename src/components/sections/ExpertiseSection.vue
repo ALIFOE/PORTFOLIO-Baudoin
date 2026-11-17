@@ -1,9 +1,9 @@
 <script setup>
 import { reactive } from 'vue'
-import { expertise } from '@/data/portfolio'
+import { content, media } from '@/content'
 
 defineProps({
-  title: { type: String, default: "Domaines d'expertise <br> au service de vos projets" },
+  title: { type: String, default: "Mes domaines d'activité" },
 })
 
 // Image qui suit la souris au survol (comportement du template)
@@ -28,11 +28,12 @@ const onLeave = (i) => {
         <h2 v-split class="style-3 text-white" v-html="title"></h2>
       </div>
       <div class="comprehensive-wrapper">
-        <div
-          v-for="(item, i) in expertise"
-          :key="item.title"
+        <router-link
+          v-for="(item, i) in content.domains"
+          :key="item.slug"
           v-anim="`${0.3 + i * 0.2}s`"
-          class="comprehensive-items"
+          :to="`/realisations/${item.slug}`"
+          class="comprehensive-items expertise-link"
           :class="{ 'mt-0': i === 0 }"
           @mousemove="onMove(i, $event)"
           @mouseleave="onLeave(i)"
@@ -40,12 +41,12 @@ const onLeave = (i) => {
           <div class="icon expertise-icon">
             <i :class="item.icon"></i>
           </div>
-          <h3 class="title">{{ item.title }}</h3>
-          <p>{{ item.text }}</p>
-          <div class="hover-image" :style="hover[i]">
-            <img :src="item.image" alt="" loading="lazy" />
+          <h3 class="title"><em class="expertise-num">{{ String(i + 1).padStart(2, '0') }}</em>{{ item.title }}</h3>
+          <p>{{ item.tagline }}</p>
+          <div v-if="media(item.cover)" class="hover-image" :style="hover[i]">
+            <img :src="media(item.cover)" alt="" loading="lazy" />
           </div>
-        </div>
+        </router-link>
       </div>
     </div>
   </section>

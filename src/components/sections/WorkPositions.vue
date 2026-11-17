@@ -13,14 +13,14 @@ const active = ref(0)
 </script>
 
 <template>
-  <section class="work-positions fix" :class="{ 'section-padding': padded }">
+  <section v-if="items.length" class="work-positions fix" :class="{ 'section-padding': padded }">
     <div class="container">
       <div class="section-title text-center text-xl-start">
         <h2 v-split class="style-3" v-html="title"></h2>
       </div>
       <div
         v-for="(job, i) in items"
-        :key="job.role + job.company"
+        :key="i"
         v-anim="`${0.2 + (i % 4) * 0.15}s`"
         class="work-positions-items"
         :class="{ active: active === i }"
@@ -34,7 +34,7 @@ const active = ref(0)
         <div class="content">
           <h4 class="title-2">{{ job.role }}</h4>
           <ul>
-            <li v-for="t in job.tasks.slice(0, 2)" :key="t">• {{ t }}</li>
+            <li v-for="(t, k) in job.tasks.slice(0, 2)" :key="k">• {{ t }}</li>
           </ul>
         </div>
       </div>

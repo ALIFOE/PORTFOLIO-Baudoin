@@ -1034,6 +1034,14 @@ img {
   font-size: 20px;
   overflow-wrap: anywhere;
 }
+/* Champ piège anti-robots : hors écran, jamais visible ni atteignable au clavier */
+.form-trap {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
 .form-feedback {
   margin-bottom: 20px;
   padding: 14px 18px;

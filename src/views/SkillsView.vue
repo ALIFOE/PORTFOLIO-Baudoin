@@ -1,5 +1,6 @@
 <script setup>
-import { skillGroups, designTools, languages, toolbox } from '@/data/portfolio'
+import { computed } from 'vue'
+import { content } from '@/content'
 import PageHeader from '@/components/PageHeader.vue'
 import CtaSection from '@/components/sections/CtaSection.vue'
 import shape1 from '@/assets/img/template/stack-shape-1.png'
@@ -7,8 +8,13 @@ import shape2 from '@/assets/img/template/stack-shape-2.png'
 import shape3 from '@/assets/img/template/stack-shape-3.png'
 
 // Deux rangées de pastilles, comme dans le template
-const half = Math.ceil(designTools.length / 2)
-const toolRows = [designTools.slice(0, half), designTools.slice(half)]
+const toolRows = computed(() => {
+  const tools = content.skills.designTools
+  const half = Math.ceil(tools.length / 2)
+  return [tools.slice(0, half), tools.slice(half)].filter((row) => row.length)
+})
+// 3 groupes par ligne quand ils sont 3, 6…, sinon 2 par ligne
+const groupCol = computed(() => (content.skills.groups.length % 3 === 0 ? 'col-xl-4 col-lg-6 col-md-6' : 'col-lg-6'))
 </script>
 
 <template>
@@ -23,14 +29,14 @@ const toolRows = [designTools.slice(0, half), designTools.slice(half)]
     <div class="container">
       <div class="section-title">
         <span v-anim class="sub-title">{ Savoir-faire }</span>
-        <h2 v-split class="style-2"><span>Trois domaines</span> d'expertise</h2>
+        <h2 v-split class="style-2"><span>Mes domaines</span> de compétence</h2>
       </div>
       <div class="row g-3">
         <div
-          v-for="(group, i) in skillGroups"
-          :key="group.title"
-          v-anim="`${0.2 + i * 0.2}s`"
-          class="col-xl-4 col-lg-6 col-md-6"
+          v-for="(group, i) in content.skills.groups"
+          :key="i"
+          v-anim="`${0.2 + (i % 3) * 0.2}s`"
+          :class="groupCol"
         >
           <div class="tech-stack-items skill-card">
             <div class="tech-top">
@@ -38,7 +44,7 @@ const toolRows = [designTools.slice(0, half), designTools.slice(half)]
               <h3 class="title">{{ group.title }}</h3>
             </div>
             <div class="skill-list">
-              <div v-for="skill in group.skills" :key="skill.name" class="skill-row">
+              <div v-for="(skill, k) in group.skills" :key="k" class="skill-row">
                 <div class="skill-row__head">
                   <span>{{ skill.name }}</span>
                   <em>{{ skill.level }}%</em>
@@ -62,7 +68,7 @@ const toolRows = [designTools.slice(0, half), designTools.slice(half)]
   </section>
 
   <!-- Design & multimédia -->
-  <section class="tech-stack-section section-padding fix section-bg">
+  <section v-if="toolRows.length" class="tech-stack-section section-padding fix section-bg">
     <div class="stack-shape-1"><img :src="shape1" alt="" /></div>
     <div class="stack-shape-2"><img :src="shape2" alt="" /></div>
     <div class="stack-bg-shape"><img :src="shape3" alt="" /></div>
@@ -96,8 +102,8 @@ const toolRows = [designTools.slice(0, half), designTools.slice(half)]
       </div>
       <div class="row g-3">
         <div
-          v-for="(tool, i) in toolbox"
-          :key="tool.title"
+          v-for="(tool, i) in content.skills.toolbox"
+          :key="i"
           v-anim="`${0.2 + (i % 3) * 0.2}s`"
           class="col-xl-4 col-lg-6 col-md-6"
         >
@@ -111,10 +117,10 @@ const toolRows = [designTools.slice(0, half), designTools.slice(half)]
         </div>
       </div>
 
-      <div v-anim="'.2s'" class="languages-box">
+      <div v-if="content.skills.languages.length" v-anim="'.2s'" class="languages-box">
         <h3>Langues</h3>
         <div class="row g-4">
-          <div v-for="lang in languages" :key="lang.name" class="col-md-6">
+          <div v-for="(lang, k) in content.skills.languages" :key="k" class="col-md-6">
             <div class="skill-row">
               <div class="skill-row__head">
                 <span>{{ lang.name }}</span>

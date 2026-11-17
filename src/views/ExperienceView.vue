@@ -1,5 +1,5 @@
 <script setup>
-import { experiences, volunteering, keySkills } from '@/data/portfolio'
+import { content } from '@/content'
 import PageHeader from '@/components/PageHeader.vue'
 import ExperienceCard from '@/components/ExperienceCard.vue'
 import WorkPositions from '@/components/sections/WorkPositions.vue'
@@ -23,8 +23,8 @@ const tilt = ['', 'style-2', 'style-3', 'style-4', 'style-5', 'style-6']
       </div>
       <div class="row g-4">
         <div
-          v-for="(job, i) in experiences"
-          :key="job.role + job.company"
+          v-for="(job, i) in content.experience.experiences"
+          :key="i"
           v-anim="`${0.2 + (i % 2) * 0.2}s`"
           class="col-xl-6 col-lg-6"
         >
@@ -34,16 +34,16 @@ const tilt = ['', 'style-2', 'style-3', 'style-4', 'style-5', 'style-6']
     </div>
   </section>
 
-  <WorkPositions title="Engagement <br> bénévole" :items="volunteering" :padded="false" />
+  <WorkPositions title="Engagement <br> bénévole" :items="content.experience.volunteering" :padded="false" />
 
-  <section class="tech-stack-section-inner section-padding fix">
+  <section v-if="content.experience.keySkills.length" class="tech-stack-section-inner section-padding fix">
     <div class="container">
       <div class="section-title text-center">
         <h2 v-split class="style-3">Compétences clés développées</h2>
         <p v-anim="'.2s'" class="mt-3">Une combinaison d'expertise technique et de qualités humaines, forgée sur le terrain.</p>
       </div>
       <div class="row g-3">
-        <div v-for="(k, i) in keySkills" :key="k.title" v-anim="`${0.3 + i * 0.2}s`" class="col-xl-4 col-lg-6 col-md-6">
+        <div v-for="(k, i) in content.experience.keySkills" :key="k.title" v-anim="`${0.3 + i * 0.2}s`" class="col-xl-4 col-lg-6 col-md-6">
           <div class="tech-stack-items">
             <div class="tech-top">
               <div class="icon fa-tile"><i :class="k.icon"></i></div>

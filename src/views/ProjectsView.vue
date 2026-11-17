@@ -1,13 +1,18 @@
 <script setup>
 import { ref, computed, watch, nextTick } from 'vue'
-import { projects, projectCategories, categoryLabel } from '@/data/portfolio'
+import { projectCategories, categoryLabel } from '@/data/portfolio'
+import { content, media } from '@/content'
 import { refreshScroll } from '@/motion'
 import PageHeader from '@/components/PageHeader.vue'
 import CtaSection from '@/components/sections/CtaSection.vue'
 
 const filter = ref('all')
-const count = (key) => (key === 'all' ? projects.length : projects.filter((p) => p.category === key).length)
-const visible = computed(() => (filter.value === 'all' ? projects : projects.filter((p) => p.category === filter.value)))
+const count = (key) => (key === 'all' ? content.projects.length : content.projects.filter((p) => p.category === key).length)
+// Seules les catégories qui contiennent au moins un projet sont proposées
+const categories = computed(() => projectCategories.filter((c) => count(c.key) > 0))
+const visible = computed(() =>
+  filter.value === 'all' ? content.projects : content.projects.filter((p) => p.category === filter.value),
+)
 
 // La hauteur de la page change avec le filtre : on recalcule le défilement
 watch(filter, () => nextTick(refreshScroll))
@@ -16,15 +21,15 @@ watch(filter, () => nextTick(refreshScroll))
 <template>
   <PageHeader
     title="Projets"
-    :crumbs="[{ label: 'Projets' }]"
+    :crumbs="[{ label: 'Réalisations', to: '/realisations' }, { label: 'Projets' }]"
     text="Une sélection de sites web, d'applications et de créations graphiques réalisés pour des organisations et des entreprises."
   />
 
   <section class="portfolio-inner-section section-padding fix pt-0">
     <div class="container">
-      <div v-anim class="project-filters" role="group" aria-label="Filtrer les projets">
+      <div v-if="categories.length > 2" v-anim class="project-filters" role="group" aria-label="Filtrer les projets">
         <button
-          v-for="cat in projectCategories"
+          v-for="cat in categories"
           :key="cat.key"
           type="button"
           class="filter-btn"
@@ -48,7 +53,7 @@ watch(filter, () => nextTick(refreshScroll))
             :class="{ 'mb-0': i === visible.length - 1 }"
           >
             <div class="portfolio-thumb">
-              <img :src="p.image" :alt="p.title" :loading="i === 0 ? 'eager' : 'lazy'" />
+              <img :src="media(p.image)" :alt="p.title" :loading="i === 0 ? 'eager' : 'lazy'" />
               <span class="project-badge">{{ categoryLabel(p.category) }}</span>
               <router-link :to="`/projets/${p.slug}`" class="project-open" :aria-label="`Voir le projet ${p.title}`">
                 <i class="fa-regular fa-arrow-up-right"></i>
@@ -59,7 +64,7 @@ watch(filter, () => nextTick(refreshScroll))
                     <router-link :to="`/projets/${p.slug}`">{{ p.title }}</router-link>
                   </h2>
                   <span>{{ p.subtitle }}</span>
-                  <h3>
+                  <h3 v-if="p.technologies.length">
                     <span>Technologies :</span>
                     {{ p.technologies.join(', ') }}
                   </h3>

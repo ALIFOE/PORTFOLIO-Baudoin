@@ -1,11 +1,15 @@
 <script setup>
 import { watch, onBeforeUnmount } from 'vue'
-import { navigation, profile, socials } from '@/data/portfolio'
+import { useRoute } from 'vue-router'
+import { navigation } from '@/data/portfolio'
+import { content, links, socials } from '@/content'
+import { useNavigation } from './navigation'
 import SiteLogo from './SiteLogo.vue'
 
 const props = defineProps({ open: { type: Boolean, default: false } })
 const emit = defineEmits(['update:open'])
 const close = () => emit('update:open', false)
+const { childrenOf } = useNavigation(useRoute())
 
 const onKey = (e) => {
   if (e.key === 'Escape') close()
@@ -35,7 +39,7 @@ onBeforeUnmount(() => window.removeEventListener('keydown', onKey))
               </button>
             </div>
           </div>
-          <p class="text d-none d-xl-block">{{ profile.intro }}</p>
+          <p class="text d-none d-xl-block">{{ content.profile.intro }}</p>
 
           <div class="mobile-menu fix">
             <div class="mean-container">
@@ -44,6 +48,13 @@ onBeforeUnmount(() => window.removeEventListener('keydown', onKey))
                   <ul>
                     <li v-for="item in navigation" :key="item.to">
                       <router-link :to="item.to" @click="close">{{ item.label }}</router-link>
+                      <ul v-if="item.children" class="mobile-submenu">
+                        <li v-for="child in childrenOf(item)" :key="child.to">
+                          <router-link :to="child.to" @click="close">
+                            <em v-if="child.number">{{ child.number }}</em>{{ child.label }}
+                          </router-link>
+                        </li>
+                      </ul>
                     </li>
                   </ul>
                 </nav>
@@ -53,17 +64,17 @@ onBeforeUnmount(() => window.removeEventListener('keydown', onKey))
 
           <div class="off-contact-info">
             <span class="info-title">Contact</span>
-            <div class="contact-details">
+            <div v-if="content.profile.phone" class="contact-details">
               <span class="sub-info">Téléphone / WhatsApp</span>
-              <p><a :href="profile.phoneHref">{{ profile.phone }}</a></p>
+              <p><a :href="links.phone">{{ content.profile.phone }}</a></p>
             </div>
-            <div class="contact-details">
+            <div v-if="content.profile.email" class="contact-details">
               <span class="sub-info">Email</span>
-              <p><a :href="`mailto:${profile.email}`">{{ profile.email }}</a></p>
+              <p><a :href="links.email">{{ content.profile.email }}</a></p>
             </div>
             <div class="contact-details">
               <span class="sub-info">Localisation</span>
-              <p>{{ profile.location }}</p>
+              <p>{{ content.profile.location }}</p>
             </div>
           </div>
         </div>

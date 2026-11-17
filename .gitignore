@@ -11,6 +11,12 @@ node_modules
 dist
 dist-ssr
 *.local
+
+# Configuration de l'API (identifiants de base de données, compte admin)
+portfolio-api.config*.php
+public/api/config.php
+# Fichiers envoyés depuis l'admin en local
+public/uploads/
 .claude
 
 # Editor directories and files

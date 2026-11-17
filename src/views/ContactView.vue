@@ -1,35 +1,36 @@
 <script setup>
-import { profile, socials } from '@/data/portfolio'
+import { computed } from 'vue'
+import { content, links, socials } from '@/content'
 import PageHeader from '@/components/PageHeader.vue'
 import ContactForm from '@/components/ContactForm.vue'
 import iconMessage from '@/assets/img/template/contact-icon-01.png'
 import iconChat from '@/assets/img/template/contact-icon-02.png'
 import iconCall from '@/assets/img/template/contact-icon-03.png'
 
-const channels = [
+const channels = computed(() => [
   {
     icon: iconMessage,
     title: 'Écrivez-moi',
     text: 'Pour une demande détaillée, un devis ou une proposition de collaboration.',
-    label: profile.email,
-    href: `mailto:${profile.email}`,
+    label: content.profile.email,
+    href: links.value.email,
   },
   {
     icon: iconChat,
     title: 'Discutons',
     text: 'Le plus rapide : une réponse sur WhatsApp, généralement dans la journée.',
     label: 'Ouvrir WhatsApp',
-    href: profile.whatsapp,
+    href: links.value.whatsapp,
     external: true,
   },
   {
     icon: iconCall,
     title: 'Appelez-moi',
-    text: `Basé à ${profile.location}, disponible aux horaires indiqués ci-dessous.`,
-    label: profile.phone,
-    href: profile.phoneHref,
+    text: `Basé à ${content.profile.location}, disponible aux horaires indiqués ci-dessous.`,
+    label: content.profile.phone,
+    href: links.value.phone,
   },
-]
+].filter((c) => c.href))
 </script>
 
 <template>
@@ -90,7 +91,7 @@ const channels = [
 
             <h3 class="availability-title">Disponibilités</h3>
             <ul v-anim="'.3s'" class="availability">
-              <li v-for="slot in profile.availability" :key="slot.day">
+              <li v-for="slot in content.profile.availability" :key="slot.day">
                 <span>{{ slot.day }}</span>
                 <span>{{ slot.hours }}</span>
               </li>

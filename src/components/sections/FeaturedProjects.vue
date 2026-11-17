@@ -1,9 +1,10 @@
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import { gsap, appReady } from '@/motion'
-import { projects, categoryLabel } from '@/data/portfolio'
+import { categoryLabel } from '@/data/portfolio'
+import { content, media } from '@/content'
 
-const featured = projects.filter((p) => p.featured)
+const featured = computed(() => content.projects.filter((p) => p.featured))
 const root = ref(null)
 let mm
 
@@ -33,7 +34,7 @@ onBeforeUnmount(() => mm?.revert())
 </script>
 
 <template>
-  <section ref="root" class="website-section-3 section-padding fix">
+  <section v-if="featured.length" ref="root" class="website-section-3 section-padding fix">
     <div class="container">
       <div class="section-title-area">
         <div class="section-title">
@@ -65,15 +66,15 @@ onBeforeUnmount(() => mm?.revert())
                   </li>
                   <li>
                     <p>Atout</p>
-                    <h4>{{ p.highlights[0] }}</h4>
+                    <h4>{{ p.highlights[0] || p.subtitle }}</h4>
                   </li>
                 </ul>
               </div>
             </div>
             <div class="col-xl-8">
               <router-link :to="`/projets/${p.slug}`" class="website-thumb d-block" :aria-label="p.title">
-                <img :src="p.image" :alt="p.title" loading="lazy" />
-                <img :src="p.image" alt="" loading="lazy" />
+                <img :src="media(p.image)" :alt="p.title" loading="lazy" />
+                <img :src="media(p.image)" alt="" loading="lazy" />
               </router-link>
             </div>
           </div>

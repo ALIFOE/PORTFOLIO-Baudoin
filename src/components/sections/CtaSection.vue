@@ -1,5 +1,5 @@
 <script setup>
-import { profile, socials } from '@/data/portfolio'
+import { links, socials } from '@/content'
 
 defineProps({
   title: { type: String, default: 'Travaillons ensemble sur votre prochain projet' },
@@ -25,10 +25,10 @@ defineProps({
             <div v-anim="'.3s'" class="cta-actions">
               <router-link to="/contact" class="theme-btn">Me contacter</router-link>
               <div class="social-list">
-                <a v-for="s in socials" :key="s.label" :href="s.url" target="_blank" rel="noopener">
+                <a v-for="s in socials.slice(0, 3)" :key="s.label" :href="s.url" target="_blank" rel="noopener">
                   {{ s.label }} <i class="fa-sharp fa-solid fa-arrow-up-right"></i>
                 </a>
-                <a :href="profile.cv" target="_blank" rel="noopener" class="mb-0">
+                <a v-if="links.cv" :href="links.cv" target="_blank" rel="noopener" class="mb-0">
                   Mon CV (PDF) <i class="fa-sharp fa-solid fa-arrow-down"></i>
                 </a>
               </div>

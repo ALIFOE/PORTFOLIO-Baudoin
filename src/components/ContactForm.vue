@@ -1,12 +1,16 @@
 <script setup>
 import { reactive, ref, computed } from 'vue'
-import { profile, contactServices } from '@/data/portfolio'
+import { contactServices } from '@/data/portfolio'
+import { content, links } from '@/content'
+import { sendContact } from '@/api'
 
 defineProps({ variant: { type: String, default: '' } })
 
-const form = reactive({ name: '', whatsapp: '', email: '', message: '', services: [] })
+// « website » est un champ piège invisible : seuls les robots le remplissent
+const form = reactive({ name: '', whatsapp: '', email: '', message: '', services: [], website: '' })
 const status = ref('idle') // idle | sending | success | error
 const feedback = ref('')
+const showFallback = ref(false) // propose WhatsApp / email quand l'envoi n'a pas abouti
 
 const toggleService = (s) => {
   const i = form.services.indexOf(s)
@@ -21,7 +25,7 @@ const subject = computed(() =>
 // Lien WhatsApp pré-rempli, proposé en secours si l'envoi échoue
 const whatsappFallback = computed(() => {
   const text = `Bonjour Baudoin, je suis ${form.name || '…'}. ${subject.value}. ${form.message}`
-  return `${profile.whatsapp}?text=${encodeURIComponent(text.trim())}`
+  return links.value.whatsapp ? `${links.value.whatsapp}?text=${encodeURIComponent(text.trim())}` : ''
 })
 
 function validate() {
@@ -32,6 +36,8 @@ function validate() {
 }
 
 async function submit() {
+  if (status.value === 'sending') return
+  showFallback.value = false
   const error = validate()
   if (error) {
     status.value = 'error'
@@ -40,24 +46,30 @@ async function submit() {
   }
   status.value = 'sending'
   feedback.value = 'Envoi en cours…'
-  const data = new FormData()
-  data.append('name', form.name.trim())
-  data.append('whatsapp', form.whatsapp.trim())
-  data.append('email', form.email.trim())
-  data.append('subject', subject.value)
-  data.append('services', form.services.join(', '))
-  data.append('message', form.message.trim())
-  data.append('_subject', subject.value)
   try {
-    const res = await fetch(profile.formEndpoint, { method: 'POST', body: data, headers: { Accept: 'application/json' } })
-    if (!res.ok) throw new Error(String(res.status))
+    // Enregistré par l'API interne, puis consultable dans l'espace d'administration
+    await sendContact({
+      name: form.name.trim(),
+      email: form.email.trim(),
+      whatsapp: form.whatsapp.trim(),
+      services: [...form.services],
+      message: form.message.trim(),
+      website: form.website,
+    })
     status.value = 'success'
     feedback.value = 'Message envoyé avec succès ! Je vous répondrai dans les plus brefs délais.'
-    Object.assign(form, { name: '', whatsapp: '', email: '', message: '', services: [] })
+    Object.assign(form, { name: '', whatsapp: '', email: '', message: '', services: [], website: '' })
     window.gtag?.('event', 'contact_form_submit', { event_category: 'Contact' })
-  } catch {
+  } catch (e) {
     status.value = 'error'
-    feedback.value = "L'envoi a échoué. Vous pouvez m'écrire directement sur WhatsApp ou par email."
+    if (e?.status === 422) {
+      // Saisie refusée par le serveur : son message dit quoi corriger
+      feedback.value = e.message
+    } else {
+      feedback.value =
+        e?.status === 429 ? e.message : "L'envoi a échoué. Vous pouvez m'écrire directement sur WhatsApp ou par email."
+      showFallback.value = true
+    }
   }
 }
 </script>
@@ -82,6 +94,12 @@ async function submit() {
     </div>
 
     <form class="contact-form-box" novalidate @submit.prevent="submit">
+      <div class="form-trap" aria-hidden="true">
+        <label>
+          Ne pas remplir ce champ
+          <input v-model="form.website" type="text" name="website" tabindex="-1" autocomplete="off" />
+        </label>
+      </div>
       <div class="row g-4 align-items-center justify-content-center">
         <div v-anim="'.2s'" class="col-lg-6 col-md-6">
           <label class="form-clt">
@@ -116,10 +134,10 @@ async function submit() {
             aria-live="polite"
           >
             {{ feedback }}
-            <template v-if="status === 'error' && feedback.startsWith('L')">
+            <template v-if="status === 'error' && showFallback">
               <br />
-              <a :href="whatsappFallback" target="_blank" rel="noopener">WhatsApp</a> ·
-              <a :href="`mailto:${profile.email}?subject=${encodeURIComponent(subject)}`">{{ profile.email }}</a>
+              <template v-if="whatsappFallback"><a :href="whatsappFallback" target="_blank" rel="noopener">WhatsApp</a> · </template>
+              <a :href="`mailto:${content.profile.email}?subject=${encodeURIComponent(subject)}`">{{ content.profile.email }}</a>
             </template>
           </p>
           <div class="contact-button">
@@ -128,7 +146,7 @@ async function submit() {
               <template v-else>Envoyer</template>
             </button>
             <p>
-              <a :href="`mailto:${profile.email}`">{{ profile.email }}</a>
+              <a :href="links.email">{{ content.profile.email }}</a>
             </p>
           </div>
         </div>

@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import { education, certifications, continuousLearning } from '@/data/portfolio'
+import { content, media } from '@/content'
 import PageHeader from '@/components/PageHeader.vue'
 import CtaSection from '@/components/sections/CtaSection.vue'
 import shape1 from '@/assets/img/template/stack-shape-1.png'
@@ -29,8 +29,8 @@ const tilt = ['', 'style-2', 'style-4', 'style-3']
         <div class="col-xl-12">
           <ul class="career-waypoints-list">
             <li
-              v-for="(item, i) in education"
-              :key="item.title"
+              v-for="(item, i) in content.education.education"
+              :key="i"
               v-anim="`${0.2 + i * 0.2}s`"
               :class="{ active: active === i }"
               @mouseenter="active = i"
@@ -41,7 +41,7 @@ const tilt = ['', 'style-2', 'style-4', 'style-3']
               </div>
               <div class="text">
                 {{ item.summary }}
-                <div class="edu-topics">
+                <div v-if="item.topics.length" class="edu-topics">
                   <span v-for="topic in item.topics" :key="topic">{{ topic }}</span>
                 </div>
               </div>
@@ -54,23 +54,23 @@ const tilt = ['', 'style-2', 'style-4', 'style-3']
   </section>
 
   <!-- Certifications -->
-  <section class="career-waypoint-section section-padding pt-0 fix">
+  <section v-if="content.education.certifications.length" class="career-waypoint-section section-padding pt-0 fix">
     <div class="container">
       <div class="section-title">
         <span v-anim class="sub-title">{ Certifications }</span>
-        <h2 v-split class="style-2"><span>{{ certifications.length }} certifications</span> professionnelles</h2>
+        <h2 v-split class="style-2"><span>{{ content.education.certifications.length }} certification{{ content.education.certifications.length > 1 ? 's' : '' }}</span> professionnelles</h2>
       </div>
       <div class="row g-4">
         <div
-          v-for="(cert, i) in certifications"
-          :key="cert.title"
+          v-for="(cert, i) in content.education.certifications"
+          :key="i"
           v-anim="`${0.2 + (i % 2) * 0.2}s`"
           class="col-xl-6 col-lg-6"
         >
           <article class="waypoint-box-items experience-card cert-card" :class="tilt[i % tilt.length]">
             <div class="experience-card__head">
               <span>{{ cert.issuer }}</span>
-              <img v-if="cert.logo" :src="cert.logo" :alt="cert.issuer" class="experience-card__logo" loading="lazy" />
+              <img v-if="media(cert.logo)" :src="media(cert.logo)" :alt="cert.issuer" class="experience-card__logo" loading="lazy" />
             </div>
             <h3 class="title">{{ cert.title }}</h3>
             <p>{{ cert.text }}</p>
@@ -94,10 +94,10 @@ const tilt = ['', 'style-2', 'style-4', 'style-3']
               <span v-anim class="sub-title">{ Formation continue }</span>
               <h2 v-split class="style-2 text-white"><span>Apprendre</span> en permanence pour rester à la pointe</h2>
             </div>
-            <p v-anim="'.2s'" class="stack-lead">{{ continuousLearning.text }}</p>
+            <p v-anim="'.2s'" class="stack-lead">{{ content.education.continuousLearning.text }}</p>
             <div v-anim="'.3s'" class="stack-list">
               <div class="stack-area">
-                <span v-for="topic in continuousLearning.topics" :key="topic" class="stack-icon">{{ topic }}</span>
+                <span v-for="topic in content.education.continuousLearning.topics" :key="topic" class="stack-icon">{{ topic }}</span>
               </div>
             </div>
           </div>

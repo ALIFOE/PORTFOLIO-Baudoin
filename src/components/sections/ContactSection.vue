@@ -1,5 +1,5 @@
 <script setup>
-import { profile } from '@/data/portfolio'
+import { content, media } from '@/content'
 import ContactForm from '@/components/ContactForm.vue'
 </script>
 
@@ -12,8 +12,8 @@ import ContactForm from '@/components/ContactForm.vue'
       <div class="row">
         <div v-anim="'.3s'" class="col-xl-5 col-lg-6">
           <div class="contact-thumb-3">
-            <img :src="profile.photos.contact" :alt="profile.fullName" loading="lazy" />
-            <img :src="profile.photos.contact" alt="" loading="lazy" />
+            <img :src="media(content.profile.photos.contact)" :alt="content.profile.fullName" loading="lazy" />
+            <img :src="media(content.profile.photos.contact)" alt="" loading="lazy" />
           </div>
         </div>
         <div class="col-xl-7 col-lg-6">
