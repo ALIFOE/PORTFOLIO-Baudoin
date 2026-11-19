@@ -23,7 +23,6 @@ const editor = useSectionEditor('profile')
         <AField v-model="p.fullName" label="Nom complet" />
         <AField v-model="p.shortName" label="Nom court" hint="Utilisé dans les emails de réponse et « Bonjour, je suis … »." />
         <AField v-model="p.role" label="Métier principal" hint="Pastille à côté de votre nom sur l'accueil." />
-        <AField v-model="p.logoText" label="Texte du logo" />
         <AField v-model="p.title" label="Titre complet" hint="Pied de page et référencement." wide />
         <AField v-model="p.headline" label="Grand titre de l'accueil" wide />
         <AField v-model="p.intro" label="Présentation courte" multiline :rows="4" wide hint="Accueil, page À propos et menu mobile." />

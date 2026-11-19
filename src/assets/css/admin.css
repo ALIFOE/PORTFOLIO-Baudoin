@@ -205,6 +205,9 @@
   display: inline-block;
   margin-bottom: 28px;
 }
+.adm-login__logo .site-logo img {
+  height: 64px;
+}
 .adm-login__card h1 {
   margin-bottom: 8px;
   font-size: 30px;
@@ -245,6 +248,9 @@
   display: flex;
   align-items: center;
   gap: 14px;
+}
+.adm-top__brand .site-logo img {
+  height: 40px;
 }
 .adm-top__brand > span:last-child {
   padding: 3px 12px;

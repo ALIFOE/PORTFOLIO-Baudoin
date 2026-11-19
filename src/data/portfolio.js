@@ -89,7 +89,6 @@ export const defaultContent = {
   profile: {
     fullName: 'ALIFOE Kokou BAUDOIN',
     shortName: 'ALIFOE Baudoin',
-    logoText: 'baudoin',
     role: 'Développeur Web & Mobile Full Stack',
     title: 'Développeur Web & Mobile Full Stack · Multimédia · Sonorisation Live',
     headline: 'Je transforme les idées en applications innovantes',
@@ -97,7 +96,7 @@ export const defaultContent = {
     intro:
       "Développeur web & mobile full stack, je conçois des sites et des applications complètes, de l'interface au serveur. Technicien multimédia (photo, vidéo, design) et technicien en sonorisation live, je donne aussi vie à vos projets à l'image et sur scène.",
     location: 'Lomé, Togo',
-    email: 'Alifoebaudoin228@gmail.com',
+    email: 'baudoinalifoe.dcli.dev24@gmail.com',
     phone: '+228 97 73 43 81',
     whatsapp: '+228 97 73 43 81',
     linkedin: 'https://linkedin.com/in/baudoin-kokou-alifoe-110197231',

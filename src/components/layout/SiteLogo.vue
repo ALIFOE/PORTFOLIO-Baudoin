@@ -1,13 +1,11 @@
 <script setup>
-import icon from '@/assets/img/logos/concepttech-icon.png'
-import { content } from '@/content'
+import logo from '@/assets/img/logos/baudoin-concept.png'
 
 defineProps({ light: { type: Boolean, default: false } })
 </script>
 
 <template>
   <span class="site-logo" :class="{ 'site-logo--light': light }">
-    <img :src="icon" alt="" width="29" height="32" />
-    <span class="site-logo__text">{{ content.profile.logoText }}<b>.</b></span>
+    <img :src="logo" alt="Baudoin Concept" width="371" height="200" />
   </span>
 </template>

@@ -67,7 +67,6 @@ function content_schemas(): array
         'profile' => Field::obj([
             'fullName' => Field::str(120),
             'shortName' => Field::str(80),
-            'logoText' => Field::str(40),
             'role' => Field::str(160),
             'title' => Field::str(200),
             'headline' => Field::str(200),

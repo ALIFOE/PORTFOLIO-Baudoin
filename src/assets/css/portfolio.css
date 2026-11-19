@@ -50,34 +50,26 @@ img {
   z-index: 1;
 }
 
-/* ---------- Logo texte ---------- */
+/* ---------- Logo « Baudoin Concept » ---------- */
 .site-logo {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
   line-height: 1;
 }
 .site-logo img,
 .offcanvas__wrapper .offcanvas__logo .site-logo img {
-  width: 29px;
-  height: 32px;
-  object-fit: contain;
+  width: auto;
+  height: 52px;
+  max-width: none;
 }
-.site-logo__text {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 26px;
-  font-weight: 700;
-  letter-spacing: -0.5px;
-  color: var(--header);
+@media (max-width: 575px) {
+  .site-logo img {
+    height: 44px;
+  }
 }
-.site-logo__text b {
-  color: var(--theme2);
-}
-.site-logo--light .site-logo__text {
-  color: var(--white);
-}
-.site-logo--light .site-logo__text b {
-  color: var(--theme);
+/* Fond sombre (menu mobile) : logo en blanc */
+.site-logo--light img {
+  filter: brightness(0) invert(1);
 }
 
 /* ---------- Bouton WhatsApp flottant ---------- */
